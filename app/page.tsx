@@ -83,9 +83,9 @@ export default function Home() {
     const selectedOccupation = occupations.find((occ) => occ.key === e.target.value);
     if (selectedOccupation) {
       setOccupationDetails(selectedOccupation);
-      console.log("Occupation selected:", selectedOccupation); 
     }
   };
+
 
   // Fill out PDF fields
   const [error, setError] = useState(null);  
@@ -233,9 +233,10 @@ export default function Home() {
       <span className={title()}>Characteristics</span>
       <div className="inline-block max-w-xl text-center justify-center">
         <div className="flex gap-3 w-full">
+          
           <Input
           defaultValue="90"
-          label="STR"
+          label={ <Tooltip content="Roll: 3d6 * 5">STR</Tooltip> }
           type="number"
           min={charMin}
           max={charMax}
@@ -243,7 +244,7 @@ export default function Home() {
           />
           <Input
           defaultValue="90"
-          label="SIZ"
+          label={ <Tooltip content="Roll: 2d6 + 6 * 5">SIZ</Tooltip> }
           type="number"
           min={charMin}
           max={charMax}
@@ -262,7 +263,7 @@ export default function Home() {
         <div className="flex gap-3 w-full">
           <Input
           defaultValue="90"
-          label="CON"
+          label={ <Tooltip content="Roll: 3d6 * 5">CON</Tooltip>}
           type="number"
           min={charMin}
           max={charMax}
@@ -270,7 +271,7 @@ export default function Home() {
           />
           <Input
           defaultValue="90"
-          label="POW"
+          label={ <Tooltip content="Roll: 3d6 * 5">POW</Tooltip> }
           type="number"
           min={charMin}
           max={charMax}
@@ -290,7 +291,7 @@ export default function Home() {
         <div className="flex gap-3 w-full">
           <Input
           defaultValue="90"
-          label="DEX"
+          label={<Tooltip content="Roll: 3d6 * 5">DEX</Tooltip>}
           type="number"
           min={charMin}
           max={charMax}
@@ -298,7 +299,7 @@ export default function Home() {
           />
           <Input
           defaultValue="90"
-          label="APP"
+          label={<Tooltip content="Roll: 3d6 * 5">DEX</Tooltip>}
           type="number"
           min={charMin}
           max={charMax}
@@ -318,7 +319,7 @@ export default function Home() {
         <div className="flex gap-3 w-full">
           <Input
           defaultValue="90"
-          label="INT"
+          label={<Tooltip content="Roll: 2d6 + 6 * 5">INT</Tooltip>}
           type="number"
           min={charMin}
           max={charMax}
@@ -326,7 +327,7 @@ export default function Home() {
           />
           <Input
           defaultValue="90"
-          label="EDU"
+          label={<Tooltip content="Roll: 2d6 + 6 * 5">EDU</Tooltip>}
           type="number"
           min={charMin}
           max={charMax}
@@ -350,15 +351,14 @@ export default function Home() {
             <p>{ occupationDetails.label }</p>
             <p>{ occupationDetails.description }</p>
             <p>Skill Points: { occupationDetails.skillpoints }</p>
-            <p>Credit Rating: { occupationDetails.creditrating }</p>
-            <p>Suggested Contacts{ occupationDetails.suggestedcontacts }</p>
-            <p>Skills: { occupationDetails.skills.join(', ') }</p>
+            <p>Credit Rating: { occupationDetails.creditrating[0] + "-" + occupationDetails.creditrating[1]}</p>
+            <p>Suggested Contacts: { occupationDetails.suggestedcontacts }</p>
           </div>
           <div>
             <span className={title()}>Skills</span>
             <p><em>Occupational Skills</em></p>
             { occupationDetails.skills.map((skill, index) => (
-              <li key={index}>{skill}</li>
+              <li key={index}>{skill}</li> 
             ))
             }
           </div>
