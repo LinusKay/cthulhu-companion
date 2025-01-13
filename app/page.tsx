@@ -17,40 +17,52 @@ import { InfoIcon, SearchIcon } from "@/components/icons";
 import { Tooltip } from "@nextui-org/tooltip";
 
 export default function Home() {
-  // also manually set as defaultValue on elements
-  const [name, setName] = useState('John Doe'); 
-  const [birthplace, setBirthplace] = useState('Arkham'); 
-  const [pronouns, setPronoun] = useState('He/Him'); 
-  const [residence, setResidence] = useState('Arkham'); 
-  const [age, setAge] = useState(33); 
-  const [str, setStr] = useState(70); 
-  const [siz, setSiz] = useState(71); 
-  const [hp, setHP] = useState(72); 
-  const [con, setCon] = useState(73); 
-  const [pow, setPow] = useState(74); 
-  const [mp, setMP] = useState(75); 
-  const [dex, setDex] = useState(76); 
-  const [app, setApp] = useState(77); 
-  const [luck, setLuck] = useState(78); 
-  const [int, setInt] = useState(79); 
-  const [edu, setEdu] = useState(80); 
-  const [sanity, setSanity] = useState(81); 
 
   // validation values
   let charMin = 0;
   let charMax = 90;
 
-  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value); 
+  const [attributes, setattributes] = useState({
+    name: "John Doe",
+    birthplace: "Arkham",
+    pronouns: "He/him",
+    residence: "Arkham",
+    age: 33,
+    str: 70,
+    siz: 71,
+    hp: 72,
+    con: 73,
+    pow: 74,
+    mp: 75,
+    dex: 76,
+    app: 77,
+    luck: 78,
+    int: 79,
+    edu: 80,
+    sanity: 81,
+    story: 'my story',
+    story1: 'my story1',
+    personalDescription: 'personal description',
+    traits: 'traits',
+    ideology: 'ideology/beliefs',
+    injuries: 'injuries & scars',
+    significantPeople: 'significant people',
+    phobiasManias: 'phobias & manias',
+    meaningfulLocations: 'meaningful locations',
+    arcaneTomesSpells: 'arcane tomes & spells',
+    treasuredPossessions: 'treasured possessions',
+    encounters: 'encounters with strange entities',
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+  
+    setattributes((prev) => ({
+      ...prev,
+      [name]: isNaN(Number(value)) ? value : Number(value), // Convert to number if possible, else keep as string
+    }));
   };
   
-  const handleBirthplaceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setBirthplace(e.target.value); 
-  };
-
-  const handlePronounChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPronoun(e.target.value); 
-  };
 
   // handle updating of page values upon occupation selection
   const [occupationDetails, setOccupationDetails] = useState<Occupation>({
@@ -75,63 +87,6 @@ export default function Home() {
     }
   };
 
-  const handleResidenceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setResidence(e.target.value); 
-  };
-
-  const handleAgeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setAge(Number(e.target.value)); 
-  };
-
-  const handleStrChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setStr(Number(e.target.value)); 
-  };
-
-  const handleSizChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSiz(Number(e.target.value)); 
-  };
-
-  const handleHPChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setHP(Number(e.target.value)); 
-  };
-
-  const handleConChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setCon(Number(e.target.value)); 
-  };
-
-  const handlePowChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPow(Number(e.target.value)); 
-  };
-
-  const handleMPChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setMP(Number(e.target.value)); 
-  };
-
-  const handleDexChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDex(Number(e.target.value)); 
-  };
-
-  const handleAppChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setApp(Number(e.target.value)); 
-  };
-
-  const handleLuckChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setLuck(Number(e.target.value)); 
-  };
-
-  const handleIntChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInt(Number(e.target.value)); 
-  };
-
-  const handleEduChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEdu(Number(e.target.value)); 
-  };
-
-  const handleSanityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSanity(Number(e.target.value)); 
-  };
-
-
   // Fill out PDF fields
   const [error, setError] = useState(null);  
   const generatePdf = async () => {
@@ -151,52 +106,69 @@ export default function Home() {
         console.log(field.getName()); 
       });
 
-      form.getTextField("Investigators_Name").setText(name);
-      form.getTextField("Birthplace").setText(birthplace);
-      form.getTextField("Pronouns").setText(pronouns);
-      form.getTextField("Occupation").setText(occupationDetails.label);
-      form.getTextField("Residence").setText(residence);
-      form.getTextField("Age").setText(String(age));
-      form.getTextField("STR").setText(String(str));
-      form.getTextField("STR_half").setText(String(Math.floor(str/2)));
-      form.getTextField("STR_fifth").setText(String(Math.floor(str/5)));
-      form.getTextField("SIZ").setText(String(siz));
-      form.getTextField("SIZ_half").setText(String(Math.floor(siz/2)));
-      form.getTextField("SIZ_fifth").setText(String(Math.floor(siz/5)));
-      form.getTextField("StartingHP").setText(String(hp));
-      form.getTextField("CON").setText(String(con));
-      form.getTextField("CON_half").setText(String(Math.floor(con/2)));
-      form.getTextField("CON_fifth").setText(String(Math.floor(con/5)));
-      form.getTextField("POW").setText(String(pow));
-      form.getTextField("POW_half").setText(String(Math.floor(pow/2)));
-      form.getTextField("POW_fifth").setText(String(Math.floor(pow/5)));
-      form.getTextField("StartingMagic").setText(String(mp));
-      form.getTextField("DEX").setText(String(dex));
-      form.getTextField("DEX_half").setText(String(Math.floor(dex/2)));
-      form.getTextField("DEX_fifth").setText(String(Math.floor(dex/5)));
-      form.getTextField("APP").setText(String(app));
-      form.getTextField("APP_half").setText(String(Math.floor(app/2)));
-      form.getTextField("APP_fifth").setText(String(Math.floor(app/5)));
-      form.getTextField("StartingLuck").setText(String(luck));
-      form.getTextField("INT").setText(String(int));
-      form.getTextField("INT_half").setText(String(Math.floor(int/2)));
-      form.getTextField("INT_fifth").setText(String(Math.floor(int/5)));
-      form.getTextField("EDU").setText(String(edu));
-      form.getTextField("EDU_half").setText(String(Math.floor(edu/2)));
-      form.getTextField("EDU_fifth").setText(String(Math.floor(edu/5)));
-      form.getTextField("StartingSanity").setText(String(sanity)); 
-
+      const fieldMapping = [
+        { field: "Investigators_Name", value: attributes.name },
+        { field: "Birthplace", value: attributes.birthplace },
+        { field: "Pronouns", value: attributes.pronouns },
+        { field: "Occupation", value: occupationDetails.label },
+        { field: "Residence", value: attributes.residence },
+        { field: "Age", value: String(attributes.age) },
+        { field: "STR", value: String(attributes.str) },
+        { field: "STR_half", value: String(Math.floor(attributes.str / 2)) },
+        { field: "STR_fifth", value: String(Math.floor(attributes.str / 5)) },
+        { field: "SIZ", value: String(attributes.siz) },
+        { field: "SIZ_half", value: String(Math.floor(attributes.siz / 2)) },
+        { field: "SIZ_fifth", value: String(Math.floor(attributes.siz / 5)) },
+        { field: "StartingHP", value: String(attributes.hp) },
+        { field: "CON", value: String(attributes.con) },
+        { field: "CON_half", value: String(Math.floor(attributes.con / 2)) },
+        { field: "CON_fifth", value: String(Math.floor(attributes.con / 5)) },
+        { field: "POW", value: String(attributes.pow) },
+        { field: "POW_half", value: String(Math.floor(attributes.pow / 2)) },
+        { field: "POW_fifth", value: String(Math.floor(attributes.pow / 5)) },
+        { field: "StartingMagic", value: String(attributes.pow) },
+        { field: "DEX", value: String(attributes.dex) },
+        { field: "DEX_half", value: String(Math.floor(attributes.dex / 2)) },
+        { field: "DEX_fifth", value: String(Math.floor(attributes.dex / 5)) },
+        { field: "APP", value: String(attributes.app) },
+        { field: "APP_half", value: String(Math.floor(attributes.app / 2)) },
+        { field: "APP_fifth", value: String(Math.floor(attributes.app / 5)) },
+        { field: "StartingLuck", value: String(attributes.luck) },
+        { field: "INT", value: String(attributes.int) },
+        { field: "INT_half", value: String(Math.floor(attributes.int / 2)) },
+        { field: "INT_fifth", value: String(Math.floor(attributes.int / 5)) },
+        { field: "EDU", value: String(attributes.edu) },
+        { field: "EDU_half", value: String(Math.floor(attributes.edu / 2)) },
+        { field: "EDU_fifth", value: String(Math.floor(attributes.edu / 5)) },
+        { field: "StartingSanity", value: String(attributes.sanity) },
+        { field: "MyStory", value: String(attributes.story) },
+        { field: "MyStory1", value: String(attributes.story1) },
+        { field: "PersonalDescription", value: String(attributes.personalDescription) },
+        { field: "Traits", value: String(attributes.traits) },
+        { field: "Ideology/Beliefs", value: String(attributes.ideology) },
+        { field: "Injuries", value: String(attributes.injuries) },
+        { field: "Significant People", value: String(attributes.significantPeople) },
+        { field: "Phobias/Manias", value: String(attributes.phobiasManias) },
+        { field: "Locations", value: String(attributes.meaningfulLocations) },
+        { field: "Tomes/Spells", value: String(attributes.arcaneTomesSpells) },
+        { field: "Possessions", value: String(attributes.treasuredPossessions) },
+        { field: "Encounters", value: String(attributes.encounters) },
+      ];
+      // map keys to PDF fields
+      fieldMapping.forEach(({ field, value }) => {
+        form.getTextField(field).setText(value);
+      });
+      
+      // save and generate PDF
       const updatedPdfBytes = await pdfDoc.save();
-
       const blob = new Blob([updatedPdfBytes], { type: "application/pdf" });
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = `${name}_${occupationDetails.label}_CoC_1920_Standard_Colour.pdf`;
+      link.download = `${attributes.name}_${occupationDetails.label}_CoC_1920_Standard_Colour.pdf`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-
     } catch (err: any) {
       console.error("Error generating PDF:", err);
       setError(err.message);
@@ -214,26 +186,19 @@ export default function Home() {
         isRequired
         label="Name"
         type="text"
-        onChange={handleNameChange}
+        onChange={handleInputChange}
         />
         <Input
         defaultValue="Arkham"
         label="Birthplace (optional)"
         type="text"
-        onChange={handleBirthplaceChange}
+        onChange={handleInputChange}
         />
         <Input
         defaultValue="He/Him"
-        label={
-          <Tooltip content="tooltip">
-          Pronoun (optional)
-          </Tooltip>
-        }
+        label="Pronoun (optional)"
         type="text"
-        onChange={handlePronounChange}
-        startContent={
-          <SearchIcon className="text-2xl text-default-400 flex-shrink-0" />
-        }
+        onChange={handleInputChange}
         />
       </div>
       <div className="flex gap-3 w-full">
@@ -243,11 +208,6 @@ export default function Home() {
         placeholder="Select an occupation"
         onChange={handleOccupationChange}
         isRequired
-        endContent={
-          <Tooltip content="test">
-          <SearchIcon className="text-2xl text-default-400 flex-shrink-0" />
-          </Tooltip>
-        }
       >
         {occupations.map((occupation) => (
           <SelectItem key={occupation.key} value={occupation.key}>
@@ -259,14 +219,14 @@ export default function Home() {
         defaultValue="Arkham"
         label="Residence (optional)"
         type="text"
-        onChange={handleResidenceChange}
+        onChange={handleInputChange}
         />
         <Input
         defaultValue="33"
         isRequired
         label="Age"
         type="number"
-        onChange={handleAgeChange}
+        onChange={handleInputChange}
         />
       </div>
 
@@ -279,7 +239,7 @@ export default function Home() {
           type="number"
           min={charMin}
           max={charMax}
-          onChange={handleStrChange}
+          onChange={handleInputChange}
           />
           <Input
           defaultValue="90"
@@ -287,14 +247,14 @@ export default function Home() {
           type="number"
           min={charMin}
           max={charMax}
-          onChange={handleSizChange}
+          onChange={handleInputChange}
           />
           <Input
           defaultValue="90"
           label="Hit Points"
           type="number"
           min={charMin}
-          onChange={handleHPChange}
+          onChange={handleInputChange}
           />
         </div>
       </div>
@@ -306,7 +266,7 @@ export default function Home() {
           type="number"
           min={charMin}
           max={charMax}
-          onChange={handleConChange}
+          onChange={handleInputChange}
           />
           <Input
           defaultValue="90"
@@ -314,7 +274,7 @@ export default function Home() {
           type="number"
           min={charMin}
           max={charMax}
-          onChange={handlePowChange}
+          onChange={handleInputChange}
           />
           <Input
           defaultValue="90"
@@ -322,7 +282,7 @@ export default function Home() {
           type="number"
           min={charMin}
           max={charMax}
-          onChange={handleMPChange}
+          onChange={handleInputChange}
           />
         </div>
       </div>
@@ -334,7 +294,7 @@ export default function Home() {
           type="number"
           min={charMin}
           max={charMax}
-          onChange={handleDexChange}
+          onChange={handleInputChange}
           />
           <Input
           defaultValue="90"
@@ -342,7 +302,7 @@ export default function Home() {
           type="number"
           min={charMin}
           max={charMax}
-          onChange={handleAppChange}
+          onChange={handleInputChange}
           />
           <Input
           defaultValue="90"
@@ -350,7 +310,7 @@ export default function Home() {
           type="number"
           min={charMin}
           max={charMax}
-          onChange={handleLuckChange}
+          onChange={handleInputChange}
           />
         </div>
       </div>
@@ -362,7 +322,7 @@ export default function Home() {
           type="number"
           min={charMin}
           max={charMax}
-          onChange={handleIntChange}
+          onChange={handleInputChange}
           />
           <Input
           defaultValue="90"
@@ -370,14 +330,14 @@ export default function Home() {
           type="number"
           min={charMin}
           max={charMax}
-          onChange={handleEduChange}
+          onChange={handleInputChange}
           />
           <Input
           defaultValue="90"
           label="Sanity"
           type="number"
           min={charMin}
-          onChange={handleSanityChange}
+          onChange={handleInputChange}
           />
         </div>
       </div>
