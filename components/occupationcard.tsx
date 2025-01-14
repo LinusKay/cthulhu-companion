@@ -5,6 +5,10 @@ import { Occupation } from '@/types/types';
 import { Tooltip } from '@nextui-org/tooltip';
 import { Accordion, AccordionItem } from '@nextui-org/accordion';
 import { Link } from '@nextui-org/link';
+import Markdown from 'react-markdown';
+import { ScrollShadow } from '@nextui-org/scroll-shadow';
+import remarkGfm from 'remark-gfm';
+import { FaBrain, FaUserFriends } from 'react-icons/fa';
 
 interface OccupationCardProps {
   occupation: Occupation;
@@ -28,11 +32,19 @@ const OccupationCard: React.FC<OccupationCardProps> = ({ occupation }) => {
         </div>
       </CardHeader>
       <CardBody>
-        <p className="text-sm">{occupation.description}</p>
+        <ScrollShadow size={10} className="h-[250px]">
+            <Markdown className="text-md" remarkPlugins={[remarkGfm]}>{occupation.description}</Markdown>
+        </ScrollShadow>
       </CardBody>
       <Divider />
     <Accordion>
-        <AccordionItem key="1" aria-label="Skills" title="Skills">
+        <AccordionItem 
+        key="1" 
+        aria-label="Skills" 
+        title="Skills"
+        startContent={<FaBrain/>}
+        subtitle="What skills may a professional hold?"
+        >
             <p className="text-sm text-left">
             { /* Print all skills as clickable links to the relevant skill card*/ }
             {occupation.skills.map((skill, index) => (
@@ -45,10 +57,14 @@ const OccupationCard: React.FC<OccupationCardProps> = ({ occupation }) => {
     </Accordion>
     <Divider/>
     <Accordion>
-        <AccordionItem key="2" aria-label="Suggested Contacts" title="Suggested Contacts">
-            <p className="text-sm text-left">
-                {occupation.suggestedcontacts}
-            </p>
+        <AccordionItem 
+        key="2" 
+        aria-label="Suggested Contacts" 
+        title="Suggested Contacts"
+        startContent={<FaUserFriends/>}
+        subtitle="Who may a professional know?"
+        >
+            <Markdown className="text-sm text-left" remarkPlugins={[remarkGfm]}>{occupation.suggestedcontacts}</Markdown>
         </AccordionItem>
     </Accordion>
     {occupation.notes != "" && (
@@ -56,9 +72,7 @@ const OccupationCard: React.FC<OccupationCardProps> = ({ occupation }) => {
             <Divider/>
             <Accordion>
                 <AccordionItem key="3" aria-label="Notes" title="Notes">
-                    <p className="text-sm text-left">
-                        <span className="font-bold">Notes: </span> {occupation.notes}
-                    </p>
+                        <Markdown className="text-sm text-left" remarkPlugins={[remarkGfm]}>{occupation.notes}</Markdown>
                 </AccordionItem>
             </Accordion>
         </div>

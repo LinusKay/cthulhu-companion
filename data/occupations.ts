@@ -46,7 +46,7 @@ export const occupations: Occupation[] = [
     {
         key: "actorstage",
         label: "Actor (Stage)",
-        description: "Usually a stage or  lm actor. Many stage actors have a background in the classics and, considering themselves \"legitimate\", have a tendency to look down upon the commercial efforts of the film industry. By the late twentieth century this is diminished, with film actors able to command greater respect and higher fees. Movie stars and the film industry have long captured the interest of people across the world. Many stars are made overnight and most of them lead flashy, high profile lives, ever in the media spotlight. In the 1920s, the theatrical center of the U.S. is in New York City, although there are major stages in most cities across the country. A similar situation exists in England, with touring repertory companies traveling the counties, with London the heart of theatrical shows. Touring companies travel by train, presenting new plays, as well as classics by Shakespeare and others. Some companies spend considerable amounts of time touring foreign parts, such as Canada, Hawaii, Australia, and Europe. With the introduction of \"talkies\" in the latter part of the 1920s, many stars of the silent films era cannot cope with the transition to sound. The arm-waving histionics of silent actors give way to more subtle characterizations. John Garfield and Francis Bushman are forgotten for new stars, such as Gary Cooper and Joan Crawford.",
+        description: "Usually a stage or  lm actor. Many stage actors have a background in the classics and, considering themselves \"legitimate\", have a tendency to look down upon the commercial efforts of the film industry. By the late twentieth century this is diminished, with film actors able to command greater respect and higher fees.\n\n&nbsp;\n\nMovie stars and the film industry have long captured the interest of people across the world. Many stars are made overnight and most of them lead flashy, high profile lives, ever in the media spotlight.\n\n&nbsp;\n\nIn the 1920s, the theatrical center of the U.S. is in New York City, although there are major stages in most cities across the country.A similar situation exists in England, with touring repertory companies traveling the counties, with London the heart of theatrical shows. Touring companies travel by train, presenting new plays, as well as classics by Shakespeare and others.Some companies spend considerable amounts of time touring foreign parts, such as Canada, Hawaii, Australia, and Europe.\n\n&nbsp;\n\nWith the introduction of \"talkies\" in the latter part of the 1920s, many stars of the silent films era cannot cope with the transition to sound. The arm-waving histionics of silent actors give way to more subtle characterizations. John Garfield and Francis Bushman are forgotten for new stars, such as Gary Cooper and Joan Crawford.",
         skillpoints: "EDU * 2 + APP * 2",
         creditrating: [9,40],
         suggestedcontacts: "Threatre industry, newspaper arts critics, actor's guild or union",
@@ -66,7 +66,7 @@ export const occupations: Occupation[] = [
     {
         key: "actorfilm",
         label: "Actor (Film)",
-        description: "Usually a stage or  lm actor. Many stage actors have a background in the classics and, considering themselves \"legitimate\", have a tendency to look down upon the commercial efforts of the film industry. By the late twentieth century this is diminished, with film actors able to command greater respect and higher fees. Movie stars and the film industry have long captured the interest of people across the world. Many stars are made overnight and most of them lead flashy, high profile lives, ever in the media spotlight. In the 1920s, the theatrical center of the U.S. is in New York City, although there are major stages in most cities across the country. A similar situation exists in England, with touring repertory companies traveling the counties, with London the heart of theatrical shows. Touring companies travel by train, presenting new plays, as well as classics by Shakespeare and others. Some companies spend considerable amounts of time touring foreign parts, such as Canada, Hawaii, Australia, and Europe. With the introduction of \"talkies\" in the latter part of the 1920s, many stars of the silent films era cannot cope with the transition to sound. The arm-waving histionics of silent actors give way to more subtle characterizations. John Garfield and Francis Bushman are forgotten for new stars, such as Gary Cooper and Joan Crawford.",
+        description: "Usually a stage or  lm actor. Many stage actors have a background in the classics and, considering themselves \"legitimate\", have a tendency to look down upon the commercial efforts of the film industry. By the late twentieth century this is diminished, with film actors able to command greater respect and higher fees.\n\n&nbsp;\n\nMovie stars and the film industry have long captured the interest of people across the world. Many stars are made overnight and most of them lead flashy, high profile lives, ever in the media spotlight.\n\n&nbsp;\n\nIn the 1920s, the theatrical center of the U.S. is in New York City, although there are major stages in most cities across the country.A similar situation exists in England, with touring repertory companies traveling the counties, with London the heart of theatrical shows. Touring companies travel by train, presenting new plays, as well as classics by Shakespeare and others.Some companies spend considerable amounts of time touring foreign parts, such as Canada, Hawaii, Australia, and Europe.\n\n&nbsp;\n\nWith the introduction of \"talkies\" in the latter part of the 1920s, many stars of the silent films era cannot cope with the transition to sound. The arm-waving histionics of silent actors give way to more subtle characterizations. John Garfield and Francis Bushman are forgotten for new stars, such as Gary Cooper and Joan Crawford.",
         skillpoints: "EDU * 2 + APP * 2",
         creditrating: [20,90],
         suggestedcontacts: "Film industry, media critics, writers",
@@ -86,7 +86,7 @@ export const occupations: Occupation[] = [
     {
         key: "agencydetective",
         label: "Agency Detective",
-        description: " Numerous well-known detective agencies exist around the world, with probably the most famous being the Pinkerton and Burns agencies (merged into one in modern times). Large agencies employ two types of agents: security guards and operatives. Guards are uniformed patrolmen, hired by companies and individuals to protect property and people against burglars, assassins, and kidnappers. Use the Uniformed Police Officer's description for these characters. Company Operatives are plainclothes detectives, sent out on cases requiring them to solve mysteries, prevent murders, locate missing people, and so on.",
+        description: " Numerous well-known detective agencies exist around the world, with probably the most famous being the Pinkerton and Burns agencies (merged into one in modern times). Large agencies employ two types of agents: security guards and operatives.\n\n&nbsp;\n\nGuards are uniformed patrolmen, hired by companies and individuals to protect property and people against burglars, assassins, and kidnappers. Use the Uniformed Police Officer's description for these characters. Company Operatives are plainclothes detectives, sent out on cases requiring them to solve mysteries, prevent murders, locate missing people, and so on.",
         skillpoints: "EDU * 2 + (STR * 2 or DEX * 2)",
         creditrating: [20,45],
         suggestedcontacts: "Local law enforcement, clients",
@@ -190,7 +190,7 @@ export const occupations: Occupation[] = [
     {
         key: "archaeologist",
         label: "Archaeologist",
-        description: "The study and exploration of the past. Primarily the identification, examination, and analysis of recovered materials relating to human history. The work involves painstaking research and meticulous study, not to mention a willing attitude to getting one's hands dirty. In the 1920s, successful archaeologists became celebrities, seen as explorers and adventurers. While some used scientific methods, many were happy to apply brute force when unveiling the secrets of the past— a few less reputable types even used dynamite. Such bullish behavior would be frowned upon in modern times.",
+        description: "The study and exploration of the past. Primarily the identification, examination, and analysis of recovered materials relating to human history. The work involves painstaking research and meticulous study, not to mention a willing attitude to getting one's hands dirty.\n\n&nbsp;\n\nIn the 1920s, successful archaeologists became celebrities, seen as explorers and adventurers. While some used scientific methods, many were happy to apply brute force when unveiling the secrets of the past— a few less reputable types even used dynamite. Such bullish behavior would be frowned upon in modern times.",
         skillpoints: "EDU * 4",
         creditrating: [10,40],
         suggestedcontacts: "Patrons, museums, universities",
@@ -211,7 +211,7 @@ export const occupations: Occupation[] = [
     {
         key: "architect",
         label: "Architect",
-        description: "Architects are trained to design and plan buildings, whether a small conversion to a private house or a multi-million dollar construction project. The architect will work closely with the project manager and oversee the construction. Architects must be aware of local planning laws, health and safety regulation, and general public safety.  Some may work for large firms or work freelance. A lot will depend on reputation. In the 1920s, many try and go it alone, working out of their house or a small office. Few manage to sell the grandiose designs they all nurse. Architecture may also encompass specialist areas like naval architecture and landscape architecture",
+        description: "Architects are trained to design and plan buildings, whether a small conversion to a private house or a multi-million dollar construction project. The architect will work closely with the project manager and oversee the construction. Architects must be aware of local planning laws, health and safety regulation, and general public safety.\n\n&nbsp;\n\nSome may work for large firms or work freelance. A lot will depend on reputation. In the 1920s, many try and go it alone, working out of their house or a small office. Few manage to sell the grandiose designs they all nurse.\n\n&nbsp;\n\nArchitecture may also encompass specialist areas like naval architecture and landscape architecture",
         skillpoints: "EDU * 4",
         creditrating: [30,70],
         suggestedcontacts: "Local building and city engineering departments, construction firms",
@@ -273,7 +273,7 @@ export const occupations: Occupation[] = [
     {
         key: "athlete",
         label: "Athlete",
-        description: "Probably plays in a professional baseball, football, cricket, or basketball team. This may be a major league team with a regular salary and national attention or—particularly in the case of 1920s baseball—one of many minor league teams, some of them owned and operated by major league owners. The latter pay barely enough to keep players fed and on the team. Successful professional athletes will enjoy a certain amount of celebrity within the arena of their expertise—more so in the present day where sporting heroes stand side by side with film stars on red carpets around the world.",
+        description: "Probably plays in a professional baseball, football, cricket, or basketball team. This may be a major league team with a regular salary and national attention or—particularly in the case of 1920s baseball—one of many minor league teams, some of them owned and operated by major league owners. The latter pay barely enough to keep players fed and on the team.\n\n&nbsp;\n\nSuccessful professional athletes will enjoy a certain amount of celebrity within the arena of their expertise—more so in the present day where sporting heroes stand side by side with film stars on red carpets around the world.",
         skillpoints: "EDU * 2 + (DEX * 2 OR STR * 2)",
         creditrating: [9,70],
         suggestedcontacts: "Sports personalities, sports writers, other media stars",
@@ -294,7 +294,7 @@ export const occupations: Occupation[] = [
     {
         key: "author",
         label: "Author",
-        description: "As distinct from the journalist, the author uses words to define and explore the human condition, especially the range of human emotions.  Their labors are solitary and the rewards solipsistic: only a relative handful make much money in the present day, though in previous eras the trade once provided a regular living wage. The work habits of authors vary widely. Typically an author might spend months or years researching in preparation for a book, then withdrawing for periods of intense creation",
+        description: "As distinct from the journalist, the author uses words to define and explore the human condition, especially the range of human emotions.  Their labors are solitary and the rewards solipsistic: only a relative handful make much money in the present day, though in previous eras the trade once provided a regular living wage.\n\n&nbsp;\n\nThe work habits of authors vary widely. Typically an author might spend months or years researching in preparation for a book, then withdrawing for periods of intense creation",
         skillpoints: "EDU * 4",
         creditrating: [9,30],
         suggestedcontacts: "publishers, critics, historians, etc.",
@@ -315,7 +315,7 @@ export const occupations: Occupation[] = [
     {
         key: "bartender",
         label: "Bartender",
-        description: "Normally not the owner of the bar, the bartender is everyone's friend. For some it's a career or their business, for many it's a means to an end. In the 1920s the profession is made illegal by the Prohibition Act; however, there's no shortage of work for a bartender, as someone has to serve the drinks in the speakeasies and secret gin joints. ",
+        description: "Normally not the owner of the bar, the bartender is everyone's friend. For some it's a career or their business, for many it's a means to an end.\n\n&nbsp;\n\nIn the 1920s the profession is made illegal by the Prohibition Act; however, there's no shortage of work for a bartender, as someone has to serve the drinks in the speakeasies and secret gin joints. ",
         skillpoints: "EDU * 2 + APP * 2",
         creditrating: [8,25],
         suggestedcontacts: "Regular customers, possibly organised crime",
@@ -327,6 +327,27 @@ export const occupations: Occupation[] = [
             "psychology",
             "spot hidden",
             "personal"
+        ],
+        restriction: null,
+        source: "core",
+        notes: ""
+    },
+    {
+        key: "biggamehunter",
+        label: "Big Game Hunter",
+        description: "Big game hunters are skilled trackers and hunters who usually earn their living leading safaris for wealthy clients. Most are specialized in one part of the world, such as the Canadian woods, African plains, and other locales. Some hunters may work for the black market, capturing live exotic species for private collectors, or trading in illegal or morally objectionable animal products like skins, ivory, and the like—although in the 1920s such activities were more common and were permissible under most countries' laws.\n\n&nbsp;\n\nAlthough the \"great white hunter\" is the quintessential type, others may be simply local indigenous people who escort hunters through the backwoods of the Yukon in search of moose or bear.",
+        skillpoints: "EDU * 2 + (DEX * 2 OR STR * 2)",
+        creditrating: [20,50],
+        suggestedcontacts: "Foreign government officials, game wardens, past (usually wealthy) clients, black-market gangs and traders, zoo owners.",
+        skills: [
+            "firearms",
+            [1, "listen", "spot hidden"],
+            "natural world",
+            "navigate",
+            [1, "other language", "survival (any)"],
+            [1, "science (biology)", "science (botany)", "science (zoology)"],
+            "stealth",
+            "track"
         ],
         restriction: null,
         source: "core",
@@ -377,7 +398,7 @@ export const occupations: Occupation[] = [
     {
         key: "boxerwrestler",
         label: "Boxer/Wrestler",
-        description: "Professional boxers and wrestlers are managed by individuals (promoters) possibly backed by outside interests, and usually locked into contracts. Professional boxers and wrestlers work and train full-time. Amateur boxing competitions abound; a training ground for those aspiring to professional status. In addition, amateur and post-professional boxers and wrestlers can sometimes be found making a living from illegal bare-knuckle fights, usually arranged by organized crime gangs or entrepreneurial locals.",
+        description: "Professional boxers and wrestlers are managed by individuals (promoters) possibly backed by outside interests, and usually locked into contracts. Professional boxers and wrestlers work and train full-time.\n\n&nbsp;\n\nAmateur boxing competitions abound; a training ground for those aspiring to professional status. In addition, amateur and post-professional boxers and wrestlers can sometimes be found making a living from illegal bare-knuckle fights, usually arranged by organized crime gangs or entrepreneurial locals.",
         skillpoints: "EDU * 2 + STR * 2",
         creditrating: [6,90],
         suggestedcontacts: "Sports promoters, journalists, organised crime, professional trainers",
@@ -398,7 +419,7 @@ export const occupations: Occupation[] = [
     {
         key: "butlervaletmaid",
         label: "Butler/Valet/Maid",
-        description: "This occupation covers those who are employed in a servant capacity and includes butler, valet, and lady's maid. A butler is usually employed as a domestic servant for a large household. Traditionally the butler is charge of the dining room, wine cellar and pantry, and ranks as the highest male servant. Usually male—a housekeeper would be the female equivalent—the butler is responsible for male servants within the household. The duties of the butler will vary according to the requirements of his employer. A valet or lady's maid provides personal services, such  as maintaining her employer's clothes, running baths, and effectively acting as a personal assistant. The work might include making travel arrangements, managing their employer's diary, and organizing household finances. ",
+        description: "This occupation covers those who are employed in a servant capacity and includes butler, valet, and lady's maid.\n\n&nbsp;\n\nA butler is usually employed as a domestic servant for a large household. Traditionally the butler is charge of the dining room, wine cellar and pantry, and ranks as the highest male servant. Usually male—a housekeeper would be the female equivalent—the butler is responsible for male servants within the household. The duties of the butler will vary according to the requirements of his employer.\n\n&nbsp;\n\nA valet or lady's maid provides personal services, such  as maintaining her employer's clothes, running baths, and effectively acting as a personal assistant. The work might include making travel arrangements, managing their employer's diary, and organizing household finances. ",
         skillpoints: "EDU * 4",
         creditrating: [9,40],
         suggestedcontacts: "Waiting staff of other households, local businesses and household suppliers",
@@ -419,7 +440,7 @@ export const occupations: Occupation[] = [
     {
         key: "clergymember",
         label: "Clergy, Member of the",
-        description: "The hierarchy of the Church usually assigns clergy to their respective parishes or sends them on evangelical missions, most often to a foreign country. Different churches have different priorities and hierarchies: for example, in the Catholic Church a priest may rise through the ranks of bishop, archbishop, and cardinal, while a Methodist pastor may in turn rise to district superintendent and bishop. Many clergy (not just Catholic priests) bear witness to confessions and, though they are not at liberty to divulge such secrets, they are free to act upon them. Some who work in the church are trained in professional skills, acting as doctors, lawyers, and scholars—as appropriate, use the occupation template which best describes the nature of the investigator's work.",
+        description: "The hierarchy of the Church usually assigns clergy to their respective parishes or sends them on evangelical missions, most often to a foreign country. Different churches have different priorities and hierarchies: for example, in the Catholic Church a priest may rise through the ranks of bishop, archbishop, and cardinal, while a Methodist pastor may in turn rise to district superintendent and bishop.\n\n&nbsp;\n\nMany clergy (not just Catholic priests) bear witness to confessions and, though they are not at liberty to divulge such secrets, they are free to act upon them.\n\n&nbsp;\n\nSome who work in the church are trained in professional skills, acting as doctors, lawyers, and scholars—as appropriate, use the occupation template which best describes the nature of the investigator's work.",
         skillpoints: "EDU * 4",
         creditrating: [9,60],
         suggestedcontacts: "Church heirarchy, local congregations, community leaders",
@@ -440,7 +461,7 @@ export const occupations: Occupation[] = [
     {
         key: "programmertechnician",
         label: "Computer Technician/Programmer",
-        description: "Usually designing, writing, testing, debugging, and/or maintaining the source code of computer programs, the computer programmer is an expert in many different subjects, including formal logic and application platforms. May work freelance or within the confines of a software development house. The computer technician is tasked with the development and maintenance of computer systems and networks, often working alongside other office staff (such as project managers) to ensure systems maintain integrity and provide desired functionality. Similar occupations may include: Database Administrator, IT Systems Manager, Multimedia Developer, Network Administrator, Software Engineer, Webmaster, etc. The computer hacker uses computers and computer networks as a means of protest to promote political ends (sometimes referred to as \"hacktivists\") or for criminal gain. Illegally breaking into computers and other user accounts is required, the outcome of which could be anything from defacing web pages, doxing, and swatting, to email bombing designed to enact denials of service.",
+        description: "Usually designing, writing, testing, debugging, and/or maintaining the source code of computer programs, the computer programmer is an expert in many different subjects, including formal logic and application platforms. May work freelance or within the confines of a software development house.\n\n&nbsp;\n\nThe computer technician is tasked with the development and maintenance of computer systems and networks, often working alongside other office staff (such as project managers) to ensure systems maintain integrity and provide desired functionality. Similar occupations may include: Database Administrator, IT Systems Manager, Multimedia Developer, Network Administrator, Software Engineer, Webmaster, etc.",
         skillpoints: "EDU * 4",
         creditrating: [10,70],
         suggestedcontacts: "Other IT workers, corporate workers and managers, specialised Internet web communities.",
@@ -482,7 +503,7 @@ export const occupations: Occupation[] = [
     {
         key: "cowboy",
         label: "Cowboy/girl",
-        description: "Cowboys work the ranges and ranches of the West. Some own their own ranches, but many are simply hired where and when work is available. Good money can also be made by those willing to risk life and limb on the rodeo circuit, traveling between events for fame and glory. During the 1920s, a few found employment in Hollywood as stuntmen and extras in westerns; for example, Wyatt Earp worked as a technical advisor to the  lm industry. In modern times some ranches have opened their gates to holidaymakers wishing to experience life as a cowboy.",
+        description: "Cowboys work the ranges and ranches of the West. Some own their own ranches, but many are simply hired where and when work is available. Good money can also be made by those willing to risk life and limb on the rodeo circuit, traveling between events for fame and glory.\n\n&nbsp;\n\nDuring the 1920s, a few found employment in Hollywood as stuntmen and extras in westerns; for example, Wyatt Earp worked as a technical advisor to the  lm industry. In modern times some ranches have opened their gates to holidaymakers wishing to experience life as a cowboy.",
         skillpoints: "EDU * 2 + (DEX * 2 OR STR * 2)",
         creditrating: [9,20],
         suggestedcontacts: "Local businesspeople, state agricultural departments, rodeo promoters, and entertainers",
@@ -503,7 +524,7 @@ export const occupations: Occupation[] = [
     {
         key: "craftsperson",
         label: "Craftsperson",
-        description: "May be equally termed an artisan or master craftsperson. The craftsperson is essentially skilled in the manual production of items or materials. Normally quite talented individuals, some gaining a high reputation for works of art, while others provide a needed community service. Possible trades include: furniture, jewelry, watchmaker, potter, blacksmith, textiles, calligraphy, sewing, carpentry, book binding, glassblowing, toy maker, stained glass, and so on.",
+        description: "May be equally termed an artisan or master craftsperson. The craftsperson is essentially skilled in the manual production of items or materials. Normally quite talented individuals, some gaining a high reputation for works of art, while others provide a needed community service.\n\n&nbsp;\n\nPossible trades include: furniture, jewelry, watchmaker, potter, blacksmith, textiles, calligraphy, sewing, carpentry, book binding, glassblowing, toy maker, stained glass, and so on.",
         skillpoints: "EDU * 2 + DEX * 2",
         creditrating: [10,40],
         suggestedcontacts: "Local business people, other craftspersons and artists",
@@ -524,7 +545,7 @@ export const occupations: Occupation[] = [
     {
         key: "criminalassassin",
         label: "Criminal (Assassin)",
-        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters. The criminal either works for someone, usually an organized \"mob\" or crime family, or works solo, perhaps occasionally teaming up with others when the reward is worth the effort and risk. Hit men are the cold-blooded killers of the underworld. Usually hired from somewhere out of town, they arrive, do their work, then quickly disappear. It's strictly business. Often sociopaths, who seem to lack the ability to empathize with other human beings. Many follow strict codes of behavior. In spite of this, many marry, raise children, and in all other ways behave like model citizens.",
+        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters.\n\n&nbsp;\n\nThe criminal either works for someone, usually an organized \"mob\" or crime family, or works solo, perhaps occasionally teaming up with others when the reward is worth the effort and risk.\n\n&nbsp;\n\nHit men are the cold-blooded killers of the underworld. Usually hired from somewhere out of town, they arrive, do their work, then quickly disappear. It's strictly business. Often sociopaths, who seem to lack the ability to empathize with other human beings. Many follow strict codes of behavior. In spite of this, many marry, raise children, and in all other ways behave like model citizens.",
         skillpoints: "EDU * 2 + (DEX * 2 OR STR * 2)",
         creditrating: [30,60],
         suggestedcontacts: "Few, mostly underworld; people perfer not to know them too well. The best will have earned a formidable reputation on the street",
@@ -545,7 +566,7 @@ export const occupations: Occupation[] = [
     {
         key: "criminalbankrobber",
         label: "Criminal (Bank Robber)",
-        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters. The criminal either works for someone, usually an organized \"mob\" or crime family, or works solo, perhaps occasionally teaming up with others when the reward is worth the effort and risk. ",
+        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters.\n\n&nbsp;\n\nThe criminal either works for someone, usually an organized \"mob\" or crime family, or works solo, perhaps occasionally teaming up with others when the reward is worth the effort and risk. ",
         skillpoints: "EDU * 2 + (DEX * 2 OR STR * 2)",
         creditrating: [5,75],
         suggestedcontacts: "Other gang members (current and retired), criminal freelancers, organised crime",
@@ -566,7 +587,7 @@ export const occupations: Occupation[] = [
     {
         key: "criminalbootleggerthug",
         label: "Criminal (Bootlegger/Thug)",
-        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters. The criminal either works for someone, usually an organized \"mob\" or crime family, or works solo, perhaps occasionally teaming up with others when the reward is worth the effort and risk. Whether bootleggers, corner-boys, or thugs, these are the soldiers of organized crime. They are supported by criminal organizations and they are the ones usually expected to take the fall for the gangsters above them. Their silence and loyalty is expected and rewarded.",
+        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters.\n\n&nbsp;\n\nThe criminal either works for someone, usually an organized \"mob\" or crime family, or works solo, perhaps occasionally teaming up with others when the reward is worth the effort and risk.\n\n&nbsp;\n\nWhether bootleggers, corner-boys, or thugs, these are the soldiers of organized crime. They are supported by criminal organizations and they are the ones usually expected to take the fall for the gangsters above them. Their silence and loyalty is expected and rewarded.",
         skillpoints: "EDU * 2 + STR * 2",
         creditrating: [5,30],
         suggestedcontacts: "Organised crime, street-level law enforcement, local traders",
@@ -586,7 +607,7 @@ export const occupations: Occupation[] = [
     {
         key: "criminalburglar",
         label: "Criminal (Burglar)",
-        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters. The criminal either works for someone, usually an organized \"mob\" or crime family, or works solo, perhaps occasionally teaming up with others when the reward is worth the effort and risk. Whether bootleggers, corner-boys, or thugs, these are the soldiers of organized crime. They are supported by criminal organizations and they are the ones usually expected to take the fall for the gangsters above them. Their silence and loyalty is expected and rewarded.",
+        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters.\n\n&nbsp;\n\nThe criminal either works for someone, usually an organized \"mob\" or crime family, or works solo, perhaps occasionally teaming up with others when the reward is worth the effort and risk.\n\n&nbsp;\n\nWhether bootleggers, corner-boys, or thugs, these are the soldiers of organized crime. They are supported by criminal organizations and they are the ones usually expected to take the fall for the gangsters above them. Their silence and loyalty is expected and rewarded.",
         skillpoints: "EDU * 2 + DEX * 2",
         creditrating: [5,40],
         suggestedcontacts: "Fences, other burglars",
@@ -607,7 +628,7 @@ export const occupations: Occupation[] = [
     {
         key: "criminalconman",
         label: "Criminal (Conman)",
-        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters. The criminal either works for someone, usually an organized \"mob\" or crime family, or works solo, perhaps occasionally teaming up with others when the reward is worth the effort and risk. Confidence tricksters are usually smooth talkers. Working alone or in a team, they descend on wealthy individuals or communities,  eecing their targets of their hard-earned savings. Some schemes are elaborate, involving teams of scam men and rented buildings; others are simple affairs, transactions requiring only one con man and no more than a few minutes.",
+        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters.\n\n&nbsp;\n\nThe criminal either works for someone, usually an organized \"mob\" or crime family, or works solo, perhaps occasionally teaming up with others when the reward is worth the effort and risk.\n\n&nbsp;\n\nConfidence tricksters are usually smooth talkers. Working alone or in a team, they descend on wealthy individuals or communities,  eecing their targets of their hard-earned savings. Some schemes are elaborate, involving teams of scam men and rented buildings; others are simple affairs, transactions requiring only one con man and no more than a few minutes.",
         skillpoints: "EDU * 2 + DEX * 2",
         creditrating: [10,65],
         suggestedcontacts: "Other confidence artists, freelance criminals",
@@ -627,7 +648,7 @@ export const occupations: Occupation[] = [
     {
         key: "criminalfreelance",
         label: "Criminal (Freelance/Solo)",
-        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters. ganized \"mob\" or crime family, or works solo, perhaps occasionally teaming up with others when the reward is worth the e ort and risk. Freelance thugs might work as muggers, stickup men, and armed robbers.",
+        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters.\n\n&nbsp;\n\nThe criminal either works for someone, usually an organized \"mob\" or crime family, or works solo, perhaps occasionally teaming up with others when the reward is worth the e ort and risk.\n\n&nbsp;\n\nFreelance thugs might work as muggers, stickup men, and armed robbers.",
         skillpoints: "EDU * 2 + (DEX * 2 OR APP * 2)",
         creditrating: [5,65],
         suggestedcontacts: "Other petty criminals, street-level law enforcement",
@@ -648,7 +669,7 @@ export const occupations: Occupation[] = [
     {
         key: "criminalgunmoll",
         label: "Criminal (Gun Moll)",
-        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters. A gun moll is a female professional criminal. While many are fiercely independent, some are at the beck and call of mobster boyfriends—however, in reality this could easily be the other way around, with the moll working her boyfriend for all she can before skedaddling with all the cash and furs she can carry.",
+        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters.\n\n&nbsp;\n\nA gun moll is a female professional criminal. While many are fiercely independent, some are at the beck and call of mobster boyfriends—however, in reality this could easily be the other way around, with the moll working her boyfriend for all she can before skedaddling with all the cash and furs she can carry.",
         skillpoints: "EDU * 2 + APP * 2",
         creditrating: [10,80],
         suggestedcontacts: "Gangsters, law enforcement, local business",
@@ -668,7 +689,7 @@ export const occupations: Occupation[] = [
     {
         key: "criminalfence",
         label: "Criminal (Fence)",
-        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters. A fence is someone who trades in stolen property, usually taking in stolen goods and then selling them to other criminals or (unwitting) legitimate customers. Principally a middleman between thieves and buyers, the fence either takes a cut of the profit or, more usually, buys the stolen goods at a very low price.",
+        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters.\n\n&nbsp;\n\nA fence is someone who trades in stolen property, usually taking in stolen goods and then selling them to other criminals or (unwitting) legitimate customers. Principally a middleman between thieves and buyers, the fence either takes a cut of the profit or, more usually, buys the stolen goods at a very low price.",
         skillpoints: "EDU * 2 + APP * 2",
         creditrating: [20,40],
         suggestedcontacts: "Organised crime, trade contracts, black market and legitimate buyers",
@@ -689,7 +710,7 @@ export const occupations: Occupation[] = [
     {
         key: "criminalforger",
         label: "Criminal (Forger/Counterfeiter)",
-        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters. Forgers are the artists of the criminal world, specializing in forging official documents, deeds and transfers, and providing phony signatures. Beginners work manufacturing fake ID's for petty criminals, while the best engrave plates for counterfeiting currency.",
+        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters.\n\n&nbsp;\n\nForgers are the artists of the criminal world, specializing in forging official documents, deeds and transfers, and providing phony signatures. Beginners work manufacturing fake ID's for petty criminals, while the best engrave plates for counterfeiting currency.",
         skillpoints: "EDU * 4",
         creditrating: [20,60],
         suggestedcontacts: "Organised crime, businesspeople",
@@ -710,7 +731,7 @@ export const occupations: Occupation[] = [
     {
         key: "criminalsmuggler",
         label: "Criminal (Smuggler)",
-        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters. Smuggling is always a lucrative and high-risk business. The smuggler usually has a public profession, such as boat captain, pilot, or businessman, allowing them to transport illicit products to a needy market. ",
+        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters.\n\n&nbsp;\n\nSmuggling is always a lucrative and high-risk business. The smuggler usually has a public profession, such as boat captain, pilot, or businessman, allowing them to transport illicit products to a needy market. ",
         skillpoints: "EDU * 2 (APP * 2 OR DEX * 2)",
         creditrating: [20,60],
         suggestedcontacts: "Organised crime, Coard Guard, U.S. Customs officials",
@@ -732,7 +753,7 @@ export const occupations: Occupation[] = [
     {
         key: "criminalstreetpunk",
         label: "Criminal (Street Punk)",
-        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters. Street punks are typically young street hoods, possibly looking for a chance to hook-up with real gangsters. Experience is probably limited to stealing cars, shoplifting, mugging, and burglary.",
+        description: "Criminals come in all shapes, sizes, and shades of grey. Some are merely opportunistic jacks of all trades, such as pickpockets and thugs, while others are highly specialized, spending time researching and planning focused criminal enterprises. This latter group could include bank robbers, cat burglars, forgers, and confidence tricksters.\n\n&nbsp;\n\nStreet punks are typically young street hoods, possibly looking for a chance to hook-up with real gangsters. Experience is probably limited to stealing cars, shoplifting, mugging, and burglary.",
         skillpoints: "EDU * 2 (STR * 2 OR DEX * 2)",
         creditrating: [3,10],
         suggestedcontacts: "Petty criminals, other punks, the local fence, maybe the local gangster, certainly the local police.",
@@ -753,7 +774,7 @@ export const occupations: Occupation[] = [
     {
         key: "cultleader",
         label: "Cult Leader",
-        description: "America has always generated new religions, from the New England Transcendentalists to the Children of God, as well as many others, right up to modern times. The leader is either a firm believer in the dogma they impart to the cult's members or simply in it for the money and power. During the 1920s, any number of charismatic cult leaders emerge. Some espouse forms of Christianity while others incorporate Eastern mysticism and occult practices. These groups are particularly familiar to America's West Coast but are found all around the country in different forms. The southern Bible Belt supports many traveling tent shows featuring song, dance, and gospel revival. Other countries also see such fringe religions springing up wherever there are those in need of something to believe in.",
+        description: "America has always generated new religions, from the New England Transcendentalists to the Children of God, as well as many others, right up to modern times. The leader is either a firm believer in the dogma they impart to the cult's members or simply in it for the money and power. \n\n&nbsp;\n\nDuring the 1920s, any number of charismatic cult leaders emerge. Some espouse forms of Christianity while others incorporate Eastern mysticism and occult practices. These groups are particularly familiar to America's West Coast but are found all around the country in different forms. \n\n&nbsp;\n\nThe southern Bible Belt supports many traveling tent shows featuring song, dance, and gospel revival. Other countries also see such fringe religions springing up wherever there are those in need of something to believe in.",
         skillpoints: "EDU * 2 + APP * 2",
         creditrating: [30,60],
         suggestedcontacts: "While the majority of followers will be regular people, the more charismatic the lader, the greater the possibility of celebrity followers, such as movie stars and rich widows",
@@ -773,7 +794,7 @@ export const occupations: Occupation[] = [
     {
         key: "deprogrammer",
         label: "Deprogrammer",
-        description: "Deprogramming is the act of persuading (or forcing) a person to abandon their belief or allegiance to a religious or social community. Normally, the deprogrammer is hired by relatives of an individual, who has joined some form of cult, in order to break them free (usually by kidnapping) and then subject them to psychological techniques to free them of their association (\"conditioning\") with the cult. Less extreme deprogrammers exist, who work with those who have voluntarily left a cult. In such cases the deprogrammer the effectively acts as an exit counselor.",
+        description: "Deprogramming is the act of persuading (or forcing) a person to abandon their belief or allegiance to a religious or social community. Normally, the deprogrammer is hired by relatives of an individual, who has joined some form of cult, in order to break them free (usually by kidnapping) and then subject them to psychological techniques to free them of their association (\"conditioning\") with the cult. \n\n&nbsp;\n\nLess extreme deprogrammers exist, who work with those who have voluntarily left a cult. In such cases the deprogrammer the effectively acts as an exit counselor.",
         skillpoints: "EDU * 4",
         creditrating: [20, 50],
         suggestedcontacts: "Local and federal law enforcement, criminals, religious community",
@@ -793,7 +814,7 @@ export const occupations: Occupation[] = [
     {
         key: "designer",
         label: "Designer",
-        description: "Designers work in many  elds, from fashion to furniture and most points in-between. The designer may work freelance, for a design house or for a business designing consumer products, processes, laws, games, graphics, and so on. The investigator's particular design specialty might influence the choice of skills—adjust the skills as appropriate.",
+        description: "Designers work in many  elds, from fashion to furniture and most points in-between. The designer may work freelance, for a design house or for a business designing consumer products, processes, laws, games, graphics, and so on. \n\n&nbsp;\n\nThe investigator's particular design specialty might influence the choice of skills—adjust the skills as appropriate.",
         skillpoints: "EDU * 4",
         creditrating: [20,60],
         suggestedcontacts: "Advertising, media, furnishings, architectural, other",
@@ -814,7 +835,7 @@ export const occupations: Occupation[] = [
     {
         key: "dilettante",
         label: "Dilettante",
-        description: "Dilettantes are self-supporting, living o  an inheritance, trust fund, or some other source of income that does not require them to work. Usually the dilettante has enough money that specialist financial advisers are needed to take care of it. Probably well educated, though not necessarily accomplished in anything. Money frees the dilettante to be eccentric and outspoken. In the 1920s, some dilettantes might be \"flappers\" or \"sheiks\"—as per the parlance of the time—of course, one didn't need to be rich to be a \"party\" person. In modern times, \"hipster\" might also be an appropriate term. The dilettante has had plenty of time to learn how to be charming and sophisticated; what else has been done with that free time is likely to betray the dilettante's true character and interests.",
+        description: "Dilettantes are self-supporting, living o  an inheritance, trust fund, or some other source of income that does not require them to work. Usually the dilettante has enough money that specialist financial advisers are needed to take care of it. \n\n&nbsp;\n\nProbably well educated, though not necessarily accomplished in anything. Money frees the dilettante to be eccentric and outspoken. \n\n&nbsp;\n\nIn the 1920s, some dilettantes might be \"flappers\" or \"sheiks\"—as per the parlance of the time—of course, one didn't need to be rich to be a \"party\" person. In modern times, \"hipster\" might also be an appropriate term. \n\n&nbsp;\n\nThe dilettante has had plenty of time to learn how to be charming and sophisticated; what else has been done with that free time is likely to betray the dilettante's true character and interests.",
         skillpoints: "EDU * 2 + APP * 2",
         creditrating: [50,99],
         suggestedcontacts: "Variable, but usually people of a similar background and tastes, fraternal organisations, bohemian circles, high society at large.",
@@ -856,7 +877,7 @@ export const occupations: Occupation[] = [
     {
         key: "doctorofmedicine",
         label: "Doctor of Medicine",
-        description: "Most likely a general practitioner, surgeon, or other specialist, such as a psychiatrist or an independent medical researcher. Apart from personal goals, three aims—helping patients, gaining money and prestige, and promoting a more rational and wiser society—are common to the profession. If a general practitioner, the doctor will be based in a rural or neighborhood practice in or near a small town or city. Many physicians are employed by large urban hospitals, allowing them to specialize in areas like pathology, toxicology, orthopedics, and brain surgery. Doctors may also serve as part- or full-time medical examiners, conducting autopsies and signing death certificates for the city, county, or state. In the U.S., physicians are licensed by individual states, most requiring a minimum of two years' attendance at an accredited medical school. These requirements, however, are but a relatively recent development. During the 1920s, many older physicians first obtained their licenses long before such strict regulations were in effect, despite never attending medical school.",
+        description: "Most likely a general practitioner, surgeon, or other specialist, such as a psychiatrist or an independent medical researcher. Apart from personal goals, three aims—helping patients, gaining money and prestige, and promoting a more rational and wiser society—are common to the profession. \n\n&nbsp;\n\nIf a general practitioner, the doctor will be based in a rural or neighborhood practice in or near a small town or city. Many physicians are employed by large urban hospitals, allowing them to specialize in areas like pathology, toxicology, orthopedics, and brain surgery. \n\n&nbsp;\n\nDoctors may also serve as part- or full-time medical examiners, conducting autopsies and signing death certificates for the city, county, or state. \n\n&nbsp;\n\nIn the U.S., physicians are licensed by individual states, most requiring a minimum of two years' attendance at an accredited medical school. These requirements, however, are but a relatively recent development. During the 1920s, many older physicians first obtained their licenses long before such strict regulations were in effect, despite never attending medical school.",
         skillpoints: "EDU * 4",
         creditrating: [30,80],
         suggestedcontacts: "Other physicians, medical workers, patients and ex-patients",
@@ -877,7 +898,7 @@ export const occupations: Occupation[] = [
     {
         key: "drifter",
         label: "Drifter",
-        description: "As opposed to someone who is poverty-stricken, the drifter's wandering life is chosen, perhaps compensating for a social, philosophical, or economic lack, or perhaps due to a desire to break free of societal constraints. The drifter takes jobs, sometimes for days or months; however, he or she is disposed to solve problems with the answer of mobility and isolation, not comfort and intimacy. The life on the road might seem especially American, but can be chosen wherever travel itself is not systematically dangerous.",
+        description: "As opposed to someone who is poverty-stricken, the drifter's wandering life is chosen, perhaps compensating for a social, philosophical, or economic lack, or perhaps due to a desire to break free of societal constraints. \n\n&nbsp;\n\nThe drifter takes jobs, sometimes for days or months; however, he or she is disposed to solve problems with the answer of mobility and isolation, not comfort and intimacy. The life on the road might seem especially American, but can be chosen wherever travel itself is not systematically dangerous.",
         skillpoints: "EDU * 2 + (APP * 2 OR DEX * 2 OR STR * 2)",
         creditrating: [0,5],
         suggestedcontacts: "Other hobos, a few friendly rail-road guards, soft touches in numerous towns.",
@@ -980,7 +1001,7 @@ export const occupations: Occupation[] = [
     {
         key: "electedofficial",
         label: "Elected Official",
-        description: "Popularly-elected o  cials enjoy prestige commensurate with their position. Small-town mayors and township supervisors find their influence extends little beyond their municipality's borders. Often these jobs are part-time, paying but small compensation. The mayors of big cities are well paid, however, often ruling their cities like little kingdoms and wielding more influence and power than the governor of their respective state. Local Representatives and Senators elected to state houses enjoy a fair amount of respect, particularly with the business community and often at a statewide level. Governors are responsible for entire states and have connections across the country. Federal positions carry the most clout. States send a number of Representatives to Congress based upon population count, and the House seats over 400 members, each elected to a two-year term. Each state, regardless of size, also sends two Senators to Washington. Elected to six-year terms and numbering less than a hundred, Senators hold considerably more influence than Representatives, and some elder Senators receive nearly as much respect as the President. In the United Kingdom, Members of Parliament are popularly elected every four to five years. Representatives in the House of Lords are unelected, receiving their memberships through either birth or appointment",
+        description: "Popularly-elected o  cials enjoy prestige commensurate with their position. Small-town mayors and township supervisors find their influence extends little beyond their municipality's borders. Often these jobs are part-time, paying but small compensation. The mayors of big cities are well paid, however, often ruling their cities like little kingdoms and wielding more influence and power than the governor of their respective state. \n\n&nbsp;\n\nLocal Representatives and Senators elected to state houses enjoy a fair amount of respect, particularly with the business community and often at a statewide level. Governors are responsible for entire states and have connections across the country. \n\n&nbsp;\n\nFederal positions carry the most clout. States send a number of Representatives to Congress based upon population count, and the House seats over 400 members, each elected to a two-year term. Each state, regardless of size, also sends two Senators to Washington. Elected to six-year terms and numbering less than a hundred, Senators hold considerably more influence than Representatives, and some elder Senators receive nearly as much respect as the President. \n\n&nbsp;\n\nIn the United Kingdom, Members of Parliament are popularly elected every four to five years. Representatives in the House of Lords are unelected, receiving their memberships through either birth or appointment",
         skillpoints: "EDU * 2 + APP * 2",
         creditrating: [50,90],
         suggestedcontacts: "Political operatives, government, news media, business, foreign governments, possibly organised crime.",
@@ -1022,7 +1043,7 @@ export const occupations: Occupation[] = [
     {
         key: "entertainer",
         label: "Entertainer",
-        description: "This occupation might include clown, singer, dancer, comedian, juggler, musician, or anyone else who earns a living in front of an audience. These people love to be seen, love to show what they do best, and love the consequent applause. Previously to the 1920s, this profession lacked respect. The money that Hollywood stars can make in the 1920s changes most minds, and by the present day such a background is generally felt to be an advantage",
+        description: "This occupation might include clown, singer, dancer, comedian, juggler, musician, or anyone else who earns a living in front of an audience. These people love to be seen, love to show what they do best, and love the consequent applause. \n\n&nbsp;\n\nPreviously to the 1920s, this profession lacked respect. The money that Hollywood stars can make in the 1920s changes most minds, and by the present day such a background is generally felt to be an advantage",
         skillpoints: "EDU * 2 + APP * 2",
         creditrating: [8,70],
         suggestedcontacts: "Vaudeville, theater, film industry, entertainment critics, organised crime, television (modern-day)",
@@ -1042,7 +1063,7 @@ export const occupations: Occupation[] = [
     {
         key: "explorer",
         label: "Explorer",
-        description: "In the early twentieth century there are still unknown areas of the world that some people can make a career of exploring. Scientific grants, private donations, and museum contracts, combined with newspaper, magazine, book, and film rights often generate enough money to support the adventurer and this exciting lifestyle. Much of darkest Africa is still unexplored, as are great portions of the Matto Grosso in South America, the great Australian desert, the Sahara and Arabian deserts, and much of the Asian interior. Although expeditions have reached both the North and South Poles, much of the surrounding territory is still unknown.",
+        description: "In the early twentieth century there are still unknown areas of the world that some people can make a career of exploring. Scientific grants, private donations, and museum contracts, combined with newspaper, magazine, book, and film rights often generate enough money to support the adventurer and this exciting lifestyle. \n\n&nbsp;\n\nMuch of darkest Africa is still unexplored, as are great portions of the Matto Grosso in South America, the great Australian desert, the Sahara and Arabian deserts, and much of the Asian interior. Although expeditions have reached both the North and South Poles, much of the surrounding territory is still unknown.",
         skillpoints: "EDU * 2 + (APP * 2 OR DEX * 2 OR STR * 2)",
         creditrating: [55,80],
         suggestedcontacts: "Major libraries, universities, museums, wealthy patrons, other explorers, publishers, foreign government officials, local tribes people",

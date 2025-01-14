@@ -20,5 +20,6 @@ export interface Skill {
   pushconsequences: string,
   source: string,
   restriction: string | null,
-  notes: string
+  notes: string,
+  group: string
 }
