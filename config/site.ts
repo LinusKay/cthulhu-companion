@@ -7,7 +7,15 @@ export const siteConfig = {
     {
       label: "Home",
       href: "/",
-    }
+    },
+    {
+      label: "Skills",
+      href: "/skills",
+    },
+    {
+      label: "Occupations",
+      href: "/occupations",
+    },
   ],
   navMenuItems: [
     {

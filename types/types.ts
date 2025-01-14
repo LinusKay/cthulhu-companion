@@ -10,3 +10,15 @@ export interface Occupation {
     source: string;
     notes: string;
   }
+
+export interface Skill {
+  key: string,
+  label: string,
+  base: number,
+  description: string,
+  pushexamples: string,
+  pushconsequences: string,
+  source: string,
+  restriction: string | null,
+  notes: string
+}

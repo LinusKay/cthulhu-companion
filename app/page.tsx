@@ -1,10 +1,5 @@
 "use client";
-import { Link } from "@nextui-org/link";
 import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
-
-import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { Input, Textarea } from "@nextui-org/input";
 import { Select, SelectItem } from "@nextui-org/select";
@@ -13,8 +8,8 @@ import { occupations } from '../data/occupations';
 import { Occupation } from "../types/types";
 import { PDFDocument } from 'pdf-lib'
 import { Button } from "@nextui-org/button";
-import { InfoIcon, SearchIcon } from "@/components/icons";
 import { Tooltip } from "@nextui-org/tooltip";
+import { Autocomplete, AutocompleteItem } from "@nextui-org/autocomplete";
 
 export default function Home() {
 
@@ -79,8 +74,10 @@ export default function Home() {
   });
   
   // Handle occupation change by extracting value from event
-  const handleOccupationChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedOccupation = occupations.find((occ) => occ.key === e.target.value);
+  const handleOccupationChange = (key: React.Key | null) => {
+    if (key === null) return; // Handle the case where no selection is made
+    const selectedOccupation = occupations.find((occ) => occ.key === key);
+    console.log(selectedOccupation)
     if (selectedOccupation) {
       setOccupationDetails(selectedOccupation);
     }
@@ -203,18 +200,18 @@ export default function Home() {
       </div>
       <div className="flex gap-3 w-full">
         
-      <Select
+      <Autocomplete
         label="Occupation"
         placeholder="Select an occupation"
-        onChange={handleOccupationChange}
+        onSelectionChange={handleOccupationChange}
         isRequired
       >
         {occupations.map((occupation) => (
-          <SelectItem key={occupation.key} value={occupation.key}>
+          <AutocompleteItem key={occupation.key} value={occupation.key}>
             {occupation.label}
-          </SelectItem>
+          </AutocompleteItem>
         ))}
-      </Select>
+      </Autocomplete>
         <Input
         defaultValue="Arkham"
         label="Residence (optional)"

@@ -1,4 +1,3 @@
-import { m } from "framer-motion";
 import { Occupation } from "../types/types";
 
 export const occupations: Occupation[] = [
@@ -16,8 +15,8 @@ export const occupations: Occupation[] = [
             "listen", 
             "persuade", 
             "spot hidden", 
-            "other", 
-            "other"
+            "personal", 
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -37,8 +36,8 @@ export const occupations: Occupation[] = [
             "throw",
             "spot hidden",
             "swim",
-            "other",
-            "other"
+            "personal",
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -58,7 +57,7 @@ export const occupations: Occupation[] = [
             "history",
             [2, "charm", "fast talk", "intimidate", "persuade"],
             "psychology",
-            "other"
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -77,8 +76,8 @@ export const occupations: Occupation[] = [
             "drive auto", 
             [2, "charm", "fast talk", "intimidate", "persuade"],
             "psychology",
-            "other",
-            "other"
+            "personal",
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -141,7 +140,7 @@ export const occupations: Occupation[] = [
             "science (zoology)",
             "stealth",
             "track",
-            "other"
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -162,7 +161,7 @@ export const occupations: Occupation[] = [
             "other language",
             [1, "charm, fast talk, intimidate, persuade"],
             "spot hidden",
-            "other"
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -244,8 +243,8 @@ export const occupations: Occupation[] = [
             "other language",
             "psychology",
             "spot hidden",
-            "other",
-            "other"
+            "personal",
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -286,7 +285,7 @@ export const occupations: Occupation[] = [
             [1, "charm", "fast talk", "intimidate", "persuade"],
             "swim",
             "throw",
-            "other"
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -307,7 +306,7 @@ export const occupations: Occupation[] = [
             "other language",
             "own language",
             "psychology",
-            "other"
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -327,7 +326,7 @@ export const occupations: Occupation[] = [
             "listen",
             "psychology",
             "spot hidden",
-            "other"
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -389,8 +388,8 @@ export const occupations: Occupation[] = [
             "jump",
             "psychology",
             "spot hidden",
-            "other",
-            "other"
+            "personal",
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -410,8 +409,8 @@ export const occupations: Occupation[] = [
             "listen",
             "psychology",
             "spot hidden",
-            "other",
-            "other"
+            "personal",
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -432,7 +431,7 @@ export const occupations: Occupation[] = [
             "other language",
             [1, "charm", "fast talk", "intimidate", "persuade"],
             "psychology",
-            "other"
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -452,8 +451,8 @@ export const occupations: Occupation[] = [
             "library use",
             "science (mathematics)",
             "spot hidden",
-            "other",
-            "other"
+            "personal",
+            "personal"
         ],
         restriction: "modern",
         source: "core",
@@ -473,8 +472,8 @@ export const occupations: Occupation[] = [
             "library use",
             "spot hidden",
             [1, "charm", "fast talk", "intimidate", "persuade"],
-            "other",
-            "other"
+            "personal",
+            "personal"
         ],
         restriction: "modern",
         source: "core",
@@ -515,8 +514,8 @@ export const occupations: Occupation[] = [
             "mechanical repair",
             "natural world",
             "spot hidden",
-            "other",
-            "other"
+            "personal",
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -558,7 +557,7 @@ export const occupations: Occupation[] = [
             "intimidate",
             "locksmith",
             "operate heavy machinery",
-            "other"
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -660,7 +659,7 @@ export const occupations: Occupation[] = [
             "drive auto",
             "listen",
             "stealth",
-            "other"
+            "personal"
         ],
         restriction: "classic",
         source: "core",
@@ -681,7 +680,7 @@ export const occupations: Occupation[] = [
             [1, "charm", "fast talk", "intimidate", "persuade"],
             "library use",
             "spot hidden",
-            "other"
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -702,7 +701,7 @@ export const occupations: Occupation[] = [
             "library use",
             "spot hidden",
             "sleight of hand",
-            "other"
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -764,8 +763,8 @@ export const occupations: Occupation[] = [
             "occult",
             "psychology",
             "spot hidden",
-            "other",
-            "other"
+            "personal",
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -806,7 +805,7 @@ export const occupations: Occupation[] = [
             "mechanical repair",
             "psychology",
             "spot hidden",
-            "other"
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -825,9 +824,9 @@ export const occupations: Occupation[] = [
             "other language",
             "ride",
             [1, "charm", "fast talk", "intimidate", "persuade"],
-            "other",
-            "other",
-            "other"
+            "personal",
+            "personal",
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -848,7 +847,7 @@ export const occupations: Occupation[] = [
             "science (biology)",
             "spot hidden",
             "swim",
-            "other"
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -868,8 +867,8 @@ export const occupations: Occupation[] = [
             "psychology",
             "science (biology)",
             "science (pharmacy)",
-            "other",
-            "other"
+            "personal",
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -889,8 +888,8 @@ export const occupations: Occupation[] = [
             "navigate",
             [1, "charm", "fast talk", "intimidate", "persuade"],
             "stealth",
-            "other",
-            "other"
+            "personal",
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -910,7 +909,7 @@ export const occupations: Occupation[] = [
             "mechanical repair",
             "navigate",
             "spot hidden",
-            "other"
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -931,7 +930,7 @@ export const occupations: Occupation[] = [
             "mechanical repair",
             "navigate",
             "psychology",
-            "other"
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -952,7 +951,7 @@ export const occupations: Occupation[] = [
             "mechanical repair",
             "navigate",
             "spot hidden",
-            "other"
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -972,7 +971,7 @@ export const occupations: Occupation[] = [
             [2, "fast talk", "charm", "intimidate", "persuade"],
             "psychology",
             "spot hidden",
-            "other"
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -1014,7 +1013,7 @@ export const occupations: Occupation[] = [
             "operate heavy machinery",
             "science (engineering)",
             "science (physics",
-            "other"
+            "personal"
         ],
         restriction: null,
         source: "core",
@@ -1033,8 +1032,8 @@ export const occupations: Occupation[] = [
             [2, "charm", "fast talk", "intimidate", "persuade"],
             "listen",
             "psychology",
-            "other",
-            "other"
+            "personal",
+            "personal"
         ],
         restriction: null,
         source: "core",
