@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-module.exports = nextConfig;
+const nextConfig = {
+    devServer: {
+      host: '0.0.0.0',
+    },
+  };
+  
+  module.exports = nextConfig;
+  

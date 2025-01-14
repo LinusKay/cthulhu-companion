@@ -1,18 +1,18 @@
 "use client";
 import { Snippet } from "@nextui-org/snippet";
-import { title, subtitle } from "@/components/primitives";
 import { Input, Textarea } from "@nextui-org/input";
-import { Select, SelectItem } from "@nextui-org/select";
-import React, { useState } from 'react';
-import { occupations } from '../data/occupations';
-import { Occupation } from "../types/types";
-import { PDFDocument } from 'pdf-lib'
+import React, { useState } from "react";
+import { PDFDocument } from "pdf-lib";
 import { Button } from "@nextui-org/button";
 import { Tooltip } from "@nextui-org/tooltip";
 import { Autocomplete, AutocompleteItem } from "@nextui-org/autocomplete";
 
-export default function Home() {
+import { Occupation } from "../types/types";
+import { occupations } from "../data/occupations";
 
+import { title } from "@/components/primitives";
+
+export default function Home() {
   // validation values
   let charMin = 0;
   let charMax = 90;
@@ -35,63 +35,66 @@ export default function Home() {
     int: 79,
     edu: 80,
     sanity: 81,
-    story: 'my story',
-    story1: 'my story1',
-    personalDescription: 'personal description',
-    traits: 'traits',
-    ideology: 'ideology/beliefs',
-    injuries: 'injuries & scars',
-    significantPeople: 'significant people',
-    phobiasManias: 'phobias & manias',
-    meaningfulLocations: 'meaningful locations',
-    arcaneTomesSpells: 'arcane tomes & spells',
-    treasuredPossessions: 'treasured possessions',
-    encounters: 'encounters with strange entities',
+    story: "my story",
+    story1: "my story1",
+    personalDescription: "personal description",
+    traits: "traits",
+    ideology: "ideology/beliefs",
+    injuries: "injuries & scars",
+    significantPeople: "significant people",
+    phobiasManias: "phobias & manias",
+    meaningfulLocations: "meaningful locations",
+    arcaneTomesSpells: "arcane tomes & spells",
+    treasuredPossessions: "treasured possessions",
+    encounters: "encounters with strange entities",
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-  
+
     setattributes((prev) => ({
       ...prev,
       [name]: isNaN(Number(value)) ? value : Number(value), // Convert to number if possible, else keep as string
     }));
   };
-  
 
   // handle updating of page values upon occupation selection
   const [occupationDetails, setOccupationDetails] = useState<Occupation>({
-    key: '',
-    label: '',
-    description: '',
-    skillpoints: '',
+    key: "",
+    label: "",
+    description: "",
+    skillpoints: "",
     creditrating: [],
-    suggestedcontacts: '',
+    suggestedcontacts: "",
     skills: [],
     restriction: null,
-    source: '',
-    notes: '',
+    source: "",
+    notes: "",
   });
-  
+
   // Handle occupation change by extracting value from event
   const handleOccupationChange = (key: React.Key | null) => {
     if (key === null) return; // Handle the case where no selection is made
     const selectedOccupation = occupations.find((occ) => occ.key === key);
-    console.log(selectedOccupation)
+
     if (selectedOccupation) {
       setOccupationDetails(selectedOccupation);
     }
   };
 
-
   // Fill out PDF fields
-  const [error, setError] = useState(null);  
+  const [, setError] = useState(null);
   const generatePdf = async () => {
     try {
       // Fetch the PDF template from the public folder
-      const response = await fetch("/pdf/CoC7 PC Sheet - Auto-Fill - 1920s - Standard - Color (1).pdf");
-      if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-      else console.log("PDF load OK!")
+      const response = await fetch(
+        "/pdf/CoC7 PC Sheet - Auto-Fill - 1920s - Standard - Color (1).pdf",
+      );
+
+      if (!response.ok)
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      // eslint-disable-next-line no-console
+      else console.log("PDF load OK!");
 
       const formPdfBytes = await response.arrayBuffer();
       const pdfDoc = await PDFDocument.load(formPdfBytes);
@@ -100,7 +103,8 @@ export default function Home() {
 
       // Log field names
       fields.forEach((field) => {
-        console.log(field.getName()); 
+        // eslint-disable-next-line no-console
+        console.log(field.getName());
       });
 
       const fieldMapping = [
@@ -140,70 +144,79 @@ export default function Home() {
         { field: "StartingSanity", value: String(attributes.sanity) },
         { field: "MyStory", value: String(attributes.story) },
         { field: "MyStory1", value: String(attributes.story1) },
-        { field: "PersonalDescription", value: String(attributes.personalDescription) },
+        {
+          field: "PersonalDescription",
+          value: String(attributes.personalDescription),
+        },
         { field: "Traits", value: String(attributes.traits) },
         { field: "Ideology/Beliefs", value: String(attributes.ideology) },
         { field: "Injuries", value: String(attributes.injuries) },
-        { field: "Significant People", value: String(attributes.significantPeople) },
+        {
+          field: "Significant People",
+          value: String(attributes.significantPeople),
+        },
         { field: "Phobias/Manias", value: String(attributes.phobiasManias) },
         { field: "Locations", value: String(attributes.meaningfulLocations) },
         { field: "Tomes/Spells", value: String(attributes.arcaneTomesSpells) },
-        { field: "Possessions", value: String(attributes.treasuredPossessions) },
+        {
+          field: "Possessions",
+          value: String(attributes.treasuredPossessions),
+        },
         { field: "Encounters", value: String(attributes.encounters) },
       ];
+
       // map keys to PDF fields
       fieldMapping.forEach(({ field, value }) => {
         form.getTextField(field).setText(value);
       });
-      
+
       // save and generate PDF
       const updatedPdfBytes = await pdfDoc.save();
       const blob = new Blob([updatedPdfBytes], { type: "application/pdf" });
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
+
       link.href = url;
       link.download = `${attributes.name}_${occupationDetails.label}_CoC_1920_Standard_Colour.pdf`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
     } catch (err: any) {
-      console.error("Error generating PDF:", err);
       setError(err.message);
     }
-  }
+  };
 
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-10 md:py-10">
-
       {/* Also set manually in state variables at top */}
       <span className={title()}>Character Details</span>
       <div className="gap-5 grid grid-cols-3 w-full">
         <Input
-        defaultValue="John Doe"
-        isRequired
-        label="Name"
-        type="text"
-        onChange={handleInputChange}
+          isRequired
+          defaultValue="John Doe"
+          label="Name"
+          type="text"
+          onChange={handleInputChange}
         />
         <Input
-        defaultValue="Arkham"
-        label="Birthplace (optional)"
-        type="text"
-        onChange={handleInputChange}
+          defaultValue="Arkham"
+          label="Birthplace (optional)"
+          type="text"
+          onChange={handleInputChange}
         />
         <Input
-        defaultValue="He/Him"
-        label="Pronoun (optional)"
-        type="text"
-        onChange={handleInputChange}
+          defaultValue="He/Him"
+          label="Pronoun (optional)"
+          type="text"
+          onChange={handleInputChange}
         />
       </div>
       <div className="gap-5 grid grid-cols-3 w-full">
         <Autocomplete
+          isRequired
           label="Occupation"
           placeholder="Select an occupation"
           onSelectionChange={handleOccupationChange}
-          isRequired
         >
           {occupations.map((occupation) => (
             <AutocompleteItem key={occupation.key} value={occupation.key}>
@@ -212,17 +225,17 @@ export default function Home() {
           ))}
         </Autocomplete>
         <Input
-        defaultValue="Arkham"
-        label="Residence (optional)"
-        type="text"
-        onChange={handleInputChange}
+          defaultValue="Arkham"
+          label="Residence (optional)"
+          type="text"
+          onChange={handleInputChange}
         />
         <Input
-        defaultValue="33"
-        isRequired
-        label="Age"
-        type="number"
-        onChange={handleInputChange}
+          isRequired
+          defaultValue="33"
+          label="Age"
+          type="number"
+          onChange={handleInputChange}
         />
       </div>
 
@@ -230,206 +243,174 @@ export default function Home() {
       <div className="gap-5 grid grid-cols-1">
         <div className="gap-5 grid grid-cols-3">
           <Input
-          defaultValue="90"
-          label={ <Tooltip content="Roll: 3d6 * 5">STR</Tooltip> }
-          type="number"
-          min={charMin}
-          max={charMax}
-          onChange={handleInputChange}
+            defaultValue="90"
+            label={<Tooltip content="Roll: 3d6 * 5">STR</Tooltip>}
+            max={charMax}
+            min={charMin}
+            type="number"
+            onChange={handleInputChange}
           />
           <Input
-          defaultValue="90"
-          label={ <Tooltip content="Roll: 2d6 + 6 * 5">SIZ</Tooltip> }
-          type="number"
-          min={charMin}
-          max={charMax}
-          onChange={handleInputChange}
+            defaultValue="90"
+            label={<Tooltip content="Roll: 2d6 + 6 * 5">SIZ</Tooltip>}
+            max={charMax}
+            min={charMin}
+            type="number"
+            onChange={handleInputChange}
           />
           <Input
-          defaultValue="90"
-          label="Hit Points"
-          type="number"
-          min={charMin}
-          onChange={handleInputChange}
+            defaultValue="90"
+            label="Hit Points"
+            min={charMin}
+            type="number"
+            onChange={handleInputChange}
           />
         </div>
         <div className="gap-5 grid grid-cols-3 w-full">
           <Input
-          defaultValue="90"
-          label={ <Tooltip content="Roll: 3d6 * 5">CON</Tooltip>}
-          type="number"
-          min={charMin}
-          max={charMax}
-          onChange={handleInputChange}
+            defaultValue="90"
+            label={<Tooltip content="Roll: 3d6 * 5">CON</Tooltip>}
+            max={charMax}
+            min={charMin}
+            type="number"
+            onChange={handleInputChange}
           />
           <Input
-          defaultValue="90"
-          label={ <Tooltip content="Roll: 3d6 * 5">POW</Tooltip> }
-          type="number"
-          min={charMin}
-          max={charMax}
-          onChange={handleInputChange}
+            defaultValue="90"
+            label={<Tooltip content="Roll: 3d6 * 5">POW</Tooltip>}
+            max={charMax}
+            min={charMin}
+            type="number"
+            onChange={handleInputChange}
           />
           <Input
-          defaultValue="90"
-          label="Magic Points"
-          type="number"
-          min={charMin}
-          max={charMax}
-          onChange={handleInputChange}
+            defaultValue="90"
+            label="Magic Points"
+            max={charMax}
+            min={charMin}
+            type="number"
+            onChange={handleInputChange}
           />
         </div>
         <div className="flex gap-3 w-full">
           <Input
-          defaultValue="90"
-          label={<Tooltip content="Roll: 3d6 * 5">DEX</Tooltip>}
-          type="number"
-          min={charMin}
-          max={charMax}
-          onChange={handleInputChange}
+            defaultValue="90"
+            label={<Tooltip content="Roll: 3d6 * 5">DEX</Tooltip>}
+            max={charMax}
+            min={charMin}
+            type="number"
+            onChange={handleInputChange}
           />
           <Input
-          defaultValue="90"
-          label={<Tooltip content="Roll: 3d6 * 5">DEX</Tooltip>}
-          type="number"
-          min={charMin}
-          max={charMax}
-          onChange={handleInputChange}
+            defaultValue="90"
+            label={<Tooltip content="Roll: 3d6 * 5">DEX</Tooltip>}
+            max={charMax}
+            min={charMin}
+            type="number"
+            onChange={handleInputChange}
           />
           <Input
-          defaultValue="90"
-          label="Luck"
-          type="number"
-          min={charMin}
-          max={charMax}
-          onChange={handleInputChange}
+            defaultValue="90"
+            label="Luck"
+            max={charMax}
+            min={charMin}
+            type="number"
+            onChange={handleInputChange}
           />
         </div>
         <div className="flex gap-3 w-full">
           <Input
-          defaultValue="90"
-          label={<Tooltip content="Roll: 2d6 + 6 * 5">INT</Tooltip>}
-          type="number"
-          min={charMin}
-          max={charMax}
-          onChange={handleInputChange}
+            defaultValue="90"
+            label={<Tooltip content="Roll: 2d6 + 6 * 5">INT</Tooltip>}
+            max={charMax}
+            min={charMin}
+            type="number"
+            onChange={handleInputChange}
           />
           <Input
-          defaultValue="90"
-          label={<Tooltip content="Roll: 2d6 + 6 * 5">EDU</Tooltip>}
-          type="number"
-          min={charMin}
-          max={charMax}
-          onChange={handleInputChange}
+            defaultValue="90"
+            label={<Tooltip content="Roll: 2d6 + 6 * 5">EDU</Tooltip>}
+            max={charMax}
+            min={charMin}
+            type="number"
+            onChange={handleInputChange}
           />
           <Input
-          defaultValue="90"
-          label="Sanity"
-          type="number"
-          min={charMin}
-          onChange={handleInputChange}
+            defaultValue="90"
+            label="Sanity"
+            min={charMin}
+            type="number"
+            onChange={handleInputChange}
           />
         </div>
-        </div>
+      </div>
       {/* Conditionally render section if an occupation is selected */}
       {occupationDetails.key && (
         <div>
           <div>
             <span className={title()}>Occupation</span>
-            <p>{ occupationDetails.label }</p>
-            <p>{ occupationDetails.description }</p>
-            <p>Skill Points: { occupationDetails.skillpoints }</p>
-            <p>Credit Rating: { occupationDetails.creditrating[0] + "-" + occupationDetails.creditrating[1]}</p>
-            <p>Suggested Contacts: { occupationDetails.suggestedcontacts }</p>
+            <p>{occupationDetails.label}</p>
+            <p>{occupationDetails.description}</p>
+            <p>Skill Points: {occupationDetails.skillpoints}</p>
+            <p>
+              Credit Rating:{" "}
+              {occupationDetails.creditrating[0] +
+                "-" +
+                occupationDetails.creditrating[1]}
+            </p>
+            <p>Suggested Contacts: {occupationDetails.suggestedcontacts}</p>
           </div>
           <div>
             <span className={title()}>Skills</span>
-            <p><em>Occupational Skills</em></p>
-            { occupationDetails.skills.map((skill, index) => (
-              <li key={index}>{skill}</li> 
-            ))
-            }
+            <p>
+              <em>Occupational Skills</em>
+            </p>
+            {occupationDetails.skills.map((skill, index) => (
+              <li key={index}>{skill}</li>
+            ))}
           </div>
         </div>
       )}
 
       <span className={title()}>Character Story</span>
-        <div className="flex gap-3 w-full">
-          <Textarea
+      <div className="flex gap-3 w-full">
+        <Textarea className="w-full" label="My Story" />
+        <Textarea className="w-full" label="My Story" />
+      </div>
+      <div className="flex gap-3 w-full">
+        <Textarea className="w-full" label="Personal Description" />
+        <Textarea className="w-full" label="Traits" />
+      </div>
+      <div className="flex gap-3 w-full">
+        <Textarea className="w-full" label="Ideologies & Beliefs" />
+        <Textarea className="w-full" label="Injuries & Scars" />
+      </div>
+      <div className="flex gap-3 w-full">
+        <Textarea className="w-full" label="Significant People" />
+        <Textarea className="w-full" label="Phobias & Manias" />
+      </div>
+      <div className="flex gap-3 w-full">
+        <Textarea className="w-full" label="Meaningful Locations" />
+        <Textarea
           className="w-full"
-          label="My Story"
-          />
-          <Textarea
-          className="w-full"
-          label="My Story"
-          />
-        </div>
-        <div className="flex gap-3 w-full">
-          <Textarea
-          className="w-full"
-          label="Personal Description"
-          />
-          <Textarea
-          className="w-full"
-          label="Traits"
-          />
-        </div>
-        <div className="flex gap-3 w-full">
-          <Textarea
-          className="w-full"
-          label="Ideologies & Beliefs"
-          />
-          <Textarea
-          className="w-full"
-          label="Injuries & Scars"
-          />
-        </div>
-        <div className="flex gap-3 w-full">
-          <Textarea
-          className="w-full"
-          label="Significant People"
-          />
-          <Textarea
-          className="w-full"
-          label="Phobias & Manias"
-          />
-        </div>
-        <div className="flex gap-3 w-full">
-          <Textarea
-          className="w-full"
-          label="Meaningful Locations"
-          />
-          <Textarea
-          className="w-full"
-          label="Arcane Tomes & Spells"
           description="Your typical citizen won't have had any interaction with the dangerous realm of the arcane, as such knowledge tends to twist the mind and drive those that use spells to insanity, or death."
-          />
-        </div>
-        <div className="flex gap-3 w-full">
-          <Textarea
-          className="w-full"
-          label="Treasured Possessions"
-          />
-          <Textarea
-          className="w-full"
-          label="Encounters with Strange Entities"
-          />
-        </div>
+          label="Arcane Tomes & Spells"
+        />
+      </div>
+      <div className="flex gap-3 w-full">
+        <Textarea className="w-full" label="Treasured Possessions" />
+        <Textarea className="w-full" label="Encounters with Strange Entities" />
+      </div>
 
       <div className="flex gap-3">
-        <Button
-        color="primary"
-        onPress={generatePdf}
-        >
-        Generate
+        <Button color="primary" onPress={generatePdf}>
+          Generate
         </Button>
       </div>
 
       <div className="mt-8">
         <Snippet hideCopyButton hideSymbol variant="bordered">
-          <span>
-            wa wa wa wa w aw 
-          </span>
+          <span>wa wa wa wa w aw</span>
         </Snippet>
       </div>
     </section>
