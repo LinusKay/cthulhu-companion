@@ -14,12 +14,12 @@ export interface Occupation {
 export interface Skill {
   key: string,
   label: string,
-  base: number,
+  base: number | 0,
   description: string,
-  pushexamples: string,
-  pushconsequences: string,
+  pushexamples: string | null,
+  pushconsequences: string | null,
   source: string,
   restriction: string | null,
-  notes: string,
-  group: string
+  notes: string | null,
+  group: string | null
 }

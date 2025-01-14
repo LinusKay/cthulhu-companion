@@ -177,7 +177,7 @@ export default function Home() {
 
       {/* Also set manually in state variables at top */}
       <span className={title()}>Character Details</span>
-      <div className="flex gap-3 w-full">
+      <div className="gap-5 grid grid-cols-3 w-full">
         <Input
         defaultValue="John Doe"
         isRequired
@@ -198,20 +198,19 @@ export default function Home() {
         onChange={handleInputChange}
         />
       </div>
-      <div className="flex gap-3 w-full">
-        
-      <Autocomplete
-        label="Occupation"
-        placeholder="Select an occupation"
-        onSelectionChange={handleOccupationChange}
-        isRequired
-      >
-        {occupations.map((occupation) => (
-          <AutocompleteItem key={occupation.key} value={occupation.key}>
-            {occupation.label}
-          </AutocompleteItem>
-        ))}
-      </Autocomplete>
+      <div className="gap-5 grid grid-cols-3 w-full">
+        <Autocomplete
+          label="Occupation"
+          placeholder="Select an occupation"
+          onSelectionChange={handleOccupationChange}
+          isRequired
+        >
+          {occupations.map((occupation) => (
+            <AutocompleteItem key={occupation.key} value={occupation.key}>
+              {occupation.label}
+            </AutocompleteItem>
+          ))}
+        </Autocomplete>
         <Input
         defaultValue="Arkham"
         label="Residence (optional)"
@@ -228,9 +227,8 @@ export default function Home() {
       </div>
 
       <span className={title()}>Characteristics</span>
-      <div className="inline-block max-w-xl text-center justify-center">
-        <div className="flex gap-3 w-full">
-          
+      <div className="gap-5 grid grid-cols-1">
+        <div className="gap-5 grid grid-cols-3">
           <Input
           defaultValue="90"
           label={ <Tooltip content="Roll: 3d6 * 5">STR</Tooltip> }
@@ -255,9 +253,7 @@ export default function Home() {
           onChange={handleInputChange}
           />
         </div>
-      </div>
-      <div className="inline-block max-w-xl text-center justify-center">
-        <div className="flex gap-3 w-full">
+        <div className="gap-5 grid grid-cols-3 w-full">
           <Input
           defaultValue="90"
           label={ <Tooltip content="Roll: 3d6 * 5">CON</Tooltip>}
@@ -283,8 +279,6 @@ export default function Home() {
           onChange={handleInputChange}
           />
         </div>
-      </div>
-      <div className="inline-block max-w-xl text-center justify-center">
         <div className="flex gap-3 w-full">
           <Input
           defaultValue="90"
@@ -311,8 +305,6 @@ export default function Home() {
           onChange={handleInputChange}
           />
         </div>
-      </div>
-      <div className="inline-block max-w-xl text-center justify-center">
         <div className="flex gap-3 w-full">
           <Input
           defaultValue="90"
@@ -338,8 +330,7 @@ export default function Home() {
           onChange={handleInputChange}
           />
         </div>
-      </div>
-      
+        </div>
       {/* Conditionally render section if an occupation is selected */}
       {occupationDetails.key && (
         <div>
@@ -364,6 +355,10 @@ export default function Home() {
 
       <span className={title()}>Character Story</span>
         <div className="flex gap-3 w-full">
+          <Textarea
+          className="w-full"
+          label="My Story"
+          />
           <Textarea
           className="w-full"
           label="My Story"
@@ -423,8 +418,11 @@ export default function Home() {
 
       <div className="flex gap-3">
         <Button
+        color="primary"
         onPress={generatePdf}
-        />
+        >
+        Generate
+        </Button>
       </div>
 
       <div className="mt-8">
