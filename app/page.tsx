@@ -17,6 +17,8 @@ export default function Home() {
   let charMin = 0;
   let charMax = 90;
 
+  const isDevelopment = process.env.NODE_ENV === "development";
+
   const [attributes, setattributes] = useState({
     name: "John Doe",
     birthplace: "Arkham",
@@ -187,232 +189,244 @@ export default function Home() {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-10 md:py-10">
-      {/* Also set manually in state variables at top */}
-      <span className={title()}>Character Details</span>
-      <div className="gap-5 grid grid-cols-3 w-full">
-        <Input
-          isRequired
-          defaultValue="John Doe"
-          label="Name"
-          type="text"
-          onChange={handleInputChange}
-        />
-        <Input
-          defaultValue="Arkham"
-          label="Birthplace (optional)"
-          type="text"
-          onChange={handleInputChange}
-        />
-        <Input
-          defaultValue="He/Him"
-          label="Pronoun (optional)"
-          type="text"
-          onChange={handleInputChange}
-        />
-      </div>
-      <div className="gap-5 grid grid-cols-3 w-full">
-        <Autocomplete
-          isRequired
-          label="Occupation"
-          placeholder="Select an occupation"
-          onSelectionChange={handleOccupationChange}
-        >
-          {occupations.map((occupation) => (
-            <AutocompleteItem key={occupation.key} value={occupation.key}>
-              {occupation.label}
-            </AutocompleteItem>
-          ))}
-        </Autocomplete>
-        <Input
-          defaultValue="Arkham"
-          label="Residence (optional)"
-          type="text"
-          onChange={handleInputChange}
-        />
-        <Input
-          isRequired
-          defaultValue="33"
-          label="Age"
-          type="number"
-          onChange={handleInputChange}
-        />
-      </div>
+    <div>
+      {isDevelopment ? (
+        <section className="flex flex-col items-center justify-center gap-4 py-10 md:py-10">
+          {/* Also set manually in state variables at top */}
+          <span className={title()}>Character Details</span>
+          <div className="gap-5 grid grid-cols-3 w-full">
+            <Input
+              isRequired
+              defaultValue="John Doe"
+              label="Name"
+              type="text"
+              onChange={handleInputChange}
+            />
+            <Input
+              defaultValue="Arkham"
+              label="Birthplace (optional)"
+              type="text"
+              onChange={handleInputChange}
+            />
+            <Input
+              defaultValue="He/Him"
+              label="Pronoun (optional)"
+              type="text"
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="gap-5 grid grid-cols-3 w-full">
+            <Autocomplete
+              isRequired
+              label="Occupation"
+              placeholder="Select an occupation"
+              onSelectionChange={handleOccupationChange}
+            >
+              {occupations.map((occupation) => (
+                <AutocompleteItem key={occupation.key} value={occupation.key}>
+                  {occupation.label}
+                </AutocompleteItem>
+              ))}
+            </Autocomplete>
+            <Input
+              defaultValue="Arkham"
+              label="Residence (optional)"
+              type="text"
+              onChange={handleInputChange}
+            />
+            <Input
+              isRequired
+              defaultValue="33"
+              label="Age"
+              type="number"
+              onChange={handleInputChange}
+            />
+          </div>
 
-      <span className={title()}>Characteristics</span>
-      <div className="gap-5 grid grid-cols-1">
-        <div className="gap-5 grid grid-cols-3">
-          <Input
-            defaultValue="90"
-            label={<Tooltip content="Roll: 3d6 * 5">STR</Tooltip>}
-            max={charMax}
-            min={charMin}
-            type="number"
-            onChange={handleInputChange}
-          />
-          <Input
-            defaultValue="90"
-            label={<Tooltip content="Roll: 2d6 + 6 * 5">SIZ</Tooltip>}
-            max={charMax}
-            min={charMin}
-            type="number"
-            onChange={handleInputChange}
-          />
-          <Input
-            defaultValue="90"
-            label="Hit Points"
-            min={charMin}
-            type="number"
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="gap-5 grid grid-cols-3 w-full">
-          <Input
-            defaultValue="90"
-            label={<Tooltip content="Roll: 3d6 * 5">CON</Tooltip>}
-            max={charMax}
-            min={charMin}
-            type="number"
-            onChange={handleInputChange}
-          />
-          <Input
-            defaultValue="90"
-            label={<Tooltip content="Roll: 3d6 * 5">POW</Tooltip>}
-            max={charMax}
-            min={charMin}
-            type="number"
-            onChange={handleInputChange}
-          />
-          <Input
-            defaultValue="90"
-            label="Magic Points"
-            max={charMax}
-            min={charMin}
-            type="number"
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="flex gap-3 w-full">
-          <Input
-            defaultValue="90"
-            label={<Tooltip content="Roll: 3d6 * 5">DEX</Tooltip>}
-            max={charMax}
-            min={charMin}
-            type="number"
-            onChange={handleInputChange}
-          />
-          <Input
-            defaultValue="90"
-            label={<Tooltip content="Roll: 3d6 * 5">DEX</Tooltip>}
-            max={charMax}
-            min={charMin}
-            type="number"
-            onChange={handleInputChange}
-          />
-          <Input
-            defaultValue="90"
-            label="Luck"
-            max={charMax}
-            min={charMin}
-            type="number"
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="flex gap-3 w-full">
-          <Input
-            defaultValue="90"
-            label={<Tooltip content="Roll: 2d6 + 6 * 5">INT</Tooltip>}
-            max={charMax}
-            min={charMin}
-            type="number"
-            onChange={handleInputChange}
-          />
-          <Input
-            defaultValue="90"
-            label={<Tooltip content="Roll: 2d6 + 6 * 5">EDU</Tooltip>}
-            max={charMax}
-            min={charMin}
-            type="number"
-            onChange={handleInputChange}
-          />
-          <Input
-            defaultValue="90"
-            label="Sanity"
-            min={charMin}
-            type="number"
-            onChange={handleInputChange}
-          />
-        </div>
-      </div>
-      {/* Conditionally render section if an occupation is selected */}
-      {occupationDetails.key && (
-        <div>
-          <div>
-            <span className={title()}>Occupation</span>
-            <p>{occupationDetails.label}</p>
-            <p>{occupationDetails.description}</p>
-            <p>Skill Points: {occupationDetails.skillpoints}</p>
-            <p>
-              Credit Rating:{" "}
-              {occupationDetails.creditrating[0] +
-                "-" +
-                occupationDetails.creditrating[1]}
-            </p>
-            <p>Suggested Contacts: {occupationDetails.suggestedcontacts}</p>
+          <span className={title()}>Characteristics</span>
+          <div className="gap-5 grid grid-cols-1">
+            <div className="gap-5 grid grid-cols-3">
+              <Input
+                defaultValue="90"
+                label={<Tooltip content="Roll: 3d6 * 5">STR</Tooltip>}
+                max={charMax}
+                min={charMin}
+                type="number"
+                onChange={handleInputChange}
+              />
+              <Input
+                defaultValue="90"
+                label={<Tooltip content="Roll: 2d6 + 6 * 5">SIZ</Tooltip>}
+                max={charMax}
+                min={charMin}
+                type="number"
+                onChange={handleInputChange}
+              />
+              <Input
+                defaultValue="90"
+                label="Hit Points"
+                min={charMin}
+                type="number"
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="gap-5 grid grid-cols-3 w-full">
+              <Input
+                defaultValue="90"
+                label={<Tooltip content="Roll: 3d6 * 5">CON</Tooltip>}
+                max={charMax}
+                min={charMin}
+                type="number"
+                onChange={handleInputChange}
+              />
+              <Input
+                defaultValue="90"
+                label={<Tooltip content="Roll: 3d6 * 5">POW</Tooltip>}
+                max={charMax}
+                min={charMin}
+                type="number"
+                onChange={handleInputChange}
+              />
+              <Input
+                defaultValue="90"
+                label="Magic Points"
+                max={charMax}
+                min={charMin}
+                type="number"
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="flex gap-3 w-full">
+              <Input
+                defaultValue="90"
+                label={<Tooltip content="Roll: 3d6 * 5">DEX</Tooltip>}
+                max={charMax}
+                min={charMin}
+                type="number"
+                onChange={handleInputChange}
+              />
+              <Input
+                defaultValue="90"
+                label={<Tooltip content="Roll: 3d6 * 5">DEX</Tooltip>}
+                max={charMax}
+                min={charMin}
+                type="number"
+                onChange={handleInputChange}
+              />
+              <Input
+                defaultValue="90"
+                label="Luck"
+                max={charMax}
+                min={charMin}
+                type="number"
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="flex gap-3 w-full">
+              <Input
+                defaultValue="90"
+                label={<Tooltip content="Roll: 2d6 + 6 * 5">INT</Tooltip>}
+                max={charMax}
+                min={charMin}
+                type="number"
+                onChange={handleInputChange}
+              />
+              <Input
+                defaultValue="90"
+                label={<Tooltip content="Roll: 2d6 + 6 * 5">EDU</Tooltip>}
+                max={charMax}
+                min={charMin}
+                type="number"
+                onChange={handleInputChange}
+              />
+              <Input
+                defaultValue="90"
+                label="Sanity"
+                min={charMin}
+                type="number"
+                onChange={handleInputChange}
+              />
+            </div>
           </div>
-          <div>
-            <span className={title()}>Skills</span>
-            <p>
-              <em>Occupational Skills</em>
-            </p>
-            {occupationDetails.skills.map((skill, index) => (
-              <li key={index}>{skill}</li>
-            ))}
+          {/* Conditionally render section if an occupation is selected */}
+          {occupationDetails.key && (
+            <div>
+              <div>
+                <span className={title()}>Occupation</span>
+                <p>{occupationDetails.label}</p>
+                <p>{occupationDetails.description}</p>
+                <p>Skill Points: {occupationDetails.skillpoints}</p>
+                <p>
+                  Credit Rating:{" "}
+                  {occupationDetails.creditrating[0] +
+                    "-" +
+                    occupationDetails.creditrating[1]}
+                </p>
+                <p>Suggested Contacts: {occupationDetails.suggestedcontacts}</p>
+              </div>
+              <div>
+                <span className={title()}>Skills</span>
+                <p>
+                  <em>Occupational Skills</em>
+                </p>
+                {occupationDetails.skills.map((skill, index) => (
+                  <li key={index}>{skill}</li>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <span className={title()}>Character Story</span>
+          <div className="flex gap-3 w-full">
+            <Textarea className="w-full" label="My Story" />
+            <Textarea className="w-full" label="My Story" />
           </div>
-        </div>
+          <div className="flex gap-3 w-full">
+            <Textarea className="w-full" label="Personal Description" />
+            <Textarea className="w-full" label="Traits" />
+          </div>
+          <div className="flex gap-3 w-full">
+            <Textarea className="w-full" label="Ideologies & Beliefs" />
+            <Textarea className="w-full" label="Injuries & Scars" />
+          </div>
+          <div className="flex gap-3 w-full">
+            <Textarea className="w-full" label="Significant People" />
+            <Textarea className="w-full" label="Phobias & Manias" />
+          </div>
+          <div className="flex gap-3 w-full">
+            <Textarea className="w-full" label="Meaningful Locations" />
+            <Textarea
+              className="w-full"
+              description="Your typical citizen won't have had any interaction with the dangerous realm of the arcane, as such knowledge tends to twist the mind and drive those that use spells to insanity, or death."
+              label="Arcane Tomes & Spells"
+            />
+          </div>
+          <div className="flex gap-3 w-full">
+            <Textarea className="w-full" label="Treasured Possessions" />
+            <Textarea
+              className="w-full"
+              label="Encounters with Strange Entities"
+            />
+          </div>
+
+          <div className="flex gap-3">
+            <Button color="primary" onPress={generatePdf}>
+              Generate
+            </Button>
+          </div>
+
+          <div className="mt-8">
+            <Snippet hideCopyButton hideSymbol variant="bordered">
+              <span>wa wa wa wa w aw</span>
+            </Snippet>
+          </div>
+        </section>
+      ) : (
+        <section className="flex flex-col items-center justify-center gap-4 py-10 md:py-10">
+          {/* Also set manually in state variables at top */}
+          <span className={title()}>Work in Progress</span>
+        </section>
       )}
-
-      <span className={title()}>Character Story</span>
-      <div className="flex gap-3 w-full">
-        <Textarea className="w-full" label="My Story" />
-        <Textarea className="w-full" label="My Story" />
-      </div>
-      <div className="flex gap-3 w-full">
-        <Textarea className="w-full" label="Personal Description" />
-        <Textarea className="w-full" label="Traits" />
-      </div>
-      <div className="flex gap-3 w-full">
-        <Textarea className="w-full" label="Ideologies & Beliefs" />
-        <Textarea className="w-full" label="Injuries & Scars" />
-      </div>
-      <div className="flex gap-3 w-full">
-        <Textarea className="w-full" label="Significant People" />
-        <Textarea className="w-full" label="Phobias & Manias" />
-      </div>
-      <div className="flex gap-3 w-full">
-        <Textarea className="w-full" label="Meaningful Locations" />
-        <Textarea
-          className="w-full"
-          description="Your typical citizen won't have had any interaction with the dangerous realm of the arcane, as such knowledge tends to twist the mind and drive those that use spells to insanity, or death."
-          label="Arcane Tomes & Spells"
-        />
-      </div>
-      <div className="flex gap-3 w-full">
-        <Textarea className="w-full" label="Treasured Possessions" />
-        <Textarea className="w-full" label="Encounters with Strange Entities" />
-      </div>
-
-      <div className="flex gap-3">
-        <Button color="primary" onPress={generatePdf}>
-          Generate
-        </Button>
-      </div>
-
-      <div className="mt-8">
-        <Snippet hideCopyButton hideSymbol variant="bordered">
-          <span>wa wa wa wa w aw</span>
-        </Snippet>
-      </div>
-    </section>
+    </div>
   );
 }
