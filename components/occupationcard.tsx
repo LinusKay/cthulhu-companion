@@ -7,7 +7,8 @@ import { Link } from "@nextui-org/link";
 import Markdown from "react-markdown";
 import { ScrollShadow } from "@nextui-org/scroll-shadow";
 import remarkGfm from "remark-gfm";
-import { FaBrain, FaUserFriends } from "react-icons/fa";
+import { FaBrain, FaLink, FaUserFriends } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 import { Occupation } from "@/types/types";
 
@@ -16,8 +17,50 @@ interface OccupationCardProps {
 }
 
 const OccupationCard: React.FC<OccupationCardProps> = ({ occupation }) => {
+  const [showAlert, setShowAlert] = useState(false);
+  const [highlighted, setHighlighted] = useState(false);
+
+  // Check if the current skill is referenced in the hash
+  useEffect(() => {
+    const checkHighlight = () => {
+      // Check if the current URL hash matches this skill's key
+      if (window.location.hash === `#${occupation.key}`) {
+        setHighlighted(true);
+      } else {
+        setHighlighted(false);
+      }
+    };
+
+    checkHighlight();
+
+    const handleHashChange = () => {
+      checkHighlight();
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    // Cleanup on component unmount
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, [occupation.key]);
+
+  // Handle card link copy
+  const handleCopy = () => {
+    const link = `${window.location.origin}/occupations#${occupation.key}`;
+
+    navigator.clipboard.writeText(link);
+
+    setShowAlert(true);
+    setTimeout(() => setShowAlert(false), 2000);
+  };
+
   return (
-    <Card key={occupation.key} id={occupation.key}>
+    <Card
+      key={occupation.key}
+      className={`relative p-1 ${highlighted ? "outline outline-2 outline-blue-500" : ""}`}
+      id={occupation.key}
+    >
       <CardHeader>
         <div className="flex flex-col text-left">
           <p className="text-lg font-bold">
@@ -34,6 +77,12 @@ const OccupationCard: React.FC<OccupationCardProps> = ({ occupation }) => {
             </Tooltip>
           )}
         </div>
+
+        <FaLink
+          className="ml-auto opacity-20 hover:opacity-50 cursor-pointer"
+          title="Copy to clipboard"
+          onClick={handleCopy}
+        />
       </CardHeader>
       <CardBody>
         <ScrollShadow className="h-[250px]" size={10}>

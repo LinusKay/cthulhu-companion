@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import { Checkbox } from "@nextui-org/checkbox";
+import { Input } from "@nextui-org/input";
 
 import SkillCard from "@/components/skillcard";
 import { skills } from "@/data/skills";
@@ -7,6 +9,9 @@ import { skills } from "@/data/skills";
 export default function SkillsPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedGroups, setSelectedGroups] = useState<string[]>([]);
+  const [selectedRestrictions, setSelectedRestrictions] = useState<string[]>(
+    [],
+  );
 
   const skillGroups = [
     "specialisation",
@@ -15,7 +20,9 @@ export default function SkillsPage() {
     "interpersonal",
   ];
 
-  const handleCheckboxChange = (group: string) => {
+  const skillRestrictions = ["Classic", "Modern"];
+
+  const handleGroupCheckboxChange = (group: string) => {
     setSelectedGroups((prevGroups) =>
       prevGroups.includes(group)
         ? prevGroups.filter((g) => g !== group)
@@ -23,22 +30,27 @@ export default function SkillsPage() {
     );
   };
 
+  const handleRestrictionCheckboxChange = (restriction: string) => {
+    setSelectedRestrictions((prevRestrictions) =>
+      prevRestrictions.includes(restriction)
+        ? prevRestrictions.filter((r) => r !== restriction)
+        : [...prevRestrictions, restriction],
+    );
+  };
+
   // Filter skills based on search term and selected groups
   const filteredSkills = skills.filter((skill) => {
-    const matchesSearch =
-      skill.key.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      skill.label.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      skill.groups?.some((group) =>
-        group.toLowerCase().includes(searchTerm.toLowerCase()),
-      );
-
-    const matchesGroup =
+    const groupMatch =
       selectedGroups.length === 0 ||
-      skill.groups?.some((group) =>
-        selectedGroups.includes(group.toLowerCase()),
-      );
+      skill.groups.some((group) => selectedGroups.includes(group));
+    const restrictionMatch =
+      selectedRestrictions.length === 0 ||
+      selectedRestrictions.includes(skill.restriction);
+    const searchMatch =
+      skill.key.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      skill.label.toLowerCase().includes(searchTerm.toLowerCase());
 
-    return matchesSearch && matchesGroup;
+    return groupMatch && restrictionMatch && searchMatch;
   });
 
   return (
@@ -46,10 +58,9 @@ export default function SkillsPage() {
       <h1 className="text-3xl font-bold">Skills</h1>
 
       {/* Search input */}
-      <input
-        className="p-2 border border-gray-300 rounded-md w-full max-w-md"
+      <Input
+        className="p-2 rounded-md max-w-xl"
         placeholder="Search skills..."
-        type="text"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
@@ -57,15 +68,26 @@ export default function SkillsPage() {
       {/* Group checkboxes */}
       <div className="flex flex-wrap gap-4 mt-4">
         {skillGroups.map((group) => (
-          <label key={group} className="flex items-center gap-2">
-            <input
-              checked={selectedGroups.includes(group)}
-              className="form-checkbox"
-              type="checkbox"
-              onChange={() => handleCheckboxChange(group)}
-            />
+          <Checkbox
+            key={group}
+            checked={selectedGroups.includes(group)}
+            onChange={() => handleGroupCheckboxChange(group)}
+          >
             {group.charAt(0).toUpperCase() + group.slice(1)}
-          </label>
+          </Checkbox>
+        ))}
+      </div>
+
+      {/* Restriction checkboxes */}
+      <div className="flex flex-wrap gap-4 mt-4">
+        {skillRestrictions.map((restriction) => (
+          <Checkbox
+            key={restriction}
+            checked={selectedRestrictions.includes(restriction)}
+            onChange={() => handleRestrictionCheckboxChange(restriction)}
+          >
+            {restriction}
+          </Checkbox>
         ))}
       </div>
 

@@ -12,7 +12,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "Discussions between investigators and third parties alert some enemy faction to the investigators' intentions; a vital part of the accounts is destroyed or lost (perhaps in their tired state the investigator spills coffee over them). \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she might be found having partially eaten the accounts.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -27,7 +27,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The animal attacks the trainer or someone else nearby, most likely causing damage; the animal escapes. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she might be found behaving like the animal they were trying to control.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -42,7 +42,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "Being attacked or imprisoned by the people studied, due to some perceived transgression of their laws or social mores; suffering severe side-effects as the result of being involved in a ceremony which involved ingesting psychotropic plants.\n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she will be lost among the culture being studied, for example like Dennis Hopper's photojournalist character in the film Apocalypse Now.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -57,7 +57,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "Accidentally ruining the item in question; bringing the item to the attention of other people, leading to its theft; activating whatever function the item might serve.\n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she could destroy the item, believing it to be cursed; alternatively they regard the item as their personal salvation and refuse to give it up to anyone else.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -72,7 +72,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The site is spoiled, with finds ruined through incompetence, vandalism, or theft; some higher authority seizes the site or the finds from your control; publicity leads to the finds being stolen. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she keeps digging deeper, ever deeper—the truth is down there somewhere.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -87,7 +87,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "A vast amount of time and money is wasted in creating a failed attempt; the audience or customer is highly offended or physically injured by some aspect of your work; the critics slam your work and no one desires your services any longer. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she creates a transgressive work that shocks and causes violent reactions in the viewer—perhaps only the most decadent could appreciate it.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "The investigator sheet contains blank spaces for specializations of this skill, for example: Acting, Barber, Carpenter, Cobbler, Cook, Dancer, Fine Art, Forgery, Morris Dancer, Opera Singer, Painter & Decorator, Photographer, Potter, Sculptor, Writer, Woodwork. \n\n&nbsp;\n\nMany of these examples are skills directly linked to a profession, but the skill may just be a leisure pursuit. You may spend skill points to purchase any skill specialization. The generic Art/Craft  skill cannot be purchased. \n\n&nbsp;\n\nAbility with this skill may enable the making or repair of an item—something typically requiring equipment and time, to be determined by the Keeper if necessary. In a situation where graduations of success might be appropriate, a higher level of success indicates the item made is of high quality and/or precision. \n\n&nbsp;\n\nAn art or craft skill might also be used to make a duplicate or fake item. In such a case, the difficulty level would depend on the intricacy and distinctiveness of the original to be copied. In the case of faking documentation, a specific specialization (Forgery) is used. \n\n&nbsp;\n\nA successful roll might provide information about an item, such as where or when it might have been made, some point of history or technique concerning it, or who might have made it. The holder of a specialization would have a breadth of knowledge within a particular field— knowledge of the subject, its history, and contemporary practitioners, as well as the ability to perform it.",
     groups: [],
@@ -103,7 +103,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "A vast amount of time and money is wasted in creating a failed attempt; the audience or customer is highly offended or physically injured by some aspect of your work; the critics slam your work and no one desires your services any longer. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she creates a transgressive work that shocks and causes violent reactions in the viewer—perhaps only the most decadent could appreciate it.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "The investigator sheet contains blank spaces for specializations of this skill, for example: Acting, Barber, Carpenter, Cobbler, Cook, Dancer, Fine Art, Forgery, Morris Dancer, Opera Singer, Painter & Decorator, Photographer, Potter, Sculptor, Writer, Woodwork. \n\n&nbsp;\n\nMany of these examples are skills directly linked to a profession, but the skill may just be a leisure pursuit. You may spend skill points to purchase any skill specialization. The generic Art/Craft  skill cannot be purchased. \n\n&nbsp;\n\nAbility with this skill may enable the making or repair of an item—something typically requiring equipment and time, to be determined by the Keeper if necessary. In a situation where graduations of success might be appropriate, a higher level of success indicates the item made is of high quality and/or precision. \n\n&nbsp;\n\nAn art or craft skill might also be used to make a duplicate or fake item. In such a case, the difficulty level would depend on the intricacy and distinctiveness of the original to be copied. In the case of faking documentation, a specific specialization (Forgery) is used. \n\n&nbsp;\n\nA successful roll might provide information about an item, such as where or when it might have been made, some point of history or technique concerning it, or who might have made it. The holder of a specialization would have a breadth of knowledge within a particular field— knowledge of the subject, its history, and contemporary practitioners, as well as the ability to perform it.",
     groups: [],
@@ -119,7 +119,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "A vast amount of time and money is wasted in creating a failed attempt; the audience or customer is highly offended or physically injured by some aspect of your work; the critics slam your work and no one desires your services any longer. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she creates a transgressive work that shocks and causes violent reactions in the viewer—perhaps only the most decadent could appreciate it.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "The investigator sheet contains blank spaces for specializations of this skill, for example: Acting, Barber, Carpenter, Cobbler, Cook, Dancer, Fine Art, Forgery, Morris Dancer, Opera Singer, Painter & Decorator, Photographer, Potter, Sculptor, Writer, Woodwork. \n\n&nbsp;\n\nMany of these examples are skills directly linked to a profession, but the skill may just be a leisure pursuit. You may spend skill points to purchase any skill specialization. The generic Art/Craft  skill cannot be purchased. \n\n&nbsp;\n\nAbility with this skill may enable the making or repair of an item—something typically requiring equipment and time, to be determined by the Keeper if necessary. In a situation where graduations of success might be appropriate, a higher level of success indicates the item made is of high quality and/or precision. \n\n&nbsp;\n\nAn art or craft skill might also be used to make a duplicate or fake item. In such a case, the difficulty level would depend on the intricacy and distinctiveness of the original to be copied. In the case of faking documentation, a specific specialization (Forgery) is used. \n\n&nbsp;\n\nA successful roll might provide information about an item, such as where or when it might have been made, some point of history or technique concerning it, or who might have made it. The holder of a specialization would have a breadth of knowledge within a particular field— knowledge of the subject, its history, and contemporary practitioners, as well as the ability to perform it.",
     groups: [],
@@ -135,7 +135,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "A vast amount of time and money is wasted in creating a failed attempt; the audience or customer is highly offended or physically injured by some aspect of your work; the critics slam your work and no one desires your services any longer. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she creates a transgressive work that shocks and causes violent reactions in the viewer—perhaps only the most decadent could appreciate it.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "The investigator sheet contains blank spaces for specializations of this skill, for example: Acting, Barber, Carpenter, Cobbler, Cook, Dancer, Fine Art, Forgery, Morris Dancer, Opera Singer, Painter & Decorator, Photographer, Potter, Sculptor, Writer, Woodwork. \n\n&nbsp;\n\nMany of these examples are skills directly linked to a profession, but the skill may just be a leisure pursuit. You may spend skill points to purchase any skill specialization. The generic Art/Craft  skill cannot be purchased. \n\n&nbsp;\n\nAbility with this skill may enable the making or repair of an item—something typically requiring equipment and time, to be determined by the Keeper if necessary. In a situation where graduations of success might be appropriate, a higher level of success indicates the item made is of high quality and/or precision. \n\n&nbsp;\n\nAn art or craft skill might also be used to make a duplicate or fake item. In such a case, the difficulty level would depend on the intricacy and distinctiveness of the original to be copied. In the case of faking documentation, a specific specialization (Forgery) is used. \n\n&nbsp;\n\nA successful roll might provide information about an item, such as where or when it might have been made, some point of history or technique concerning it, or who might have made it. The holder of a specialization would have a breadth of knowledge within a particular field— knowledge of the subject, its history, and contemporary practitioners, as well as the ability to perform it.",
     groups: [],
@@ -149,7 +149,7 @@ export const skills: Skill[] = [
     pushexamples: "",
     pushconsequences: "",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "Uncommon skill. As a combat skill, this cannot be pushed.",
     groups: [],
   },
@@ -164,7 +164,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The target takes offence and will have nothing further to do with you; the target is associated in some way with your enemies and, while they may play along with you, they also inform on you; a third party intercedes to prevent you from chatting up their girl. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she falls head over heels in love with their target and will act as if the target had successfully used a Dominate spell (see Call of Cthulhu Rulebook) upon them",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: ["interpersonal"],
   },
@@ -179,7 +179,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "Fall and suffer damage (1D6 damage per ten feet onto grass, or 1D10 damage per 10 feet onto concrete); lose a valuable possession as it falls from your pocket (you may not notice this until later); become stranded, unable to go up or down. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she holds on for dear life and screams at the top of their lungs for as long as they can.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -209,7 +209,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The loan shark turns nasty and directs his boys to teach you lesson; the bank manager calls the police; you are loaned the money, but it is a ploy to put you in deeper debt with a mobster who plans to buy out your debt and later call on you for a favor. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she loses all faith in capitalism and begins freely handing out his or her money to passersby. ",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Credit Rating is not so much a skill as a gauge of financial wealth, and should not be ticked as other skills are. A high Credit Rating can be a useful resource in play, and so should be paid for with skill points when creating an investigator. Each occupation has a starting range for Credit Rating, and skill points should be spent to achieve a rating therein. ",
     groups: [],
@@ -225,7 +225,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "Get too close, exposing oneself to harm or suspicion; unwittingly read aloud a passage from a tome that activates a summoning spell; accidentally corrupt or destroy the evidence being studied. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she experiences a vision or revelation that reveals new truths about the Cthulhu Mythos",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -240,7 +240,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "If defusing or removing an explosive device, the consequence of failing a pushed roll is clear—it explodes! If using the Demolitions skill to place charges, the consequence of failing a pushed roll may be a failure to detonate at the right time (or at all), or that the detonation fails to have the desired effect (either too great or too little). \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she devises the most bizarre method of delivering the explosive, such as strapping it to a cat or to themselves.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "Uncommon skill",
     groups: [],
   },
@@ -255,7 +255,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "Being arrested; causing offence, leading to violence or criminal charges; finding that the person being imitated is wanted by a criminal gang who come looking for vengeance.\n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, the investigator no longer recognizes his or her own face in the mirror, even when the disguise is removed.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -270,7 +270,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "become trapped underwater; attacked by sea creatures; suffer the bends. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she begins to understand whale-song; all you have to do is follow their instructions.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "Uncommon",
     groups: [],
   },
@@ -283,7 +283,7 @@ export const skills: Skill[] = [
     pushexamples: "",
     pushconsequences: "",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "As a combat skill, this cannot be pushed",
     groups: ["combat"],
   },
@@ -298,7 +298,7 @@ export const skills: Skill[] = [
     pushconsequences:
       'Crashing; skidding to a halt, unable to proceed; being seen and pursued by the police. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she will be found behind the wheel of a stationary vehicle making "brum-brum" noises',
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -313,7 +313,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "take damage from an electric shock; blow the fuses and plunge the building into darkness; wreck the thing you are working on beyond repair. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she attempts to harness the electrical power of living organisms into the device.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -343,7 +343,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "Cause great offence leading to violence, outrage, or criminal proceedings. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she begins hurling random abusive phrases at people. ",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: ["interpersonal"],
   },
@@ -356,7 +356,7 @@ export const skills: Skill[] = [
     pushexamples: "",
     pushconsequences: "",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Fighting skill denotes a character's skill in melee combat. You may spend skill points to purchase any skill specialization. The generic Fighting skill cannot be purchased. Choose Fighting specializations appropriate to your investigator's occupation and history.\n\n&nbsp;\n\n Those starting the game with a Fighting (Brawl) skill of 50% or higher may wish to choose some type of formal training as part of their background to account for his or her skill level. A myriad of fighting styles exist, each with its own pros and cons. Martial arts are simply a way of developing a person's Fighting skill. Decide how the character learned to fight, whether it be formal military training, martial arts classes, or learned the hard way as a result of street-fighting. The term \"brawl\" might feel too crude for a skilled martial artist and could be replaced (with Karate for example) if a player so wished.\n\n&nbsp;\n\n**As a combat skill, this cannot be pushed.**",
     groups: ["combat", "specialisation"],
@@ -370,7 +370,7 @@ export const skills: Skill[] = [
     pushexamples: "",
     pushconsequences: "",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Fighting skill denotes a character's skill in melee combat. You may spend skill points to purchase any skill specialization. The generic Fighting skill cannot be purchased. Choose Fighting specializations appropriate to your investigator's occupation and history.\n\n&nbsp;\n\n Those starting the game with a Fighting (Brawl) skill of 50% or higher may wish to choose some type of formal training as part of their background to account for his or her skill level. A myriad of fighting styles exist, each with its own pros and cons. Martial arts are simply a way of developing a person's Fighting skill. Decide how the character learned to fight, whether it be formal military training, martial arts classes, or learned the hard way as a result of street-fighting. The term \"brawl\" might feel too crude for a skilled martial artist and could be replaced (with Karate for example) if a player so wished.\n\n&nbsp;\n\n**As a combat skill, this cannot be pushed.**",
     groups: ["combat", "specialisation"],
@@ -384,7 +384,7 @@ export const skills: Skill[] = [
     pushexamples: "",
     pushconsequences: "",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Fighting skill denotes a character's skill in melee combat. You may spend skill points to purchase any skill specialization. The generic Fighting skill cannot be purchased. Choose Fighting specializations appropriate to your investigator's occupation and history.\n\n&nbsp;\n\n Those starting the game with a Fighting (Brawl) skill of 50% or higher may wish to choose some type of formal training as part of their background to account for his or her skill level. A myriad of fighting styles exist, each with its own pros and cons. Martial arts are simply a way of developing a person's Fighting skill. Decide how the character learned to fight, whether it be formal military training, martial arts classes, or learned the hard way as a result of street-fighting. The term \"brawl\" might feel too crude for a skilled martial artist and could be replaced (with Karate for example) if a player so wished.\n\n&nbsp;\n\n**As a combat skill, this cannot be pushed.**",
     groups: ["combat", "specialisation"],
@@ -397,7 +397,7 @@ export const skills: Skill[] = [
     pushexamples: "",
     pushconsequences: "",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Fighting skill denotes a character's skill in melee combat. You may spend skill points to purchase any skill specialization. The generic Fighting skill cannot be purchased. Choose Fighting specializations appropriate to your investigator's occupation and history.\n\n&nbsp;\n\n Those starting the game with a Fighting (Brawl) skill of 50% or higher may wish to choose some type of formal training as part of their background to account for his or her skill level. A myriad of fighting styles exist, each with its own pros and cons. Martial arts are simply a way of developing a person's Fighting skill. Decide how the character learned to fight, whether it be formal military training, martial arts classes, or learned the hard way as a result of street-fighting. The term \"brawl\" might feel too crude for a skilled martial artist and could be replaced (with Karate for example) if a player so wished.\n\n&nbsp;\n\n**As a combat skill, this cannot be pushed.**",
     groups: ["combat", "specialisation"],
@@ -411,7 +411,7 @@ export const skills: Skill[] = [
     pushexamples: "",
     pushconsequences: "",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Fighting skill denotes a character's skill in melee combat. You may spend skill points to purchase any skill specialization. The generic Fighting skill cannot be purchased. Choose Fighting specializations appropriate to your investigator's occupation and history.\n\n&nbsp;\n\n Those starting the game with a Fighting (Brawl) skill of 50% or higher may wish to choose some type of formal training as part of their background to account for his or her skill level. A myriad of fighting styles exist, each with its own pros and cons. Martial arts are simply a way of developing a person's Fighting skill. Decide how the character learned to fight, whether it be formal military training, martial arts classes, or learned the hard way as a result of street-fighting. The term \"brawl\" might feel too crude for a skilled martial artist and could be replaced (with Karate for example) if a player so wished.\n\n&nbsp;\n\n**As a combat skill, this cannot be pushed.**",
     groups: ["combat", "specialisation"],
@@ -425,7 +425,7 @@ export const skills: Skill[] = [
     pushexamples: "",
     pushconsequences: "",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Fighting skill denotes a character's skill in melee combat. You may spend skill points to purchase any skill specialization. The generic Fighting skill cannot be purchased. Choose Fighting specializations appropriate to your investigator's occupation and history.\n\n&nbsp;\n\n Those starting the game with a Fighting (Brawl) skill of 50% or higher may wish to choose some type of formal training as part of their background to account for his or her skill level. A myriad of fighting styles exist, each with its own pros and cons. Martial arts are simply a way of developing a person's Fighting skill. Decide how the character learned to fight, whether it be formal military training, martial arts classes, or learned the hard way as a result of street-fighting. The term \"brawl\" might feel too crude for a skilled martial artist and could be replaced (with Karate for example) if a player so wished.\n\n&nbsp;\n\n**As a combat skill, this cannot be pushed.**",
     groups: ["combat", "specialisation"],
@@ -438,7 +438,7 @@ export const skills: Skill[] = [
     pushexamples: "",
     pushconsequences: "",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Fighting skill denotes a character's skill in melee combat. You may spend skill points to purchase any skill specialization. The generic Fighting skill cannot be purchased. Choose Fighting specializations appropriate to your investigator's occupation and history.\n\n&nbsp;\n\n Those starting the game with a Fighting (Brawl) skill of 50% or higher may wish to choose some type of formal training as part of their background to account for his or her skill level. A myriad of fighting styles exist, each with its own pros and cons. Martial arts are simply a way of developing a person's Fighting skill. Decide how the character learned to fight, whether it be formal military training, martial arts classes, or learned the hard way as a result of street-fighting. The term \"brawl\" might feel too crude for a skilled martial artist and could be replaced (with Karate for example) if a player so wished.\n\n&nbsp;\n\n**As a combat skill, this cannot be pushed.**",
     groups: ["combat", "specialisation"],
@@ -451,7 +451,7 @@ export const skills: Skill[] = [
     pushexamples: "",
     pushconsequences: "",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Fighting skill denotes a character's skill in melee combat. You may spend skill points to purchase any skill specialization. The generic Fighting skill cannot be purchased. Choose Fighting specializations appropriate to your investigator's occupation and history.\n\n&nbsp;\n\n Those starting the game with a Fighting (Brawl) skill of 50% or higher may wish to choose some type of formal training as part of their background to account for his or her skill level. A myriad of fighting styles exist, each with its own pros and cons. Martial arts are simply a way of developing a person's Fighting skill. Decide how the character learned to fight, whether it be formal military training, martial arts classes, or learned the hard way as a result of street-fighting. The term \"brawl\" might feel too crude for a skilled martial artist and could be replaced (with Karate for example) if a player so wished.\n\n&nbsp;\n\n**As a combat skill, this cannot be pushed.**",
     groups: ["combat", "specialisation"],
@@ -465,7 +465,7 @@ export const skills: Skill[] = [
     pushexamples: "",
     pushconsequences: "",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Covers all manner of firearms, as well as bows and crossbows. You may spend skill points to purchase any skill specialization. The generic Firearms skill cannot be purchased. Choose specializations appropriate to your investigator's occupation and history.\n\n&nbsp;\n\nNote: as a combat skill, this cannot be pushed.",
     groups: ["combat", "specialisation"],
@@ -479,7 +479,7 @@ export const skills: Skill[] = [
     pushexamples: "",
     pushconsequences: "",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Covers all manner of firearms, as well as bows and crossbows. You may spend skill points to purchase any skill specialization. The generic Firearms skill cannot be purchased. Choose specializations appropriate to your investigator's occupation and history.\n\n&nbsp;\n\nNote: as a combat skill, this cannot be pushed.",
     groups: ["combat", "specialisation"],
@@ -493,7 +493,7 @@ export const skills: Skill[] = [
     pushexamples: "",
     pushconsequences: "",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Covers all manner of firearms, as well as bows and crossbows. You may spend skill points to purchase any skill specialization. The generic Firearms skill cannot be purchased. Choose specializations appropriate to your investigator's occupation and history.\n\n&nbsp;\n\nNote: as a combat skill, this cannot be pushed.",
     groups: ["combat", "specialisation"],
@@ -506,7 +506,7 @@ export const skills: Skill[] = [
     pushexamples: "",
     pushconsequences: "",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Covers all manner of firearms, as well as bows and crossbows. You may spend skill points to purchase any skill specialization. The generic Firearms skill cannot be purchased. Choose specializations appropriate to your investigator's occupation and history.\n\n&nbsp;\n\nNote: as a combat skill, this cannot be pushed.",
     groups: ["combat", "specialisation"],
@@ -520,7 +520,7 @@ export const skills: Skill[] = [
     pushexamples: "",
     pushconsequences: "",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Covers all manner of firearms, as well as bows and crossbows. You may spend skill points to purchase any skill specialization. The generic Firearms skill cannot be purchased. Choose specializations appropriate to your investigator's occupation and history.\n\n&nbsp;\n\nNote: as a combat skill, this cannot be pushed.",
     groups: ["combat", "specialisation"],
@@ -534,7 +534,7 @@ export const skills: Skill[] = [
     pushexamples: "",
     pushconsequences: "",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Covers all manner of firearms, as well as bows and crossbows. You may spend skill points to purchase any skill specialization. The generic Firearms skill cannot be purchased. Choose specializations appropriate to your investigator's occupation and history.\n\n&nbsp;\n\nNote: as a combat skill, this cannot be pushed.",
     groups: ["combat", "specialisation"],
@@ -548,7 +548,7 @@ export const skills: Skill[] = [
     pushexamples: "",
     pushconsequences: "",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Covers all manner of firearms, as well as bows and crossbows. You may spend skill points to purchase any skill specialization. The generic Firearms skill cannot be purchased. Choose specializations appropriate to your investigator's occupation and history.\n\n&nbsp;\n\nNote: as a combat skill, this cannot be pushed.",
     groups: ["combat", "specialisation"],
@@ -564,7 +564,7 @@ export const skills: Skill[] = [
     pushconsequences:
       'Make things worse, causing an additional point of damage. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she feels compelled to "heal" the person, even if it means amputation or worse. In effect their endeavors constitute physical attacks that may lead to murder if they are not stopped.',
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -579,7 +579,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "Consultations alert your adversaries, who become aware of your intent; your facts are erroneous and lead you into danger; much time and money is wasted on fruitless research. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she is convinced that they are somehow displaced in time, or perhaps they start believing they are living in a historic period, dressing and speaking in an archaic manner.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -594,7 +594,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "Some past memory or trauma is bought to the surface, causing the target 1D6 Sanity loss; the target falls into a trance, causing them to walk in front of a bus at a later time; the target's mind (or the investigator's mind) is temporarily emptied, allowing possession by a malevolent entity. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, his or her mind regresses to a childlike state until treatment is administered.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "Uncommon skill.",
     groups: [],
   },
@@ -609,7 +609,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "Accidentally pulling the trigger of the gun you're waving in the target's face; the target's mind snaps, resulting in violence or inane babbling,after which no more can be gained; the target simply laughs in your face and won't break no matter what you do; the target somehow turns the tables and intimidates the intimidator. \n\n&nbsp;\n\nIt is important to note that Pushing an Intimidate roll means taking things to the limit. This could involve days of interrogation, or an ultimatum with a gun to the head. Either way, a pushed roll either gains the required information or renders some kind of end to the situation. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she becomes intensely fearful of the target and does their bidding",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: ["interpersonal"],
   },
@@ -624,7 +624,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "Fall and suffer physical harm; achieve the jump but a valuable possession (of the Keeper's choice) is dropped in the process. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she will become convinced that they can fly.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -639,7 +639,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "Exaggerated or loud discussions between investigators and third parties alert some enemy faction to the investigators' intentions; a word or phrase is misunderstood (perhaps the meaning is reversed); the listener takes offense to an unintentional slur, and they respond with their fists, or turn everyone in the neighborhood against you. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she begins to speak in tongues, or imagines that they are using the Enochian language.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Suggestions regarding the Other Languages skill:\n\n• At 5% skill a language can be correctly identified without need for a roll.\n\n• At 10% skill simple ideas can be communicated.\n\n• At 30% transactional requests can be understood.\n\n• At 50% skill a person is fluent.\n\n• At 75% skill in a character can pass for a native speaker of a foreign language.\n\n• To identify a present-day human language (unknown to the investigator), use an EDU roll.\n\n• To identify an extinct human language, use an **[Archaeology](/skills#archaeology)** or **[History](/skills#history)** roll.\n\n• To identify an alien language, use a **[Cthulhu Mythos](/skills#cthulhumythos)** or possibly an **[Occult](/skills#occult)** roll.",
     groups: ["specialisation"],
@@ -655,7 +655,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "Exaggerated or loud discussions between investigators and third parties alert some enemy faction to the investigators' intentions; a word or phrase is misunderstood (perhaps the meaning is reversed); the listener takes offense to an unintentional slur, and they respond with their fists, or turn everyone in the neighborhood against you. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she begins to speak in tongues, or imagines that they are using the Enochian language.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -670,7 +670,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "Misinterpreting a law or stepping outside of the accepted legal procedure leads you to break the law and draws police attention; wasting valuable time and money on research and legal fees; you are held in contempt of court and thrown in the cells for at least 24 hours. \n\n&nbsp;\n\nIf a pushed roll is failed, an insane investigator will now believe that he or she is above the law.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -685,7 +685,7 @@ export const skills: Skill[] = [
     pushconsequences:
       'Finding a similar book, containing misleading information, which will lead the investigators into danger; entanglement with an adversary—perhaps they are alerted to your research and act against you, or they check out the book you are searching for (or simply tear out the pages in question); getting into an argument with the librarian, resulting in your library membership being revoked.\n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she hoards books, cutting out pages to stick to their bedroom wall, making copious bizarre notes, linking the pages with threads of cotton and pins. Alternatively, the investigator is obsessed with finding the "correct" book or piece of information, spending all of their time pilfering and poring over books.',
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -700,7 +700,7 @@ export const skills: Skill[] = [
     pushconsequences:
       'The "thing" has caught you unawares; you misheard the conversation and get the facts mixed up; you are caught trying to eavesdrop, and  nd yourself in a very embarrassing predicament.\n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she becomes overly sensitive to all sounds and is unable to operate without earplugs or similar',
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: ["perception"],
   },
@@ -715,7 +715,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The lock is damaged beyond repair (perhaps your lock pick has snapped off inside the lock); you break the puzzle box (perhaps only smashing it will open it now); you trip an alarm, or make enough noise for someone or something to come looking.\n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she gives up on the lock in question and realizes the higher purpose of unlocking their own mind; a veil has been lifted from their eyes, and they see the world in a new way that makes complete sense to them, but no sense to anyone of sound mind.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -730,7 +730,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "You have broken the device beyond repair; you hurt yourself while working on the device (perhaps cutting your hand, etc.);you become obsessed with the device and find you have spent the whole day and night working on it. \n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she fills a telephone directory-sized notepad with scribbled designs, culminating in the creation of a bizarre device using organic matter and household appliances",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -745,7 +745,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "You misdiagnose the ailment and you worsen the patient's condition (perhaps even killing them); your good standing comes into question and you are investigated for malpractice. In the case of a dying character, if a pushed Medicine roll is failed, the patient dies.\n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, the results will be disturbing in the extreme, perhaps involving amputation or blood poisoning as a result of failed attempts to graft animal parts to the person.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "**1920s Medicine**\n\n&nbsp;\n\nThe Great War results in X-ray machines that are fast and portable. Insulin is isolated in 1922. Sir Alexander Fleming discovers penicillin in 1928. By the end of the decade, radiation therapy is being administered to cancer patients. Nitrous Oxide is still the best general anesthetic, despite tests with ethylene and acetylene. Cocaine is still the best topical anesthetic, although it is quickly being replaced by synthetic Novocaine. Morphine, although regulated by the Federal Government, is the best massive painkiller and, despite its addictive quality, has still not completely lost its early wonder-drug image. Antibiotics are non-existent, and quinine is still used to treat such things as malaria and yellow fever. State-mandated vaccinations have nearly eliminated smallpox as a threat, and successes have been obtained against typhoid-type diseases; however, many others such as cholera and tuberculosis have proved resistant and remain virulent. A worldwide influenza epidemic in 1918-1919 infected twenty million in the U.S., resulting in 850,000 fatalities. It is estimated that the pandemic killed twenty million people. ",
     groups: [],
@@ -761,7 +761,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "You spend long hours obsessively poring over books to identify the species; you get the facts wrong, and instead of the wasps being repelled by your concoction of swamp mud and herbs, they are drawn to you (with painful results); you picked the wrong mushroom and find yourself, hours later, walking naked towards a policeman.\n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she goes native and will be lost in the wilderness until friends come to their aid.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -776,7 +776,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "You get lost and find yourself being watched or ambushed by a bear; you go round and round in circles, and your companions stop following you (you're on your own now…); you mistake the stars, and rather than getting away from the cultists' search parties, you end up back at the cult's hidden base.\n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she throws away the map (as happens in the Blair Witch Project) and follows their intuition. Their intuition does not work.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -791,7 +791,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "Information is misremembered, and the ritual is performed incorrectly with disastrous consequences (perhaps the house is burned to the ground); in preparing the circle of protection, you use the wrong ingredients, and rather than ward off the spirits you genuinely summon something malevolent; your research has uncovered a hitherto unknown Mythos link, and your realization shatters your mind (SAN loss).\n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, this is likely to manifest in some form on obsession: perhaps the investigator tattoos occult symbols upon his or her cheeks and palms, or cannot act without first using a scrying crystal to divine their future.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -806,7 +806,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "You're driving the bulldozer, but get overconfident, and lose control so it veers into a brick wall (the wall comes down on you, or perhaps worse).\n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she may believe they are tasked with unearthing or building a temple to the old ones. ",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -821,7 +821,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The target takes great o ence and refuses to have any more to do with you; your bribe worked and the target signed the forms—however in the cold light of morning they feel they have been duped, and now their solicitor has employed a private eye to  nd out what you're up to, or is suing you for malpractice; the target doesn't like your big talk and, from out of nowhere, they pull a knife on you; you persuaded the security guard to turn a blind eye to your robbery—however they lose their job and, wracked with guilt, they commit suicide (the full implications of your actions hit you and you lose Sanity for causing the death of an innocent).\n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, they may be found later on a street corner trying to convince passersby of their argument or bizarre point of view.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: ["interpersonal"],
   },
@@ -836,7 +836,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The results of a failed roll should  t the situation. It may be that the craft is somehow damaged, and repairs will have to be made before it can be used again (which may prove impossible in remote locations); passengers are injured during the maneuver or accident; you emergency-landed the plane in the jungle, and awake tied to large stones that circle a huge, bubbling cooking pot. Reserve burning wrecks for exceptional circumstances, such as when the pilot is insane, or when taking a crazy risk at high speed.\n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she will believe that they are capable of death-defying stunts. They are not.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "The air or water equivalent of Drive Automobile, this is the maneuver skill for flying or floating craft. You may spend skill points to purchase any skill specialization.\n\n&nbsp;\n\nAnyone with modest skill can sail or fly on a calm day with good visibility, although skill rolls are required for storms, navigation by instrument, low visibility, and other difficult situations. Bad weather, poor visibility, and damage may raise the difficulty level of skill rolls to pilot air and watercraft. \n\n&nbsp;\n\nAn investigator might have several versions of this skill in the spaces on the investigator sheet (such as Pilot Aircraft, Pilot Dirigible, etc.). Each starts at 01%. The generic Pilot skill cannot be purchased. ",
     groups: [],
@@ -852,7 +852,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The results of a failed roll should fit the situation. It may be that the craft is somehow damaged, and repairs will have to be made before it can be used again (which may prove impossible in remote locations); passengers are injured during the maneuver or accident; you emergency-landed the boat in the jungle, and awake tied to large stones that circle a huge, bubbling cooking pot. Reserve burning wrecks for exceptional circumstances, such as when the pilot is insane, or when taking a crazy risk at high speed.\n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she will believe that they are capable of death-defying stunts. They are not.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "The air or water equivalent of Drive Automobile, this is the maneuver skill for flying or floating craft. You may spend skill points to purchase any skill specialization.\n\n&nbsp;\n\nAnyone with modest skill can sail or fly on a calm day with good visibility, although skill rolls are required for storms, navigation by instrument, low visibility, and other difficult situations. Bad weather, poor visibility, and damage may raise the difficulty level of skill rolls to pilot air and watercraft. \n\n&nbsp;\n\nAn investigator might have several versions of this skill in the spaces on the investigator sheet (such as Pilot Aircraft, Pilot Dirigible, etc.). Each starts at 01%. The generic Pilot skill cannot be purchased. ",
     groups: ["specialisation"],
@@ -868,7 +868,7 @@ export const skills: Skill[] = [
     pushconsequences:
       'Curing the patient\'s fear of spiders by locking them in a room full of tarantulas backfires as the patient goes berserk (possible damage to self and to others) and now thinks they are the "spider king" (the patient now has a new mania and has lost additional Sanity points—the therapist should make a Sanity roll too, as their actions caused this!) \n\n&nbsp;\n\n Much like the blind leading the blind, it is possible for an insane character to practice psychoanalysis. An insane character who fails a pushed roll could seek to become a cult leader, with his or her patients as recruits.',
     source: "base",
-    restriction: null,
+    restriction: "Classic",
     notes: "",
     groups: [],
   },
@@ -883,7 +883,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "You somehow reveal your own motivations to the target; the target is o ended by your prying questions or curious stare, and refuses to speak with you further, or takes action against you (perhaps violence or a call to the police); unknown to you, the target is connected with your adversaries, and you unwittingly reveal your own agenda to them; spending all week locked in your room in order to build the profile has left you a physical and mental wreck (Penalty die to all rolls until you recover).\n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she believes that they hear the target's evil thoughts, and launches a physical attack upon them",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: ["perception"],
   },
@@ -898,7 +898,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The target becomes aware that you are watching them intently, and takes offense and confronts you; the drunken man across the bar is angered, mistakenly thinking that you are looking at him, and punches you; you are so intent on the target that you miss what is happening in your close proximity (someone steals your case, or you walk into a lamp post). \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, there is plenty of scope for imagining all manner of strange and bizarre things being said.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "Uncommon skill",
     groups: [],
   },
@@ -913,7 +913,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The rider is thrown from mount and takes falling damage; mount is injured; rider's foot is entangled in the mount's bridle and the rider ends up being dragged for some distance. \n\n&nbsp;\n\n  If an insane investigator fails a pushed roll, he or she becomes obsessed with the animal.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -928,7 +928,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The experiment goes completely awry, causing unforeseen damage (explosion, fire, electrical shock, expulsion to the sixth dimension, etc.); you misinterpret the information and so incorrectly prepare the formulae for the magical powder, with disastrous results. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she begins to explore an aspect of weird science related to their specialization.  is may ultimately lead to actual developments akin to those of Crawford Tillinghast (from Lovecraft's story *From Beyond*).",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Practical and theoretical ability with a science specialty would suggest some degree of formalized education and training, although a well-read amateur scientist may also be a possibility. Understanding and scope is limited by the era of play. You may spend skill points to purchase any skill specialization. The generic Science skill cannot be purchased.\n\n&nbsp;\n\nEach specialty covers a particular discipline and the list given is not exhaustive. Many specialties cross and overlap in knowledge, for example Mathematics and Cryptography, Botany and Biology, Chemistry and Pharmacy. When a character does not have the obvious discipline specialty, they may roll against an allied specialty with the level of difficulty increased (or a Penalty die) at the Keeper's discretion. ",
     groups: ["specialisation"],
@@ -944,7 +944,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The experiment goes completely awry, causing unforeseen damage (explosion, fire, electrical shock, expulsion to the sixth dimension, etc.); you misinterpret the information and so incorrectly prepare the formulae for the magical powder, with disastrous results. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she begins to explore an aspect of weird science related to their specialization.  is may ultimately lead to actual developments akin to those of Crawford Tillinghast (from Lovecraft's story *From Beyond*).",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Practical and theoretical ability with a science specialty would suggest some degree of formalized education and training, although a well-read amateur scientist may also be a possibility. Understanding and scope is limited by the era of play. You may spend skill points to purchase any skill specialization. The generic Science skill cannot be purchased.\n\n&nbsp;\n\nEach specialty covers a particular discipline and the list given is not exhaustive. Many specialties cross and overlap in knowledge, for example Mathematics and Cryptography, Botany and Biology, Chemistry and Pharmacy. When a character does not have the obvious discipline specialty, they may roll against an allied specialty with the level of difficulty increased (or a Penalty die) at the Keeper's discretion. ",
     groups: ["specialisation"],
@@ -960,7 +960,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The experiment goes completely awry, causing unforeseen damage (explosion, fire, electrical shock, expulsion to the sixth dimension, etc.); you misinterpret the information and so incorrectly prepare the formulae for the magical powder, with disastrous results. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she begins to explore an aspect of weird science related to their specialization.  is may ultimately lead to actual developments akin to those of Crawford Tillinghast (from Lovecraft's story *From Beyond*).",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Practical and theoretical ability with a science specialty would suggest some degree of formalized education and training, although a well-read amateur scientist may also be a possibility. Understanding and scope is limited by the era of play. You may spend skill points to purchase any skill specialization. The generic Science skill cannot be purchased.\n\n&nbsp;\n\nEach specialty covers a particular discipline and the list given is not exhaustive. Many specialties cross and overlap in knowledge, for example Mathematics and Cryptography, Botany and Biology, Chemistry and Pharmacy. When a character does not have the obvious discipline specialty, they may roll against an allied specialty with the level of difficulty increased (or a Penalty die) at the Keeper's discretion. ",
     groups: ["specialisation"],
@@ -976,7 +976,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The experiment goes completely awry, causing unforeseen damage (explosion, fire, electrical shock, expulsion to the sixth dimension, etc.); you misinterpret the information and so incorrectly prepare the formulae for the magical powder, with disastrous results. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she begins to explore an aspect of weird science related to their specialization.  is may ultimately lead to actual developments akin to those of Crawford Tillinghast (from Lovecraft's story *From Beyond*).",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Practical and theoretical ability with a science specialty would suggest some degree of formalized education and training, although a well-read amateur scientist may also be a possibility. Understanding and scope is limited by the era of play. You may spend skill points to purchase any skill specialization. The generic Science skill cannot be purchased.\n\n&nbsp;\n\nEach specialty covers a particular discipline and the list given is not exhaustive. Many specialties cross and overlap in knowledge, for example Mathematics and Cryptography, Botany and Biology, Chemistry and Pharmacy. When a character does not have the obvious discipline specialty, they may roll against an allied specialty with the level of difficulty increased (or a Penalty die) at the Keeper's discretion. ",
     groups: ["specialisation"],
@@ -992,7 +992,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The experiment goes completely awry, causing unforeseen damage (explosion, fire, electrical shock, expulsion to the sixth dimension, etc.); you misinterpret the information and so incorrectly prepare the formulae for the magical powder, with disastrous results. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she begins to explore an aspect of weird science related to their specialization.  is may ultimately lead to actual developments akin to those of Crawford Tillinghast (from Lovecraft's story *From Beyond*).",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Practical and theoretical ability with a science specialty would suggest some degree of formalized education and training, although a well-read amateur scientist may also be a possibility. Understanding and scope is limited by the era of play. You may spend skill points to purchase any skill specialization. The generic Science skill cannot be purchased.\n\n&nbsp;\n\nEach specialty covers a particular discipline and the list given is not exhaustive. Many specialties cross and overlap in knowledge, for example Mathematics and Cryptography, Botany and Biology, Chemistry and Pharmacy. When a character does not have the obvious discipline specialty, they may roll against an allied specialty with the level of difficulty increased (or a Penalty die) at the Keeper's discretion. ",
     groups: ["specialisation"],
@@ -1008,7 +1008,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The experiment goes completely awry, causing unforeseen damage (explosion, fire, electrical shock, expulsion to the sixth dimension, etc.); you misinterpret the information and so incorrectly prepare the formulae for the magical powder, with disastrous results. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she begins to explore an aspect of weird science related to their specialization.  is may ultimately lead to actual developments akin to those of Crawford Tillinghast (from Lovecraft's story *From Beyond*).",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Practical and theoretical ability with a science specialty would suggest some degree of formalized education and training, although a well-read amateur scientist may also be a possibility. Understanding and scope is limited by the era of play. You may spend skill points to purchase any skill specialization. The generic Science skill cannot be purchased.\n\n&nbsp;\n\nEach specialty covers a particular discipline and the list given is not exhaustive. Many specialties cross and overlap in knowledge, for example Mathematics and Cryptography, Botany and Biology, Chemistry and Pharmacy. When a character does not have the obvious discipline specialty, they may roll against an allied specialty with the level of difficulty increased (or a Penalty die) at the Keeper's discretion. ",
     groups: ["specialisation"],
@@ -1024,7 +1024,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The experiment goes completely awry, causing unforeseen damage (explosion, fire, electrical shock, expulsion to the sixth dimension, etc.); you misinterpret the information and so incorrectly prepare the formulae for the magical powder, with disastrous results. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she begins to explore an aspect of weird science related to their specialization.  is may ultimately lead to actual developments akin to those of Crawford Tillinghast (from Lovecraft's story *From Beyond*).",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Practical and theoretical ability with a science specialty would suggest some degree of formalized education and training, although a well-read amateur scientist may also be a possibility. Understanding and scope is limited by the era of play. You may spend skill points to purchase any skill specialization. The generic Science skill cannot be purchased.\n\n&nbsp;\n\nEach specialty covers a particular discipline and the list given is not exhaustive. Many specialties cross and overlap in knowledge, for example Mathematics and Cryptography, Botany and Biology, Chemistry and Pharmacy. When a character does not have the obvious discipline specialty, they may roll against an allied specialty with the level of difficulty increased (or a Penalty die) at the Keeper's discretion. ",
     groups: ["specialisation"],
@@ -1040,7 +1040,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The experiment goes completely awry, causing unforeseen damage (explosion, fire, electrical shock, expulsion to the sixth dimension, etc.); you misinterpret the information and so incorrectly prepare the formulae for the magical powder, with disastrous results. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she begins to explore an aspect of weird science related to their specialization.  is may ultimately lead to actual developments akin to those of Crawford Tillinghast (from Lovecraft's story *From Beyond*).",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Practical and theoretical ability with a science specialty would suggest some degree of formalized education and training, although a well-read amateur scientist may also be a possibility. Understanding and scope is limited by the era of play. You may spend skill points to purchase any skill specialization. The generic Science skill cannot be purchased.\n\n&nbsp;\n\nEach specialty covers a particular discipline and the list given is not exhaustive. Many specialties cross and overlap in knowledge, for example Mathematics and Cryptography, Botany and Biology, Chemistry and Pharmacy. When a character does not have the obvious discipline specialty, they may roll against an allied specialty with the level of difficulty increased (or a Penalty die) at the Keeper's discretion. ",
     groups: ["specialisation"],
@@ -1056,7 +1056,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The experiment goes completely awry, causing unforeseen damage (explosion, fire, electrical shock, expulsion to the sixth dimension, etc.); you misinterpret the information and so incorrectly prepare the formulae for the magical powder, with disastrous results. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she begins to explore an aspect of weird science related to their specialization.  is may ultimately lead to actual developments akin to those of Crawford Tillinghast (from Lovecraft's story *From Beyond*).",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Practical and theoretical ability with a science specialty would suggest some degree of formalized education and training, although a well-read amateur scientist may also be a possibility. Understanding and scope is limited by the era of play. You may spend skill points to purchase any skill specialization. The generic Science skill cannot be purchased.\n\n&nbsp;\n\nEach specialty covers a particular discipline and the list given is not exhaustive. Many specialties cross and overlap in knowledge, for example Mathematics and Cryptography, Botany and Biology, Chemistry and Pharmacy. When a character does not have the obvious discipline specialty, they may roll against an allied specialty with the level of difficulty increased (or a Penalty die) at the Keeper's discretion. ",
     groups: ["specialisation"],
@@ -1072,7 +1072,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The experiment goes completely awry, causing unforeseen damage (explosion, fire, electrical shock, expulsion to the sixth dimension, etc.); you misinterpret the information and so incorrectly prepare the formulae for the magical powder, with disastrous results. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she begins to explore an aspect of weird science related to their specialization.  is may ultimately lead to actual developments akin to those of Crawford Tillinghast (from Lovecraft's story *From Beyond*).",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Practical and theoretical ability with a science specialty would suggest some degree of formalized education and training, although a well-read amateur scientist may also be a possibility. Understanding and scope is limited by the era of play. You may spend skill points to purchase any skill specialization. The generic Science skill cannot be purchased.\n\n&nbsp;\n\nEach specialty covers a particular discipline and the list given is not exhaustive. Many specialties cross and overlap in knowledge, for example Mathematics and Cryptography, Botany and Biology, Chemistry and Pharmacy. When a character does not have the obvious discipline specialty, they may roll against an allied specialty with the level of difficulty increased (or a Penalty die) at the Keeper's discretion. ",
     groups: ["specialisation"],
@@ -1088,7 +1088,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The experiment goes completely awry, causing unforeseen damage (explosion, fire, electrical shock, expulsion to the sixth dimension, etc.); you misinterpret the information and so incorrectly prepare the formulae for the magical powder, with disastrous results. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she begins to explore an aspect of weird science related to their specialization.  is may ultimately lead to actual developments akin to those of Crawford Tillinghast (from Lovecraft's story *From Beyond*).",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Practical and theoretical ability with a science specialty would suggest some degree of formalized education and training, although a well-read amateur scientist may also be a possibility. Understanding and scope is limited by the era of play. You may spend skill points to purchase any skill specialization. The generic Science skill cannot be purchased.\n\n&nbsp;\n\nEach specialty covers a particular discipline and the list given is not exhaustive. Many specialties cross and overlap in knowledge, for example Mathematics and Cryptography, Botany and Biology, Chemistry and Pharmacy. When a character does not have the obvious discipline specialty, they may roll against an allied specialty with the level of difficulty increased (or a Penalty die) at the Keeper's discretion. ",
     groups: ["specialisation"],
@@ -1104,7 +1104,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The experiment goes completely awry, causing unforeseen damage (explosion, fire, electrical shock, expulsion to the sixth dimension, etc.); you misinterpret the information and so incorrectly prepare the formulae for the magical powder, with disastrous results. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she begins to explore an aspect of weird science related to their specialization.  is may ultimately lead to actual developments akin to those of Crawford Tillinghast (from Lovecraft's story *From Beyond*).",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Practical and theoretical ability with a science specialty would suggest some degree of formalized education and training, although a well-read amateur scientist may also be a possibility. Understanding and scope is limited by the era of play. You may spend skill points to purchase any skill specialization. The generic Science skill cannot be purchased.\n\n&nbsp;\n\nEach specialty covers a particular discipline and the list given is not exhaustive. Many specialties cross and overlap in knowledge, for example Mathematics and Cryptography, Botany and Biology, Chemistry and Pharmacy. When a character does not have the obvious discipline specialty, they may roll against an allied specialty with the level of difficulty increased (or a Penalty die) at the Keeper's discretion. ",
     groups: ["specialisation"],
@@ -1120,7 +1120,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The experiment goes completely awry, causing unforeseen damage (explosion, fire, electrical shock, expulsion to the sixth dimension, etc.); you misinterpret the information and so incorrectly prepare the formulae for the magical powder, with disastrous results. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she begins to explore an aspect of weird science related to their specialization.  is may ultimately lead to actual developments akin to those of Crawford Tillinghast (from Lovecraft's story *From Beyond*).",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes:
       "Practical and theoretical ability with a science specialty would suggest some degree of formalized education and training, although a well-read amateur scientist may also be a possibility. Understanding and scope is limited by the era of play. You may spend skill points to purchase any skill specialization. The generic Science skill cannot be purchased.\n\n&nbsp;\n\nEach specialty covers a particular discipline and the list given is not exhaustive. Many specialties cross and overlap in knowledge, for example Mathematics and Cryptography, Botany and Biology, Chemistry and Pharmacy. When a character does not have the obvious discipline specialty, they may roll against an allied specialty with the level of difficulty increased (or a Penalty die) at the Keeper's discretion. ",
     groups: ["specialisation"],
@@ -1136,7 +1136,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "You feel a policeman's hand on your shoulder; while no one can prove you pick-pocketed the priceless diamond, someone has their suspicions and you begin to notice that for the last week you have been tailed by a mysterious dark  gure; you're caught red-handed and the mobster doesn't take kindly to thieves! You're taken out back and shown the business end of a couple of baseball bats. If an insane investigator fails a pushed roll, he or she acts like a kleptomaniac.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -1151,7 +1151,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "Inadvertently drop something of your own while searching, which will make it clear that you have been there (the investigator will not realize this at the time); you fail to the spot the paw print in the mud and are surprised when the red-eyed beast leaps at you from the trees; while you managed to find a clue, you didn't notice the cultists arriving home. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she is convinced that something is there and that they will find it under the wallpaper, hidden in the plaster, or beneath the floorboards.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: ["perception"],
   },
@@ -1166,7 +1166,7 @@ export const skills: Skill[] = [
     pushconsequences:
       'Unbeknown to you, you have been spotted and rather than approach you directly, the cultists decide to summon "something" to get you; you hear the cupboard door behind which you are hiding being locked then nailed shut. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll the investigator may believe he or she is invisible, when in fact everyone can see them.',
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -1181,7 +1181,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The cave you found is inhabited by an angry bear; having burned all of your clothes to make a signal fire, you have given away your position to your pursuers—will your rescuers reach before the pursuers do?\n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she believes themselves to be impervious to the elements and able to exist as a breatharian (able to exist without food and water).",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: ["specialisation"],
   },
@@ -1196,7 +1196,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The current pulls you under and you lose consciousness, awaking on an unknown beach; you are pulled under and are injured by being dashed against rocks; you strive for the lifeboat and, just as you make it, you feel something cold and slimy grab your ankle. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she keeps on swimming and probably considers dry ground dangerous for some reason",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -1211,7 +1211,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "You send the object  ying to your companion as you stumble and fall, hitting your head against the jagged rocks; you throw too hard and the object flies over the high church wall into the graveyard; the dynamite stick slips from your hand—you look for it in vain but fail to see it in your hood, and only then do you smell the burning fuse. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she will refuse to let go of the item to be thrown.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: [],
   },
@@ -1226,7 +1226,7 @@ export const skills: Skill[] = [
     pushconsequences:
       "The tracks you are following lead you directly into the path of a hungry bear/lion/cannibal; you find yourself going round and round in circles, and night is falling as you realize you are now totally lost; you follow the tracks, only to be ambushed or caught in a trap laid by the thing you are following. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she will compulsively follow any tracks (convinced they are the right ones) until they are physically restrained or convinced otherwise.",
     source: "base",
-    restriction: null,
+    restriction: "",
     notes: "",
     groups: ["perception"],
   }
@@ -1239,7 +1239,7 @@ export const skills: Skill[] = [
   //   pushexamples: "",
   //   pushconsequences: "",
   //   source: "base",
-  //   restriction: null,
+  //   restriction: "",
   //   notes: "",
   //   groups: [],
   // },

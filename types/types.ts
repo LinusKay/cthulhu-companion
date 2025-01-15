@@ -6,7 +6,7 @@ export interface Occupation {
   skillpoints: string;
   suggestedcontacts: string;
   skills: (string | (string | number)[])[];
-  restriction: string | null;
+  restriction: string;
   source: string;
   notes: string;
 }
@@ -19,7 +19,7 @@ export interface Skill {
   pushexamples: string | null;
   pushconsequences: string | null;
   source: string;
-  restriction: string | null;
+  restriction: string;
   notes: string | null;
   groups: string[];
 }
