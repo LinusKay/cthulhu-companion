@@ -10,6 +10,8 @@ import {
   FaFistRaised,
   FaComment,
   FaLink,
+  FaEye,
+  FaAsterisk,
 } from "react-icons/fa";
 import { ScrollShadow } from "@nextui-org/scroll-shadow";
 import Markdown from "react-markdown";
@@ -68,34 +70,38 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
       className={`relative p-1 ${highlighted ? "outline outline-2 outline-blue-500" : ""}`}
       id={skill.key}
     >
-      <CardHeader className="justify-between">
+      <CardHeader>
         <div className="flex gap-5 w-full">
-          <p className="text-lg font-bold flex items-center">
-            {skill.group == "combat" && (
+          <p className="text-lg w-full font-bold flex items-center">
+            {skill.groups.includes("combat") && (
               <Tooltip content="Combat skill - cannot be pushed during combat">
                 <FaFistRaised className="mr-2 opacity-50 cursor-help" />
               </Tooltip>
             )}
-            {skill.group == "interpersonal" && (
+            {skill.groups.includes("interpersonal") && (
               <Tooltip content="Interpersonal skill">
                 <FaComment className="mr-2 opacity-50 cursor-help" />
               </Tooltip>
             )}
-            <span className="mr-1">{skill.label}</span>
-            <Tooltip content="Base unskilled chance to succeed">
-              <span className="text-default-500 cursor-help">
-                {" "}
-                ({skill.base * 100}%)
-              </span>
-            </Tooltip>
+            {skill.groups.includes("perception") && (
+              <Tooltip content="Perception skill">
+                <FaEye className="mr-2 opacity-50 cursor-help" />
+              </Tooltip>
+            )}
+            {skill.groups.includes("specialisation") && (
+              <Tooltip content="Skill specialisation">
+                <FaAsterisk className="mr-2 opacity-50 cursor-help" />
+              </Tooltip>
+            )}
+            <span className="mr-1 text-left">
+              {skill.label}
+              <Tooltip content="Base unskilled chance to succeed">
+                <span className="ml-1 text-default-500 cursor-help">
+                  ({skill.base * 100}%)
+                </span>
+              </Tooltip>
+            </span>
           </p>
-          {skill.restriction && (
-            <Tooltip content="This skill should only be used in certain settings.">
-              <p className="text-small text-default-500">
-                Restriction: {skill.restriction}
-              </p>
-            </Tooltip>
-          )}
           <FaLink
             className="ml-auto opacity-20 hover:opacity-50 cursor-pointer"
             title="Copy to clipboard"
@@ -104,6 +110,15 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
         </div>
       </CardHeader>
       <CardBody>
+        <div>
+          {skill.restriction && (
+            <Tooltip content="This skill should only be used in certain settings.">
+              <p className="text-small text-default-500">
+                Restriction: {skill.restriction}
+              </p>
+            </Tooltip>
+          )}
+        </div>
         <ScrollShadow className="max-h-[250px]">
           <Markdown className="text-md" remarkPlugins={[remarkGfm]}>
             {skill.description}
@@ -160,6 +175,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
               key="3"
               aria-label="Notes"
               startContent={<FaStickyNote className="opacity-50" />}
+              subtitle="Further helpful information"
               title="Notes"
             >
               <Markdown

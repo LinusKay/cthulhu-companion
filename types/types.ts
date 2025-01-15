@@ -21,5 +21,5 @@ export interface Skill {
   source: string;
   restriction: string | null;
   notes: string | null;
-  group: string | null;
+  groups: string[];
 }
