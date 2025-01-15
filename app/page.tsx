@@ -69,7 +69,7 @@ export default function Home() {
     creditrating: [],
     suggestedcontacts: "",
     skills: [],
-    restriction: null,
+    restriction: "",
     source: "",
     notes: "",
   });

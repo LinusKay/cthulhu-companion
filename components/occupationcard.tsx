@@ -11,6 +11,7 @@ import { FaBrain, FaLink, FaUserFriends } from "react-icons/fa";
 import { useEffect, useState } from "react";
 
 import { Occupation } from "@/types/types";
+import { Alert } from "@nextui-org/alert";
 
 interface OccupationCardProps {
   occupation: Occupation;
@@ -140,6 +141,13 @@ const OccupationCard: React.FC<OccupationCardProps> = ({ occupation }) => {
               </Markdown>
             </AccordionItem>
           </Accordion>
+        </div>
+      )}
+      {showAlert && (
+        <div className="fixed bottom-5 right-5 z-50">
+          <Alert color="primary">
+            {occupation.label} link copied to clipboard!
+          </Alert>
         </div>
       )}
     </Card>
