@@ -702,7 +702,7 @@ export const skills: Skill[] = [
     source: "base",
     restriction: null,
     notes: "",
-    groups: [],
+    groups: ["perception"],
   },
   {
     key: "locksmith",
@@ -1189,10 +1189,12 @@ export const skills: Skill[] = [
     key: "swim",
     label: "Swim",
     base: 0.2,
-    description: "The ability to float and to move through water or other liquid. Only roll Swim in times of crisis or danger, or when the Keeper judges it appropriate. Failing a pushed Swim roll can result in loss of hit points. It may also lead to the person being washed away downstream, partially or completely drowned.",
+    description:
+      "The ability to float and to move through water or other liquid. Only roll Swim in times of crisis or danger, or when the Keeper judges it appropriate. Failing a pushed Swim roll can result in loss of hit points. It may also lead to the person being washed away downstream, partially or completely drowned.",
     pushexamples:
       'Taking a big breath and really "going for it" with all your remaining strength; pushing your physical limits.',
-    pushconsequences: "The current pulls you under and you lose consciousness, awaking on an unknown beach; you are pulled under and are injured by being dashed against rocks; you strive for the lifeboat and, just as you make it, you feel something cold and slimy grab your ankle. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she keeps on swimming and probably considers dry ground dangerous for some reason",
+    pushconsequences:
+      "The current pulls you under and you lose consciousness, awaking on an unknown beach; you are pulled under and are injured by being dashed against rocks; you strive for the lifeboat and, just as you make it, you feel something cold and slimy grab your ankle. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she keeps on swimming and probably considers dry ground dangerous for some reason",
     source: "base",
     restriction: null,
     notes: "",
@@ -1202,9 +1204,12 @@ export const skills: Skill[] = [
     key: "throw",
     label: "Throw",
     base: 0.2,
-    description: "Throw to hit a target with an object. A palm-sized object can be hurled up to STR divided by 5 in yards. The effective range can be extended up to STR divided by 2 in yards, but a penalty die is applied to the Throw roll.\n\n&nbsp;\n\nIf the Throw roll fails, the object lands at a random distance from the target. The Keeper should compare the closeness of the die roll result to the highest number which would have indicated success and choose a distance between the target and object that feels comparable. \n\n&nbsp;\n\n The Throw skill is used in combat when throwing rocks, spears, grenades, or boomerangs. \n\n&nbsp;\n\n Once an item has been thrown, it is quite literally out of the investigator's hands and therefore there is nothing the player can do to justify a pushed roll. If multiple missiles are available, there is no risk connected with failure, and it is only a matter of time until the investigator is successful, don't roll dice. If multiple missiles are available and there is a distinct risk connected with failure then the Keeper might ask for a Pushed roll.",
-    pushexamples: "Taking more time to assess the distance or waiting some time for more favorable conditions; putting every ounce of strength into the throw and throwing yourself as you launch the item; throwing a lot of items in quick succession hoping one will hit the target; taking a massive run-up and risking your momentum taking you over the ravine.",
-    pushconsequences: "You send the object  ying to your companion as you stumble and fall, hitting your head against the jagged rocks; you throw too hard and the object flies over the high church wall into the graveyard; the dynamite stick slips from your hand—you look for it in vain but fail to see it in your hood, and only then do you smell the burning fuse. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she will refuse to let go of the item to be thrown.",
+    description:
+      "Throw to hit a target with an object. A palm-sized object can be hurled up to STR divided by 5 in yards. The effective range can be extended up to STR divided by 2 in yards, but a penalty die is applied to the Throw roll.\n\n&nbsp;\n\nIf the Throw roll fails, the object lands at a random distance from the target. The Keeper should compare the closeness of the die roll result to the highest number which would have indicated success and choose a distance between the target and object that feels comparable. \n\n&nbsp;\n\n The Throw skill is used in combat when throwing rocks, spears, grenades, or boomerangs. \n\n&nbsp;\n\n Once an item has been thrown, it is quite literally out of the investigator's hands and therefore there is nothing the player can do to justify a pushed roll. If multiple missiles are available, there is no risk connected with failure, and it is only a matter of time until the investigator is successful, don't roll dice. If multiple missiles are available and there is a distinct risk connected with failure then the Keeper might ask for a Pushed roll.",
+    pushexamples:
+      "Taking more time to assess the distance or waiting some time for more favorable conditions; putting every ounce of strength into the throw and throwing yourself as you launch the item; throwing a lot of items in quick succession hoping one will hit the target; taking a massive run-up and risking your momentum taking you over the ravine.",
+    pushconsequences:
+      "You send the object  ying to your companion as you stumble and fall, hitting your head against the jagged rocks; you throw too hard and the object flies over the high church wall into the graveyard; the dynamite stick slips from your hand—you look for it in vain but fail to see it in your hood, and only then do you smell the burning fuse. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she will refuse to let go of the item to be thrown.",
     source: "base",
     restriction: null,
     notes: "",
@@ -1214,24 +1219,28 @@ export const skills: Skill[] = [
     key: "track",
     label: "Track",
     base: 0.1,
-    description: "With Track, an investigator can follow a person, vehicle, or animal over earth, and through plants/leaves. Factors such as time passed since the tracks were made, rain, and the type With Track, an investigator can follow a person, vehicle, or animal over earth, and through plants/leaves. Factors such as time passed since the tracks were made, rain, and the type of ground covered may affect the difficulty level.",
-    pushexamples: "Backtracking and taking more time to study the area; walking in increasing spirals to locate the tracks (taking longer, possibly making more noise and making oneself more visible).",
-    pushconsequences: "The tracks you are following lead you directly into the path of a hungry bear/lion/cannibal; you find yourself going round and round in circles, and night is falling as you realize you are now totally lost; you follow the tracks, only to be ambushed or caught in a trap laid by the thing you are following. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she will compulsively follow any tracks (convinced they are the right ones) until they are physically restrained or convinced otherwise.",
+    description:
+      "With Track, an investigator can follow a person, vehicle, or animal over earth, and through plants/leaves. Factors such as time passed since the tracks were made, rain, and the type With Track, an investigator can follow a person, vehicle, or animal over earth, and through plants/leaves. Factors such as time passed since the tracks were made, rain, and the type of ground covered may affect the difficulty level.",
+    pushexamples:
+      "Backtracking and taking more time to study the area; walking in increasing spirals to locate the tracks (taking longer, possibly making more noise and making oneself more visible).",
+    pushconsequences:
+      "The tracks you are following lead you directly into the path of a hungry bear/lion/cannibal; you find yourself going round and round in circles, and night is falling as you realize you are now totally lost; you follow the tracks, only to be ambushed or caught in a trap laid by the thing you are following. \n\n&nbsp;\n\n If an insane investigator fails a pushed roll, he or she will compulsively follow any tracks (convinced they are the right ones) until they are physically restrained or convinced otherwise.",
     source: "base",
     restriction: null,
     notes: "",
-    groups: [],
-  },
-  {
-    key: "",
-    label: "",
-    base: 0,
-    description: "",
-    pushexamples: "",
-    pushconsequences: "",
-    source: "base",
-    restriction: null,
-    notes: "",
-    groups: [],
-  },
+    groups: ["perception"],
+  }
+  // ,
+  // {
+  //   key: "",
+  //   label: "",
+  //   base: 0,
+  //   description: "",
+  //   pushexamples: "",
+  //   pushconsequences: "",
+  //   source: "base",
+  //   restriction: null,
+  //   notes: "",
+  //   groups: [],
+  // },
 ];
