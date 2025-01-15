@@ -63,12 +63,7 @@ const OccupationCard: React.FC<OccupationCardProps> = ({ occupation }) => {
     >
       <CardHeader>
         <div className="flex flex-col text-left">
-          <p className="text-lg font-bold">
-            {occupation.label}
-            <Tooltip content="Base unskilled chance to succeed">
-              {/* <span className="text-default-500"> ({skill.base * 100}%)</span> */}
-            </Tooltip>
-          </p>
+          <p className="text-lg font-bold">{occupation.label}</p>
           {occupation.restriction && (
             <Tooltip content="This occupation should only be used in certain settings.">
               <p className="text-small text-default-500">

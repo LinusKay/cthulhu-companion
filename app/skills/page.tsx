@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Checkbox } from "@nextui-org/checkbox";
 import { Input } from "@nextui-org/input";
 
+import { title } from "@/components/primitives";
 import SkillCard from "@/components/skillcard";
 import { skills } from "@/data/skills";
 
@@ -55,7 +56,7 @@ export default function SkillsPage() {
 
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-10">
-      <h1 className="text-3xl font-bold">Skills</h1>
+      <h1 className={title()}>Skills</h1>
 
       {/* Search input */}
       <Input

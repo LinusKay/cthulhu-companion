@@ -14,7 +14,7 @@ export interface Occupation {
 export interface Skill {
   key: string;
   label: string;
-  base: number | 0;
+  base: number | string | null;
   description: string;
   pushexamples: string | null;
   pushconsequences: string | null;

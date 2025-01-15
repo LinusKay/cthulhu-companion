@@ -95,11 +95,15 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
             )}
             <span className="mr-1 text-left">
               {skill.label}
-              <Tooltip content="Base unskilled chance to succeed">
-                <span className="ml-1 text-default-500 cursor-help">
-                  ({skill.base * 100}%)
-                </span>
-              </Tooltip>
+              {typeof skill.base === "number" ? (
+                <Tooltip content="Base unskilled chance to succeed">
+                  <span className="ml-1 text-default-500 cursor-help">
+                    {skill.base * 100}%
+                  </span>
+                </Tooltip>
+              ) : typeof skill.base === "string" ? (
+                <span className="ml-1 text-default-500">({skill.base}%)</span>
+              ) : null}
             </span>
           </p>
           <FaLink

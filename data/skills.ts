@@ -90,7 +90,7 @@ export const skills: Skill[] = [
     restriction: "",
     notes:
       "The investigator sheet contains blank spaces for specializations of this skill, for example: Acting, Barber, Carpenter, Cobbler, Cook, Dancer, Fine Art, Forgery, Morris Dancer, Opera Singer, Painter & Decorator, Photographer, Potter, Sculptor, Writer, Woodwork. \n\n&nbsp;\n\nMany of these examples are skills directly linked to a profession, but the skill may just be a leisure pursuit. You may spend skill points to purchase any skill specialization. The generic Art/Craft  skill cannot be purchased. \n\n&nbsp;\n\nAbility with this skill may enable the making or repair of an item—something typically requiring equipment and time, to be determined by the Keeper if necessary. In a situation where graduations of success might be appropriate, a higher level of success indicates the item made is of high quality and/or precision. \n\n&nbsp;\n\nAn art or craft skill might also be used to make a duplicate or fake item. In such a case, the difficulty level would depend on the intricacy and distinctiveness of the original to be copied. In the case of faking documentation, a specific specialization (Forgery) is used. \n\n&nbsp;\n\nA successful roll might provide information about an item, such as where or when it might have been made, some point of history or technique concerning it, or who might have made it. The holder of a specialization would have a breadth of knowledge within a particular field— knowledge of the subject, its history, and contemporary practitioners, as well as the ability to perform it.",
-    groups: [],
+    groups: ["specialisation"],
   },
   {
     key: "artcraft_fineart",
@@ -106,7 +106,7 @@ export const skills: Skill[] = [
     restriction: "",
     notes:
       "The investigator sheet contains blank spaces for specializations of this skill, for example: Acting, Barber, Carpenter, Cobbler, Cook, Dancer, Fine Art, Forgery, Morris Dancer, Opera Singer, Painter & Decorator, Photographer, Potter, Sculptor, Writer, Woodwork. \n\n&nbsp;\n\nMany of these examples are skills directly linked to a profession, but the skill may just be a leisure pursuit. You may spend skill points to purchase any skill specialization. The generic Art/Craft  skill cannot be purchased. \n\n&nbsp;\n\nAbility with this skill may enable the making or repair of an item—something typically requiring equipment and time, to be determined by the Keeper if necessary. In a situation where graduations of success might be appropriate, a higher level of success indicates the item made is of high quality and/or precision. \n\n&nbsp;\n\nAn art or craft skill might also be used to make a duplicate or fake item. In such a case, the difficulty level would depend on the intricacy and distinctiveness of the original to be copied. In the case of faking documentation, a specific specialization (Forgery) is used. \n\n&nbsp;\n\nA successful roll might provide information about an item, such as where or when it might have been made, some point of history or technique concerning it, or who might have made it. The holder of a specialization would have a breadth of knowledge within a particular field— knowledge of the subject, its history, and contemporary practitioners, as well as the ability to perform it.",
-    groups: [],
+    groups: ["specialisation"],
   },
   {
     key: "artcraft_forgery",
@@ -122,7 +122,7 @@ export const skills: Skill[] = [
     restriction: "",
     notes:
       "The investigator sheet contains blank spaces for specializations of this skill, for example: Acting, Barber, Carpenter, Cobbler, Cook, Dancer, Fine Art, Forgery, Morris Dancer, Opera Singer, Painter & Decorator, Photographer, Potter, Sculptor, Writer, Woodwork. \n\n&nbsp;\n\nMany of these examples are skills directly linked to a profession, but the skill may just be a leisure pursuit. You may spend skill points to purchase any skill specialization. The generic Art/Craft  skill cannot be purchased. \n\n&nbsp;\n\nAbility with this skill may enable the making or repair of an item—something typically requiring equipment and time, to be determined by the Keeper if necessary. In a situation where graduations of success might be appropriate, a higher level of success indicates the item made is of high quality and/or precision. \n\n&nbsp;\n\nAn art or craft skill might also be used to make a duplicate or fake item. In such a case, the difficulty level would depend on the intricacy and distinctiveness of the original to be copied. In the case of faking documentation, a specific specialization (Forgery) is used. \n\n&nbsp;\n\nA successful roll might provide information about an item, such as where or when it might have been made, some point of history or technique concerning it, or who might have made it. The holder of a specialization would have a breadth of knowledge within a particular field— knowledge of the subject, its history, and contemporary practitioners, as well as the ability to perform it.",
-    groups: [],
+    groups: ["specialisation"],
   },
   {
     key: "artcraft_photography",
@@ -138,7 +138,7 @@ export const skills: Skill[] = [
     restriction: "",
     notes:
       "The investigator sheet contains blank spaces for specializations of this skill, for example: Acting, Barber, Carpenter, Cobbler, Cook, Dancer, Fine Art, Forgery, Morris Dancer, Opera Singer, Painter & Decorator, Photographer, Potter, Sculptor, Writer, Woodwork. \n\n&nbsp;\n\nMany of these examples are skills directly linked to a profession, but the skill may just be a leisure pursuit. You may spend skill points to purchase any skill specialization. The generic Art/Craft  skill cannot be purchased. \n\n&nbsp;\n\nAbility with this skill may enable the making or repair of an item—something typically requiring equipment and time, to be determined by the Keeper if necessary. In a situation where graduations of success might be appropriate, a higher level of success indicates the item made is of high quality and/or precision. \n\n&nbsp;\n\nAn art or craft skill might also be used to make a duplicate or fake item. In such a case, the difficulty level would depend on the intricacy and distinctiveness of the original to be copied. In the case of faking documentation, a specific specialization (Forgery) is used. \n\n&nbsp;\n\nA successful roll might provide information about an item, such as where or when it might have been made, some point of history or technique concerning it, or who might have made it. The holder of a specialization would have a breadth of knowledge within a particular field— knowledge of the subject, its history, and contemporary practitioners, as well as the ability to perform it.",
-    groups: [],
+    groups: ["specialisation"],
   },
   {
     key: "artillery",
@@ -277,9 +277,9 @@ export const skills: Skill[] = [
   {
     key: "dodge",
     label: "Dodge",
-    base: 0,
+    base: "Half DEX",
     description:
-      "**(Half DEX%)**\n\n&nbsp;\n\nAllows an investigator to instinctively evade blows, thrown missiles, and so forth. A character may attempt to use dodge any number of times in a combat round (but only once per  attack). Dodge can increase through experience, like other skills. If an attack can be seen, a character can try to dodge it. It is impossible to dodge bullets because they cannot be seen when in motion; the best a character can do is to take evasive action that results in being harder to hit (see Diving for Cover in the Call of Cthulhu Rulebook).",
+      "Allows an investigator to instinctively evade blows, thrown missiles, and so forth. A character may attempt to use dodge any number of times in a combat round (but only once per  attack). Dodge can increase through experience, like other skills. If an attack can be seen, a character can try to dodge it. It is impossible to dodge bullets because they cannot be seen when in motion; the best a character can do is to take evasive action that results in being harder to hit (see Diving for Cover in the Call of Cthulhu Rulebook).",
     pushexamples: "",
     pushconsequences: "",
     source: "base",
@@ -647,9 +647,9 @@ export const skills: Skill[] = [
   {
     key: "language_own",
     label: "Language (Own)",
-    base: 0,
+    base: "EDU",
     description:
-      "**(EDU%)\n\n&nbsp;\n\nWhen choosing this skill, the exact language must be speci ed and written next to the skill. In infancy and early childhood, most humans use a single language. The tongue chosen by the player for the Own Language automatically starts as equal to the investigator's EDU characteristic; thereafter, the investigator understands, speaks, reads, and writes at that percentage or higher (if further skill points are added during investigator creation).",
+      "When choosing this skill, the exact language must be speci ed and written next to the skill. In infancy and early childhood, most humans use a single language. The tongue chosen by the player for the Own Language automatically starts as equal to the investigator's EDU characteristic; thereafter, the investigator understands, speaks, reads, and writes at that percentage or higher (if further skill points are added during investigator creation).",
     pushexamples:
       "Taking longer to think through the words you want to say; taking long pauses to answer what you have been told; referencing other books to make a translation.",
     pushconsequences:
@@ -805,6 +805,18 @@ export const skills: Skill[] = [
       "Going step-by-step with the operating manual; taking time to practice; seeking a teacher",
     pushconsequences:
       "You're driving the bulldozer, but get overconfident, and lose control so it veers into a brick wall (the wall comes down on you, or perhaps worse).\n\n&nbsp;\n\nIf an insane investigator fails a pushed roll, he or she may believe they are tasked with unearthing or building a temple to the old ones. ",
+    source: "base",
+    restriction: "",
+    notes: "",
+    groups: [],
+  },
+  {
+    key: "personal",
+    label: "Personal Skill",
+    base: "EDU",
+    description: "Many occupations also allow for personal skill selections. These are in addition to the personal skills already able to be chosen based on your INT characteristic.",
+    pushexamples: "",
+    pushconsequences: "",
     source: "base",
     restriction: "",
     notes: "",
@@ -1229,18 +1241,17 @@ export const skills: Skill[] = [
     restriction: "",
     notes: "",
     groups: ["perception"],
-  }
-  // ,
-  // {
-  //   key: "",
-  //   label: "",
-  //   base: 0,
-  //   description: "",
-  //   pushexamples: "",
-  //   pushconsequences: "",
-  //   source: "base",
-  //   restriction: "",
-  //   notes: "",
-  //   groups: [],
-  // },
+  },
+  {
+    key: "",
+    label: "",
+    base: null,
+    description: "",
+    pushexamples: "",
+    pushconsequences: "",
+    source: "base",
+    restriction: "",
+    notes: "",
+    groups: [],
+  },
 ];
