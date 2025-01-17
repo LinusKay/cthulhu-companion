@@ -24,3 +24,17 @@ export interface Skill {
   notes: string | null;
   groups: string[];
 }
+
+export interface Weapon {
+  key: string;
+  label: string;
+  skill: string | string[];
+  damage: string;
+  range: string;
+  usesperround: number;
+  bullets: number | null;
+  cost20s: number;
+  costmodern: number;
+  malfunction: number | null;
+  era: string[];
+}
