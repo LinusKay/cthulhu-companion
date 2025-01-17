@@ -33,7 +33,7 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/linuskay/cthulhu-creator",
+    github: "https://github.com/linuskay/cthulhu-companion",
     sponsor: "https://ko-fi.com/libus_",
   },
 };
