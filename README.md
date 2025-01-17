@@ -6,7 +6,7 @@ This is a companion site for the Call of Cthulhu tabletop RPG.
 
 - Character Sheet Generator (dev only)
 - Skill browser
-- Occupation browser (pending complete input)
+- Occupation browser
 
 ## Technologies Used
 
@@ -25,7 +25,7 @@ This is a companion site for the Call of Cthulhu tabletop RPG.
 To create a new project based on this template using `create-next-app`, run the following command:
 
 ```bash
-git clone https://github.com/LinusKay/cthulhu-creator
+git clone https://github.com/LinusKay/cthulhu-companion
 ```
 
 ### Install dependencies
