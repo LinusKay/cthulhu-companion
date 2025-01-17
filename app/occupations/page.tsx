@@ -9,11 +9,21 @@ import { occupations } from "@/data/occupations";
 
 export default function OccupationssPage() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedGroups, setSelectedGroups] = useState<string[]>([]);
   const [selectedRestrictions, setSelectedRestrictions] = useState<string[]>(
     [],
   );
 
+  const occupationGroups = ["specialisation"];
   const occupationRestrictions = ["Classic", "Modern"];
+
+  const handleGroupCheckboxChange = (group: string) => {
+    setSelectedGroups((prevGroups) =>
+      prevGroups.includes(group)
+        ? prevGroups.filter((g) => g !== group)
+        : [...prevGroups, group],
+    );
+  };
 
   const handleRestrictionCheckboxChange = (restriction: string) => {
     setSelectedRestrictions((prevRestrictions) =>
@@ -25,6 +35,9 @@ export default function OccupationssPage() {
 
   // Filter occupations based on search term and selected groups
   const filteredOccupations = occupations.filter((occupation) => {
+    const groupMatch =
+      selectedGroups.length === 0 ||
+      occupation.groups.some((group) => selectedGroups.includes(group));
     const restrictionMatch =
       selectedRestrictions.length === 0 ||
       selectedRestrictions.includes(occupation.restriction);
@@ -32,7 +45,7 @@ export default function OccupationssPage() {
       occupation.key.toLowerCase().includes(searchTerm.toLowerCase()) ||
       occupation.label.toLowerCase().includes(searchTerm.toLowerCase());
 
-    return restrictionMatch && searchMatch;
+    return groupMatch && restrictionMatch && searchMatch;
   });
 
   return (
@@ -46,6 +59,19 @@ export default function OccupationssPage() {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
+
+      {/* Group checkboxes */}
+      <div className="flex flex-wrap gap-4 mt-4">
+        {occupationGroups.map((group) => (
+          <Checkbox
+            key={group}
+            checked={selectedGroups.includes(group)}
+            onChange={() => handleGroupCheckboxChange(group)}
+          >
+            {group.charAt(0).toUpperCase() + group.slice(1)}
+          </Checkbox>
+        ))}
+      </div>
 
       {/* Restriction checkboxes */}
       <div className="flex flex-wrap gap-4 mt-4">

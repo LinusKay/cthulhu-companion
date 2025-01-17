@@ -814,7 +814,8 @@ export const skills: Skill[] = [
     key: "personal",
     label: "Personal Skill",
     base: "EDU",
-    description: "Many occupations also allow for personal skill selections. These are in addition to the personal skills already able to be chosen based on your INT characteristic.",
+    description:
+      "Many occupations also allow for personal skill selections. These are in addition to the personal skills already able to be chosen based on your INT characteristic.",
     pushexamples: "",
     pushconsequences: "",
     source: "base",

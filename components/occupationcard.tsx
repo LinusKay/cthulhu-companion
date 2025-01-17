@@ -7,11 +7,11 @@ import { Link } from "@nextui-org/link";
 import Markdown from "react-markdown";
 import { ScrollShadow } from "@nextui-org/scroll-shadow";
 import remarkGfm from "remark-gfm";
-import { FaBrain, FaLink, FaUserFriends } from "react-icons/fa";
+import { FaAsterisk, FaBrain, FaLink, FaUserFriends } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { Alert } from "@nextui-org/alert";
 
 import { Occupation } from "@/types/types";
-import { Alert } from "@nextui-org/alert";
 
 interface OccupationCardProps {
   occupation: Occupation;
@@ -64,7 +64,14 @@ const OccupationCard: React.FC<OccupationCardProps> = ({ occupation }) => {
     >
       <CardHeader>
         <div className="flex flex-col text-left">
-          <p className="text-lg font-bold">{occupation.label}</p>
+          <p className="text-lg w-full font-bold flex items-center">
+            {occupation.groups.includes("specialisation") && (
+              <Tooltip content="Specialisation">
+                <FaAsterisk className="mr-2 opacity-50 cursor-help" />
+              </Tooltip>
+            )}
+            {occupation.label}
+          </p>
           {occupation.restriction && (
             <Tooltip content="This occupation should only be used in certain settings.">
               <p className="text-small text-default-500">
@@ -100,17 +107,36 @@ const OccupationCard: React.FC<OccupationCardProps> = ({ occupation }) => {
             {/* Print all skills as clickable links to the relevant skill card*/}
             {occupation.skills.map((skill, index) => (
               <span key={index}>
-                <Link
-                  isBlock
-                  showAnchorIcon
-                  color="foreground"
-                  href={`/skills#${skill}`}
-                  target="_blank"
-                >
-                  {skill}
-                </Link>
+                {Array.isArray(skill) ? (
+                  <Link
+                    isBlock
+                    showAnchorIcon
+                    color="foreground"
+                    href={`/skills#${skill[0]}`}
+                    size="sm"
+                    target="_blank"
+                  >
+                    {skill[1]}
+                  </Link>
+                ) : (
+                  <Link
+                    isBlock
+                    showAnchorIcon
+                    color="foreground"
+                    href={`/skills#${skill}`}
+                    size="sm"
+                    target="_blank"
+                  >
+                    {skill}
+                  </Link>
+                )}
               </span>
             ))}
+          </p>
+          <Divider />
+          <p className="text-md text-left mt-2 ml-2">
+            <span className="font-bold ">Skill Points: </span>
+            {occupation.skillpoints}
           </p>
         </AccordionItem>
       </Accordion>

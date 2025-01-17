@@ -98,7 +98,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
               {typeof skill.base === "number" ? (
                 <Tooltip content="Base unskilled chance to succeed">
                   <span className="ml-1 text-default-500 cursor-help">
-                    {skill.base * 100}%
+                    ({skill.base * 100}%)
                   </span>
                 </Tooltip>
               ) : typeof skill.base === "string" ? (

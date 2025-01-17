@@ -72,6 +72,7 @@ export default function Home() {
     restriction: "",
     source: "",
     notes: "",
+    groups: []
   });
 
   // Handle occupation change by extracting value from event

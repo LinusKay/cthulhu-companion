@@ -9,6 +9,7 @@ export interface Occupation {
   restriction: string;
   source: string;
   notes: string;
+  groups: string[];
 }
 
 export interface Skill {
