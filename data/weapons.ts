@@ -1,13 +1,13 @@
 import { Weapon } from "../types/types";
 
-export const skills: Weapon[] = [
+export const weapons: Weapon[] = [
   {
     key: "bowandarrows",
     label: "Bow and Arrows",
     skill: ["firearms_bow", "firearms (bow)"],
     damage: "1D6+half D8",
     range: "30 yards",
-    usesperround: 1,
+    uses: 1,
     bullets: 1,
     cost20s: 7,
     costmodern: 75,
@@ -20,7 +20,7 @@ export const skills: Weapon[] = [
     skill: ["fighting_brawl", "fighting (brawl)"],
     damage: "1D3+1+D8",
     range: "Touch",
-    usesperround: 1,
+    uses: 1,
     bullets: null,
     cost20s: 1,
     costmodern: 10,
@@ -33,7 +33,7 @@ export const skills: Weapon[] = [
     skill: [],
     damage: "",
     range: "",
-    usesperround: 1,
+    uses: 1,
     bullets: null,
     cost20s: 0,
     costmodern: 0,

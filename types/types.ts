@@ -31,7 +31,7 @@ export interface Weapon {
   skill: string | string[];
   damage: string;
   range: string;
-  usesperround: number;
+  uses: number;
   bullets: number | null;
   cost20s: number;
   costmodern: number;

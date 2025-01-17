@@ -1,101 +1,83 @@
 "use client";
-import { useState } from "react";
+
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+} from "@nextui-org/table";
+import { Link } from "@nextui-org/link";
 import { Input } from "@nextui-org/input";
-import { Checkbox } from "@nextui-org/checkbox";
+import { useState } from "react";
 
+import { weapons } from "@/data/weapons";
 import { title } from "@/components/primitives";
-import OccupationCard from "@/components/occupationcard";
-import { occupations } from "@/data/occupations";
 
-export default function OccupationssPage() {
+export default function WeaponsPage() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedGroups, setSelectedGroups] = useState<string[]>([]);
-  const [selectedRestrictions, setSelectedRestrictions] = useState<string[]>(
-    [],
-  );
 
-  const occupationGroups = ["specialisation"];
-  const occupationRestrictions = ["Classic", "Modern"];
-
-  const handleGroupCheckboxChange = (group: string) => {
-    setSelectedGroups((prevGroups) =>
-      prevGroups.includes(group)
-        ? prevGroups.filter((g) => g !== group)
-        : [...prevGroups, group],
-    );
-  };
-
-  const handleRestrictionCheckboxChange = (restriction: string) => {
-    setSelectedRestrictions((prevRestrictions) =>
-      prevRestrictions.includes(restriction)
-        ? prevRestrictions.filter((r) => r !== restriction)
-        : [...prevRestrictions, restriction],
-    );
-  };
-
-  // Filter occupations based on search term and selected groups
-  const filteredOccupations = occupations.filter((occupation) => {
-    const groupMatch =
-      selectedGroups.length === 0 ||
-      occupation.groups.some((group) => selectedGroups.includes(group));
-    const restrictionMatch =
-      selectedRestrictions.length === 0 ||
-      selectedRestrictions.includes(occupation.restriction);
+  // Filter skills based on search term and selected groups
+  const filteredWeapons = weapons.filter((weapon) => {
     const searchMatch =
-      occupation.key.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      occupation.label.toLowerCase().includes(searchTerm.toLowerCase());
+      weapon.key.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      weapon.label.toLowerCase().includes(searchTerm.toLowerCase());
 
-    return groupMatch && restrictionMatch && searchMatch;
+    return searchMatch;
   });
 
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-10 md:py-10">
-      <h1 className={title()}>Occupations</h1>
+      <h1 className={title()}>Weapons</h1>
 
       {/* Search input */}
       <Input
         className="p-2 rounded-md max-w-xl"
-        placeholder="Search occupations..."
+        placeholder="Search skills..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
 
-      {/* Group checkboxes */}
-      <div className="flex flex-wrap gap-4 mt-4">
-        {occupationGroups.map((group) => (
-          <Checkbox
-            key={group}
-            checked={selectedGroups.includes(group)}
-            onChange={() => handleGroupCheckboxChange(group)}
-          >
-            {group.charAt(0).toUpperCase() + group.slice(1)}
-          </Checkbox>
-        ))}
-      </div>
-
-      {/* Restriction checkboxes */}
-      <div className="flex flex-wrap gap-4 mt-4">
-        {occupationRestrictions.map((restriction) => (
-          <Checkbox
-            key={restriction}
-            checked={selectedRestrictions.includes(restriction)}
-            onChange={() => handleRestrictionCheckboxChange(restriction)}
-          >
-            {restriction}
-          </Checkbox>
-        ))}
-      </div>
-
-      {/* Occupations grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
-        {filteredOccupations.length > 0 ? (
-          filteredOccupations.map((occupation) => (
-            <OccupationCard key={occupation.key} occupation={occupation} />
-          ))
-        ) : (
-          <p className="text-gray-500 col-span-full">No occupations found.</p>
-        )}
-      </div>
+      <Table aria-label="Example static collection table">
+        <TableHeader>
+          <TableColumn>Name</TableColumn>
+          <TableColumn>Skill</TableColumn>
+          <TableColumn>Damage</TableColumn>
+          <TableColumn>Range</TableColumn>
+          <TableColumn>Uses Per Round</TableColumn>
+          <TableColumn>Bullets in Gun (Mag)</TableColumn>
+          <TableColumn>Cost (1920s)</TableColumn>
+          <TableColumn>Cost (Modern)</TableColumn>
+          <TableColumn>Malfunction</TableColumn>
+          <TableColumn>Eras</TableColumn>
+        </TableHeader>
+        <TableBody>
+          {filteredWeapons.map((weapon) => (
+            <TableRow key={weapon.key}>
+              <TableCell>{weapon.label}</TableCell>
+              <TableCell>
+                <Link
+                  isBlock
+                  showAnchorIcon
+                  color="foreground"
+                  href={`/skills#${weapon.skill[0]}`}
+                >
+                  {weapon.skill[1]}
+                </Link>
+              </TableCell>
+              <TableCell>{weapon.damage}</TableCell>
+              <TableCell>{weapon.range}</TableCell>
+              <TableCell>{weapon.uses}</TableCell>
+              <TableCell>{weapon.bullets}</TableCell>
+              <TableCell>{weapon.cost20s}</TableCell>
+              <TableCell>{weapon.costmodern}</TableCell>
+              <TableCell>{weapon.malfunction}</TableCell>
+              <TableCell>{weapon.era.join(", ")}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     </section>
   );
 }
