@@ -6,11 +6,13 @@ import { PDFDocument } from "pdf-lib";
 import { Button } from "@nextui-org/button";
 import { Tooltip } from "@nextui-org/tooltip";
 import { Autocomplete, AutocompleteItem } from "@nextui-org/autocomplete";
+import { FaDice } from "react-icons/fa";
 
 import { Occupation } from "../types/types";
 import { occupations } from "../data/occupations";
 
 import { title } from "@/components/primitives";
+import OccupationCard from "@/components/occupationcard";
 
 export default function Home() {
   // validation values
@@ -20,11 +22,11 @@ export default function Home() {
   const isDevelopment = process.env.NODE_ENV === "development";
 
   const [attributes, setattributes] = useState({
-    name: "John Doe",
-    birthplace: "Arkham",
+    name: "Alan Test",
+    birthplace: "Brooklyn",
     pronouns: "He/him",
-    residence: "Arkham",
-    age: 33,
+    residence: "Brooklyn",
+    age: 99,
     str: 70,
     siz: 71,
     hp: 72,
@@ -83,6 +85,32 @@ export default function Home() {
     if (selectedOccupation) {
       setOccupationDetails(selectedOccupation);
     }
+  };
+
+  const roll = (
+    e: React.MouseEvent<SVGElement, MouseEvent>,
+    dice: number[],
+    addition: number[],
+    multiplication: number[],
+  ) => {
+    let total = 0;
+
+    for (let i = 0; i < dice.length; i++) {
+      let roll = Math.floor(Math.random() * (6 - 1) + 1);
+      console.log("roll: (1d" + dice[i] + "):" + roll);
+      total += roll;
+      console.log(total);
+    }
+    for (let i = 0; i < addition.length; i++) {
+      total += addition[i];
+      console.log("+" + addition[i] + " = " + total);
+    }
+    for (let i = 0; i < addition.length; i++) {
+      total *= multiplication[i];
+      console.log("*" + multiplication[i] + " = " + total);
+    }
+    console.log(total);
+    console.log(e.target)
   };
 
   // Fill out PDF fields
@@ -198,19 +226,16 @@ export default function Home() {
           <div className="gap-5 grid grid-cols-3 w-full">
             <Input
               isRequired
-              defaultValue="John Doe"
               label="Name"
               type="text"
               onChange={handleInputChange}
             />
             <Input
-              defaultValue="Arkham"
               label="Birthplace (optional)"
               type="text"
               onChange={handleInputChange}
             />
             <Input
-              defaultValue="He/Him"
               label="Pronoun (optional)"
               type="text"
               onChange={handleInputChange}
@@ -230,14 +255,12 @@ export default function Home() {
               ))}
             </Autocomplete>
             <Input
-              defaultValue="Arkham"
               label="Residence (optional)"
               type="text"
               onChange={handleInputChange}
             />
             <Input
               isRequired
-              defaultValue="33"
               label="Age"
               type="number"
               onChange={handleInputChange}
@@ -248,7 +271,14 @@ export default function Home() {
           <div className="gap-5 grid grid-cols-1">
             <div className="gap-5 grid grid-cols-3">
               <Input
-                defaultValue="90"
+                endContent={
+                  <Tooltip content="Auto-Roll">
+                    <FaDice
+                      className="cursor-pointer"
+                      onClick={(e) => roll(e, [6, 6, 6], [0], [5])}
+                    />
+                  </Tooltip>
+                }
                 label={<Tooltip content="Roll: 3d6 * 5">STR</Tooltip>}
                 max={charMax}
                 min={charMin}
@@ -256,7 +286,14 @@ export default function Home() {
                 onChange={handleInputChange}
               />
               <Input
-                defaultValue="90"
+                endContent={
+                  <Tooltip content="Auto-Roll">
+                    <FaDice
+                      className="cursor-pointer"
+                      onClick={() => roll([6, 6], [6], [5])}
+                    />
+                  </Tooltip>
+                }
                 label={<Tooltip content="Roll: 2d6 + 6 * 5">SIZ</Tooltip>}
                 max={charMax}
                 min={charMin}
@@ -264,7 +301,6 @@ export default function Home() {
                 onChange={handleInputChange}
               />
               <Input
-                defaultValue="90"
                 label="Hit Points"
                 min={charMin}
                 type="number"
@@ -273,7 +309,14 @@ export default function Home() {
             </div>
             <div className="gap-5 grid grid-cols-3 w-full">
               <Input
-                defaultValue="90"
+                endContent={
+                  <Tooltip content="Auto-Roll">
+                    <FaDice
+                      className="cursor-pointer"
+                      onClick={() => roll([6, 6, 6], [0], [5])}
+                    />
+                  </Tooltip>
+                }
                 label={<Tooltip content="Roll: 3d6 * 5">CON</Tooltip>}
                 max={charMax}
                 min={charMin}
@@ -281,7 +324,14 @@ export default function Home() {
                 onChange={handleInputChange}
               />
               <Input
-                defaultValue="90"
+                endContent={
+                  <Tooltip content="Auto-Roll">
+                    <FaDice
+                      className="cursor-pointer"
+                      onClick={() => roll([6, 6, 6], [0], [5])}
+                    />
+                  </Tooltip>
+                }
                 label={<Tooltip content="Roll: 3d6 * 5">POW</Tooltip>}
                 max={charMax}
                 min={charMin}
@@ -289,7 +339,6 @@ export default function Home() {
                 onChange={handleInputChange}
               />
               <Input
-                defaultValue="90"
                 label="Magic Points"
                 max={charMax}
                 min={charMin}
@@ -299,7 +348,14 @@ export default function Home() {
             </div>
             <div className="flex gap-3 w-full">
               <Input
-                defaultValue="90"
+                endContent={
+                  <Tooltip content="Auto-Roll">
+                    <FaDice
+                      className="cursor-pointer"
+                      onClick={() => roll([6, 6, 6], [0], [5])}
+                    />
+                  </Tooltip>
+                }
                 label={<Tooltip content="Roll: 3d6 * 5">DEX</Tooltip>}
                 max={charMax}
                 min={charMin}
@@ -307,7 +363,14 @@ export default function Home() {
                 onChange={handleInputChange}
               />
               <Input
-                defaultValue="90"
+                endContent={
+                  <Tooltip content="Auto-Roll">
+                    <FaDice
+                      className="cursor-pointer"
+                      onClick={() => roll([6, 6, 6], [0], [5])}
+                    />
+                  </Tooltip>
+                }
                 label={<Tooltip content="Roll: 3d6 * 5">DEX</Tooltip>}
                 max={charMax}
                 min={charMin}
@@ -315,7 +378,6 @@ export default function Home() {
                 onChange={handleInputChange}
               />
               <Input
-                defaultValue="90"
                 label="Luck"
                 max={charMax}
                 min={charMin}
@@ -325,7 +387,14 @@ export default function Home() {
             </div>
             <div className="flex gap-3 w-full">
               <Input
-                defaultValue="90"
+                endContent={
+                  <Tooltip content="Auto-Roll">
+                    <FaDice
+                      className="cursor-pointer"
+                      onClick={() => roll([6, 6], [6], [5])}
+                    />
+                  </Tooltip>
+                }
                 label={<Tooltip content="Roll: 2d6 + 6 * 5">INT</Tooltip>}
                 max={charMax}
                 min={charMin}
@@ -333,7 +402,14 @@ export default function Home() {
                 onChange={handleInputChange}
               />
               <Input
-                defaultValue="90"
+                endContent={
+                  <Tooltip content="Auto-Roll">
+                    <FaDice
+                      className="cursor-pointer"
+                      onClick={() => roll([6, 6], [6], [5])}
+                    />
+                  </Tooltip>
+                }
                 label={<Tooltip content="Roll: 2d6 + 6 * 5">EDU</Tooltip>}
                 max={charMax}
                 min={charMin}
@@ -341,7 +417,6 @@ export default function Home() {
                 onChange={handleInputChange}
               />
               <Input
-                defaultValue="90"
                 label="Sanity"
                 min={charMin}
                 type="number"
@@ -351,30 +426,13 @@ export default function Home() {
           </div>
           {/* Conditionally render section if an occupation is selected */}
           {occupationDetails.key && (
-            <div>
-              <div>
-                <span className={title()}>Occupation</span>
-                <p>{occupationDetails.label}</p>
-                <p>{occupationDetails.description}</p>
-                <p>Skill Points: {occupationDetails.skillpoints}</p>
-                <p>
-                  Credit Rating:{" "}
-                  {occupationDetails.creditrating[0] +
-                    "-" +
-                    occupationDetails.creditrating[1]}
-                </p>
-                <p>Suggested Contacts: {occupationDetails.suggestedcontacts}</p>
-              </div>
-              <div>
-                <span className={title()}>Skills</span>
-                <p>
-                  <em>Occupational Skills</em>
-                </p>
-                {occupationDetails.skills.map((skill, index) => (
-                  <li key={index}>{skill}</li>
-                ))}
-              </div>
-            </div>
+            <section className="flex flex-col items-center justify-center gap-4 py-10 md:py-10">
+              <span className={title()}>Occupation</span>
+              <OccupationCard
+                key={occupationDetails.key}
+                occupation={occupationDetails}
+              />
+            </section>
           )}
 
           <span className={title()}>Character Story</span>

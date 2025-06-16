@@ -17,6 +17,10 @@ export const siteConfig = {
       label: "Occupations",
       href: "/occupations",
     },
+    {
+      label: "Weapons",
+      href: "/weapons",
+    },
   ],
   navMenuItems: [
     {
@@ -30,6 +34,10 @@ export const siteConfig = {
     {
       label: "Occupations",
       href: "/occupations",
+    },
+    {
+      label: "Weapons",
+      href: "/weapons",
     },
   ],
   links: {

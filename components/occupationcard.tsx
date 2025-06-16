@@ -7,7 +7,13 @@ import { Link } from "@nextui-org/link";
 import Markdown from "react-markdown";
 import { ScrollShadow } from "@nextui-org/scroll-shadow";
 import remarkGfm from "remark-gfm";
-import { FaAsterisk, FaBrain, FaLink, FaUserFriends } from "react-icons/fa";
+import {
+  FaAsterisk,
+  FaBrain,
+  FaLink,
+  FaUserFriends,
+  FaCommentDollar,
+} from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { Alert } from "@nextui-org/alert";
 
@@ -151,6 +157,22 @@ const OccupationCard: React.FC<OccupationCardProps> = ({ occupation }) => {
         >
           <Markdown className="text-sm text-left" remarkPlugins={[remarkGfm]}>
             {occupation.suggestedcontacts}
+          </Markdown>
+        </AccordionItem>
+      </Accordion>
+      <Divider />
+      <Accordion>
+        <AccordionItem
+          key="2"
+          aria-label="Credit Rating"
+          startContent={<FaCommentDollar />}
+          subtitle="What is their potential social/financial standing?"
+          title="Credit Rating"
+        >
+          <Markdown className="text-sm text-left" remarkPlugins={[remarkGfm]}>
+            {occupation.creditrating[0].toString() +
+              "-" +
+              occupation.creditrating[1].toString()}
           </Markdown>
         </AccordionItem>
       </Accordion>
