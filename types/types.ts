@@ -31,10 +31,11 @@ export interface Weapon {
   skill: string | string[];
   damage: string;
   range: string;
-  uses: number;
-  bullets: number | null;
-  cost20s: number;
-  costmodern: number;
+  uses: number | string;
+  bullets: number | string | null;
+  cost20s: number | null;
+  costmodern: number | null;
   malfunction: number | null;
   era: string[];
+  groups: string[];
 }
