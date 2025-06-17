@@ -4,15 +4,16 @@ import { Input, Textarea } from "@nextui-org/input";
 import React, { useState } from "react";
 import { PDFDocument } from "pdf-lib";
 import { Button } from "@nextui-org/button";
-import { Tooltip } from "@nextui-org/tooltip";
 import { Autocomplete, AutocompleteItem } from "@nextui-org/autocomplete";
-import { FaDice } from "react-icons/fa";
 
 import { Occupation } from "../types/types";
 import { occupations } from "../data/occupations";
+import { skills } from "../data/skills";
 
 import { title } from "@/components/primitives";
 import OccupationCard from "@/components/occupationcard";
+import CharacteristicInput from "@/components/characteristicinput";
+import SkillRecord from "@/components/skillrecord";
 
 export default function Home() {
   // validation values
@@ -21,7 +22,7 @@ export default function Home() {
 
   const isDevelopment = process.env.NODE_ENV === "development";
 
-  const [attributes, setattributes] = useState({
+  const [attributes, setAttributes] = useState({
     name: "Alan Test",
     birthplace: "Brooklyn",
     pronouns: "He/him",
@@ -51,14 +52,22 @@ export default function Home() {
     arcaneTomesSpells: "arcane tomes & spells",
     treasuredPossessions: "treasured possessions",
     encounters: "encounters with strange entities",
+    move: 0,
+    build: 0,
+    damageBonus: "",
+    accounting: 0,
+    accountingHalf: 0,
+    accountingFifth: 0,
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
-    setattributes((prev) => ({
+    console.log(e.target);
+    console.log(name);
+    setAttributes((prev) => ({
       ...prev,
-      [name]: isNaN(Number(value)) ? value : Number(value), // Convert to number if possible, else keep as string
+      [name]: isNaN(Number(value)) ? value : Number(value),
     }));
   };
 
@@ -85,32 +94,6 @@ export default function Home() {
     if (selectedOccupation) {
       setOccupationDetails(selectedOccupation);
     }
-  };
-
-  const roll = (
-    e: React.MouseEvent<SVGElement, MouseEvent>,
-    dice: number[],
-    addition: number[],
-    multiplication: number[],
-  ) => {
-    let total = 0;
-
-    for (let i = 0; i < dice.length; i++) {
-      let roll = Math.floor(Math.random() * (6 - 1) + 1);
-      console.log("roll: (1d" + dice[i] + "):" + roll);
-      total += roll;
-      console.log(total);
-    }
-    for (let i = 0; i < addition.length; i++) {
-      total += addition[i];
-      console.log("+" + addition[i] + " = " + total);
-    }
-    for (let i = 0; i < addition.length; i++) {
-      total *= multiplication[i];
-      console.log("*" + multiplication[i] + " = " + total);
-    }
-    console.log(total);
-    console.log(e.target)
   };
 
   // Fill out PDF fields
@@ -173,6 +156,15 @@ export default function Home() {
         { field: "EDU_half", value: String(Math.floor(attributes.edu / 2)) },
         { field: "EDU_fifth", value: String(Math.floor(attributes.edu / 5)) },
         { field: "StartingSanity", value: String(attributes.sanity) },
+
+        { field: "Skill_Accounting", value: String(attributes.accounting) },
+        { field: "Skill_Accounting_half", value: String(attributes.accountingHalf) },
+        { field: "Skill_Accounting_fifth", value: String(attributes.accountingFifth) },
+
+        { field: "MOV", value: String(attributes.move) },
+        { field: "Build", value: String(attributes.build) },
+        { field: "DamageBonus", value: String(attributes.damageBonus) },
+
         { field: "MyStory", value: String(attributes.story) },
         { field: "MyStory1", value: String(attributes.story1) },
         {
@@ -217,6 +209,295 @@ export default function Home() {
     }
   };
 
+  const [characteristics, setCharacteristics] = useState({
+    str: 0,
+    siz: 0,
+    hp: undefined as number | undefined,
+    con: 0,
+    pow: 0,
+    mp: undefined as number | undefined,
+    dex: 0,
+    app: 0,
+    luck: 0,
+    int: 0,
+    edu: 0,
+    sanity: undefined as number | undefined,
+    move: 0,
+    build: "" as string | undefined,
+    damageBonus: "" as string | undefined, 
+  });
+
+  // Handles changes to characteristics inputs, eg: syncing Sanity to POW automatically
+  const handleCharacteristicChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    const { name, value } = e.target;
+    const numericValue = Number(value);
+
+    if (isNaN(numericValue)) return; // skip invalid input
+
+    setCharacteristics((prev) => {
+      const updated = { ...prev, [name]: numericValue };
+
+      if (name === "pow") {
+        updated.sanity = numericValue;
+        updated.mp = Math.floor(numericValue / 5);
+      }
+
+      if ((name === "con" && prev.siz) || (name === "siz" && prev.con)) {
+        const con = name === "con" ? numericValue : prev.con;
+        const siz = name === "siz" ? numericValue : prev.siz;
+
+        updated.hp = Math.floor((con + siz) / 5);
+      }
+
+      if (name === "siz" && prev.str) {
+        const str = prev.str;
+
+        const [build, damageBonus] = calculateBuildAndDamageBonus(
+          str,
+          numericValue,
+        );
+
+        updated.build = build;
+        updated.damageBonus = damageBonus;
+      }
+
+      if (name === "str" && prev.siz) {
+        const siz = prev.siz;
+
+        const [build, damageBonus] = calculateBuildAndDamageBonus(
+          numericValue,
+          siz,
+        );
+
+        updated.build = build;
+        updated.damageBonus = damageBonus;
+      }
+
+      if (
+        (name === "str" && prev.dex && prev.siz) ||
+        (name === "dex" && prev.str && prev.siz) ||
+        (name === "siz" && prev.str && prev.dex)
+      ) {
+        const str = name === "str" ? numericValue : prev.str;
+        const dex = name === "dex" ? numericValue : prev.dex;
+        const siz = name === "siz" ? numericValue : prev.siz;
+
+        if (str < siz && dex < siz) {
+          updated.move = 7;
+        } else if (str > siz && dex > siz) {
+          updated.move = 9;
+        } else {
+          updated.move = 8;
+        }
+      }
+
+      return updated;
+    });
+  };
+
+  const calculateBuildAndDamageBonus = (
+    str: number,
+    siz: number,
+  ): [string, string] => {
+    const combined = str + siz;
+    let build = "";
+    let damageBonus = "";
+
+    if (combined > 2 && combined < 65) {
+      build = "-2";
+      damageBonus = "-2";
+    } else if (combined >= 65 && combined < 85) {
+      build = "-1";
+      damageBonus = "-1";
+    } else if (combined >= 85 && combined < 125) {
+      build = "0";
+      damageBonus = "0";
+    } else if (combined >= 125 && combined < 165) {
+      build = "1";
+      damageBonus = "1d4";
+    } else if (combined >= 165 && combined < 205) {
+      build = "2";
+      damageBonus = "1d6";
+    } else if (combined >= 205 && combined < 285) {
+      build = "3";
+      damageBonus = "2d6";
+    } else if (combined >= 285 && combined < 365) {
+      build = "3";
+      damageBonus = "3d6";
+    } else if (combined >= 365 && combined < 445) {
+      build = "5";
+      damageBonus = "4d6";
+    } else if (combined >= 445 && combined < 524) {
+      build = "6";
+      damageBonus = "5d6";
+    }
+
+    return [build, damageBonus];
+  };
+
+  const characteristicsRows = [
+    [
+      {
+        vanity: "STR",
+        name: "str",
+        rollable: true,
+        rollContent: "3d6 × 5",
+        rollParams: { dice: [6, 6, 6], addition: [0], multiplication: [5] },
+        value: characteristics.str,
+      },
+      {
+        vanity: "SIZ",
+        name: "siz",
+        rollable: true,
+        rollContent: "2d6 + 6 × 5",
+        rollParams: { dice: [6, 6], addition: [6], multiplication: [5] },
+        value: characteristics.siz,
+      },
+      {
+        vanity: "Hit Points",
+        name: "hp",
+        rollable: false,
+        rollContent: "CON + SIZE / 5",
+        rollParams: null,
+        editable: false,
+        value: characteristics.hp,
+      },
+    ],
+    [
+      {
+        vanity: "CON",
+        name: "con",
+        rollable: true,
+        rollContent: "3d6 × 5",
+        rollParams: { dice: [6, 6, 6], addition: [0], multiplication: [5] },
+        value: characteristics.con,
+      },
+      {
+        vanity: "POW",
+        name: "pow",
+        rollable: true,
+        rollContent: "3d6 × 5",
+        rollParams: { dice: [6, 6, 6], addition: [0], multiplication: [5] },
+        value: characteristics.pow,
+      },
+      {
+        vanity: "Magic Points",
+        name: "mp",
+        rollable: false,
+        rollContent: "POW / 5",
+        rollParams: null,
+        editable: false,
+        value: characteristics.mp,
+      },
+    ],
+    [
+      {
+        vanity: "DEX",
+        name: "dex",
+        rollable: true,
+        rollContent: "3d6 × 5",
+        rollParams: { dice: [6, 6, 6], addition: [0], multiplication: [5] },
+        value: characteristics.dex,
+      },
+      {
+        vanity: "APP",
+        name: "app",
+        rollable: true,
+        rollContent: "3d6 × 5",
+        rollParams: { dice: [6, 6, 6], addition: [0], multiplication: [5] },
+        value: characteristics.app,
+      },
+      {
+        vanity: "Luck",
+        name: "luck",
+        rollable: true,
+        rollContent: "3d6 × 5",
+        rollParams: { dice: [6, 6, 6], addition: [0], multiplication: [5] },
+        value: characteristics.luck,
+      },
+    ],
+    [
+      {
+        vanity: "INT",
+        name: "int",
+        rollable: true,
+        rollContent: "2d6 + 6 × 5",
+        rollParams: { dice: [6, 6], addition: [6], multiplication: [5] },
+        value: characteristics.int,
+      },
+      {
+        vanity: "EDU",
+        name: "edu",
+        rollable: true,
+        rollContent: "2d6 + 6 × 5",
+        rollParams: { dice: [6, 6], addition: [6], multiplication: [5] },
+        value: characteristics.edu,
+      },
+      {
+        vanity: "Sanity",
+        name: "sanity",
+        rollable: false,
+        rollContent: "POW",
+        rollParams: null,
+        editable: false,
+        value: characteristics.sanity,
+      },
+    ],
+    [
+      {
+        vanity: "Move",
+        name: "move",
+        rollable: false,
+        rollContent: "DEX, STR, SIZ",
+        rollParams: null,
+        editable: false,
+        value: characteristics.move,
+      },
+      {
+        vanity: "Build",
+        name: "build",
+        rollable: false,
+        rollContent: "STR, SIZ",
+        rollParams: null,
+        editable: false,
+        value: characteristics.build,
+      },
+      {
+        vanity: "Damage Bonus",
+        name: "damageBonus",
+        rollable: false,
+        rollContent: "STR, SIZ",
+        rollParams: null,
+        editable: false,
+        value: characteristics.damageBonus,
+      },
+    ],
+  ];
+
+  const occupationHasSkill = (
+    skillArray: (string | (string | number)[])[],
+    skillName: string,
+  ) => {
+    return skillArray.some((skill) =>
+      Array.isArray(skill) ? skill.includes(skillName) : skill === skillName,
+    );
+  };
+
+  const toColumnLayout = <T,>(array: T[], columns: number): T[][] => {
+    const rows = Math.ceil(array.length / columns);
+    const result: T[][] = Array.from({ length: columns }, () => []);
+
+    for (let i = 0; i < array.length; i++) {
+      const col = Math.floor(i / rows);
+
+      result[col].push(array[i]);
+    }
+
+    return result;
+  };
+
   return (
     <div>
       {isDevelopment ? (
@@ -227,16 +508,19 @@ export default function Home() {
             <Input
               isRequired
               label="Name"
+              name="name"
               type="text"
               onChange={handleInputChange}
             />
             <Input
               label="Birthplace (optional)"
+              name="birthplace"
               type="text"
               onChange={handleInputChange}
             />
             <Input
               label="Pronoun (optional)"
+              name="pronouns"
               type="text"
               onChange={handleInputChange}
             />
@@ -256,215 +540,179 @@ export default function Home() {
             </Autocomplete>
             <Input
               label="Residence (optional)"
+              name="residence"
               type="text"
               onChange={handleInputChange}
             />
             <Input
               isRequired
               label="Age"
+              name="age"
               type="number"
               onChange={handleInputChange}
             />
           </div>
 
           <span className={title()}>Characteristics</span>
-          <div className="gap-5 grid grid-cols-1">
-            <div className="gap-5 grid grid-cols-3">
-              <Input
-                endContent={
-                  <Tooltip content="Auto-Roll">
-                    <FaDice
-                      className="cursor-pointer"
-                      onClick={(e) => roll(e, [6, 6, 6], [0], [5])}
-                    />
-                  </Tooltip>
-                }
-                label={<Tooltip content="Roll: 3d6 * 5">STR</Tooltip>}
-                max={charMax}
-                min={charMin}
-                type="number"
-                onChange={handleInputChange}
-              />
-              <Input
-                endContent={
-                  <Tooltip content="Auto-Roll">
-                    <FaDice
-                      className="cursor-pointer"
-                      onClick={() => roll([6, 6], [6], [5])}
-                    />
-                  </Tooltip>
-                }
-                label={<Tooltip content="Roll: 2d6 + 6 * 5">SIZ</Tooltip>}
-                max={charMax}
-                min={charMin}
-                type="number"
-                onChange={handleInputChange}
-              />
-              <Input
-                label="Hit Points"
-                min={charMin}
-                type="number"
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className="gap-5 grid grid-cols-3 w-full">
-              <Input
-                endContent={
-                  <Tooltip content="Auto-Roll">
-                    <FaDice
-                      className="cursor-pointer"
-                      onClick={() => roll([6, 6, 6], [0], [5])}
-                    />
-                  </Tooltip>
-                }
-                label={<Tooltip content="Roll: 3d6 * 5">CON</Tooltip>}
-                max={charMax}
-                min={charMin}
-                type="number"
-                onChange={handleInputChange}
-              />
-              <Input
-                endContent={
-                  <Tooltip content="Auto-Roll">
-                    <FaDice
-                      className="cursor-pointer"
-                      onClick={() => roll([6, 6, 6], [0], [5])}
-                    />
-                  </Tooltip>
-                }
-                label={<Tooltip content="Roll: 3d6 * 5">POW</Tooltip>}
-                max={charMax}
-                min={charMin}
-                type="number"
-                onChange={handleInputChange}
-              />
-              <Input
-                label="Magic Points"
-                max={charMax}
-                min={charMin}
-                type="number"
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className="flex gap-3 w-full">
-              <Input
-                endContent={
-                  <Tooltip content="Auto-Roll">
-                    <FaDice
-                      className="cursor-pointer"
-                      onClick={() => roll([6, 6, 6], [0], [5])}
-                    />
-                  </Tooltip>
-                }
-                label={<Tooltip content="Roll: 3d6 * 5">DEX</Tooltip>}
-                max={charMax}
-                min={charMin}
-                type="number"
-                onChange={handleInputChange}
-              />
-              <Input
-                endContent={
-                  <Tooltip content="Auto-Roll">
-                    <FaDice
-                      className="cursor-pointer"
-                      onClick={() => roll([6, 6, 6], [0], [5])}
-                    />
-                  </Tooltip>
-                }
-                label={<Tooltip content="Roll: 3d6 * 5">DEX</Tooltip>}
-                max={charMax}
-                min={charMin}
-                type="number"
-                onChange={handleInputChange}
-              />
-              <Input
-                label="Luck"
-                max={charMax}
-                min={charMin}
-                type="number"
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className="flex gap-3 w-full">
-              <Input
-                endContent={
-                  <Tooltip content="Auto-Roll">
-                    <FaDice
-                      className="cursor-pointer"
-                      onClick={() => roll([6, 6], [6], [5])}
-                    />
-                  </Tooltip>
-                }
-                label={<Tooltip content="Roll: 2d6 + 6 * 5">INT</Tooltip>}
-                max={charMax}
-                min={charMin}
-                type="number"
-                onChange={handleInputChange}
-              />
-              <Input
-                endContent={
-                  <Tooltip content="Auto-Roll">
-                    <FaDice
-                      className="cursor-pointer"
-                      onClick={() => roll([6, 6], [6], [5])}
-                    />
-                  </Tooltip>
-                }
-                label={<Tooltip content="Roll: 2d6 + 6 * 5">EDU</Tooltip>}
-                max={charMax}
-                min={charMin}
-                type="number"
-                onChange={handleInputChange}
-              />
-              <Input
-                label="Sanity"
-                min={charMin}
-                type="number"
-                onChange={handleInputChange}
-              />
-            </div>
+          <div className="gap-5 grid grid-cols-1 w-1/2 mx-auto">
+            {characteristicsRows.map((row, rowIndex) => (
+              <div key={rowIndex} className="gap-5 grid grid-cols-3 w-full">
+                {row.map((char) => (
+                  <CharacteristicInput
+                    key={char.name}
+                    charMax={charMax}
+                    charMin={charMin}
+                    editable={char.editable}
+                    name={char.name}
+                    rollContent={char.rollContent}
+                    rollParams={char.rollParams}
+                    rollable={char.rollable}
+                    value={char.value}
+                    vanity={char.vanity}
+                    onChange={handleCharacteristicChange}
+                  />
+                ))}
+              </div>
+            ))}
           </div>
           {/* Conditionally render section if an occupation is selected */}
           {occupationDetails.key && (
-            <section className="flex flex-col items-center justify-center gap-4 py-10 md:py-10">
-              <span className={title()}>Occupation</span>
-              <OccupationCard
-                key={occupationDetails.key}
-                occupation={occupationDetails}
-              />
-            </section>
+            <div>
+              <section className="flex flex-col items-center justify-center gap-4 py-10 md:py-10">
+                <span className={title()}>Occupation</span>
+                <OccupationCard
+                  key={occupationDetails.key}
+                  occupation={occupationDetails}
+                />
+              </section>
+              <section className="flex flex-col items-center justify-center gap-4 py-10 md:py-10">
+                <span className={title()}>Skills</span>
+                <span className={title({ size: "sm" })}>
+                  Occupational Skills
+                </span>
+                <p>
+                  Points: {characteristics.edu * 2 + characteristics.dex * 2}
+                </p>
+                <div className="flex gap-6">
+                  {toColumnLayout(
+                    skills.filter((skill) =>
+                      occupationHasSkill(occupationDetails.skills, skill.key),
+                    ),
+                    3,
+                  ).map((column, colIndex) => (
+                    <div key={colIndex} className="flex flex-col gap-2">
+                      {column.map((skill, rowIndex) => (
+                        <SkillRecord
+                          key={`${colIndex}-${rowIndex}`}
+                          skill={skill}
+                          onChange={handleInputChange}
+                        />
+                      ))}
+                    </div>
+                  ))}
+                </div>
+                <span className={title({ size: "sm" })}>Personal Skills</span>
+                <div className="flex gap-4">
+                  {toColumnLayout(skills, 3).map((column, colIndex) => (
+                    <div key={colIndex} className="flex flex-col gap-2">
+                      {column.map((skill, rowIndex) => (
+                        <SkillRecord
+                          key={`${colIndex}-${rowIndex}`}
+                          skill={skill}
+                          onChange={handleInputChange}
+                        />
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </section>
+            </div>
           )}
 
           <span className={title()}>Character Story</span>
           <div className="flex gap-3 w-full">
-            <Textarea className="w-full" label="My Story" />
-            <Textarea className="w-full" label="My Story" />
+            <Textarea
+              className="w-full"
+              label="My Story"
+              name="story"
+              onChange={handleInputChange}
+            />
+            <Textarea
+              className="w-full"
+              label="My Story"
+              name="story1"
+              onChange={handleInputChange}
+            />
           </div>
           <div className="flex gap-3 w-full">
-            <Textarea className="w-full" label="Personal Description" />
-            <Textarea className="w-full" label="Traits" />
+            <Textarea
+              className="w-full"
+              label="Personal Description"
+              name="personalDescription"
+              onChange={handleInputChange}
+            />
+            <Textarea
+              className="w-full"
+              label="Traits"
+              name="traits"
+              onChange={handleInputChange}
+            />
           </div>
           <div className="flex gap-3 w-full">
-            <Textarea className="w-full" label="Ideologies & Beliefs" />
-            <Textarea className="w-full" label="Injuries & Scars" />
+            <Textarea
+              className="w-full"
+              label="Ideologies & Beliefs"
+              name="ideology"
+              onChange={handleInputChange}
+            />
+            <Textarea
+              className="w-full"
+              label="Injuries & Scars"
+              name="injuries"
+              onChange={handleInputChange}
+            />
           </div>
           <div className="flex gap-3 w-full">
-            <Textarea className="w-full" label="Significant People" />
-            <Textarea className="w-full" label="Phobias & Manias" />
+            <Textarea
+              className="w-full"
+              label="Significant People"
+              name="significantPeople"
+              onChange={handleInputChange}
+            />
+            <Textarea
+              className="w-full"
+              label="Phobias & Manias"
+              name="phobiasManias"
+              onChange={handleInputChange}
+            />
           </div>
           <div className="flex gap-3 w-full">
-            <Textarea className="w-full" label="Meaningful Locations" />
+            <Textarea
+              className="w-full"
+              label="Meaningful Locations"
+              name="meaningfulLocations"
+              onChange={handleInputChange}
+            />
             <Textarea
               className="w-full"
               description="Your typical citizen won't have had any interaction with the dangerous realm of the arcane, as such knowledge tends to twist the mind and drive those that use spells to insanity, or death."
               label="Arcane Tomes & Spells"
+              name="arcaneTomesSpells"
+              onChange={handleInputChange}
             />
           </div>
           <div className="flex gap-3 w-full">
-            <Textarea className="w-full" label="Treasured Possessions" />
+            <Textarea
+              className="w-full"
+              label="Treasured Possessions"
+              name="treasuredPossessions"
+              onChange={handleInputChange}
+            />
             <Textarea
               className="w-full"
               label="Encounters with Strange Entities"
+              name="encounters"
+              onChange={handleInputChange}
             />
           </div>
 

@@ -125,16 +125,18 @@ const OccupationCard: React.FC<OccupationCardProps> = ({ occupation }) => {
                     {skill[1]}
                   </Link>
                 ) : (
-                  <Link
-                    isBlock
-                    showAnchorIcon
-                    color="foreground"
-                    href={`/skills#${skill}`}
-                    size="sm"
-                    target="_blank"
-                  >
-                    {skill}
-                  </Link>
+                  skill != "personal" && (
+                    <Link
+                      isBlock
+                      showAnchorIcon
+                      color="foreground"
+                      href={`/skills#${skill}`}
+                      size="sm"
+                      target="_blank"
+                    >
+                      {skill}
+                    </Link>
+                  )
                 )}
               </span>
             ))}
