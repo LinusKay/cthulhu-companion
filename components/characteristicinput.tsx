@@ -23,8 +23,7 @@ interface CharacteristicProps {
   value?: string | number;
 }
 
-const CharacteristicInput: React.FC<
-  CharacteristicProps> = ({
+const CharacteristicInput: React.FC<CharacteristicProps> = ({
   vanity,
   name,
   rollParams = null,

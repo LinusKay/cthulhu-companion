@@ -63,8 +63,6 @@ export default function Home() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
-    console.log(e.target);
-    console.log(name);
     setAttributes((prev) => ({
       ...prev,
       [name]: isNaN(Number(value)) ? value : Number(value),
@@ -158,8 +156,14 @@ export default function Home() {
         { field: "StartingSanity", value: String(attributes.sanity) },
 
         { field: "Skill_Accounting", value: String(attributes.accounting) },
-        { field: "Skill_Accounting_half", value: String(attributes.accountingHalf) },
-        { field: "Skill_Accounting_fifth", value: String(attributes.accountingFifth) },
+        {
+          field: "Skill_Accounting_half",
+          value: String(attributes.accountingHalf),
+        },
+        {
+          field: "Skill_Accounting_fifth",
+          value: String(attributes.accountingFifth),
+        },
 
         { field: "MOV", value: String(attributes.move) },
         { field: "Build", value: String(attributes.build) },
@@ -224,7 +228,7 @@ export default function Home() {
     sanity: undefined as number | undefined,
     move: 0,
     build: "" as string | undefined,
-    damageBonus: "" as string | undefined, 
+    damageBonus: "" as string | undefined,
   });
 
   // Handles changes to characteristics inputs, eg: syncing Sanity to POW automatically
@@ -605,7 +609,6 @@ export default function Home() {
                         <SkillRecord
                           key={`${colIndex}-${rowIndex}`}
                           skill={skill}
-                          onChange={handleInputChange}
                         />
                       ))}
                     </div>
@@ -619,7 +622,6 @@ export default function Home() {
                         <SkillRecord
                           key={`${colIndex}-${rowIndex}`}
                           skill={skill}
-                          onChange={handleInputChange}
                         />
                       ))}
                     </div>

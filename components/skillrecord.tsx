@@ -41,15 +41,15 @@ const SkillRecord: React.FC<SkillRecordProps> = ({ skill }) => {
         />
         <Input
           disabled
-          name={skill.key + "Half"}
           className="cursor-default opacity-70"
+          name={skill.key + "Half"}
           radius={"none"}
           value={inputValues.half}
         />
         <Input
           disabled
-          name={skill.key + "Fifth"}
           className="cursor-default opacity-70"
+          name={skill.key + "Fifth"}
           radius={"none"}
           value={inputValues.fifth}
         />
